@@ -1,0 +1,135 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{fontawesome}
+\usepackage{etaremune}
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+
+\newcommand{\leftright}[2]{#1 \hfill #2\\}
+\newcommand{\rtxt}[1]{\raggedleft \noindent #1 \\ \raggedright}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Evan H.} % Your first name
+\familyname{Anders} % Your last name
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+\leftright{Dept. Astrophysical \& Planetary Sciences}{email: evan.anders@colorado.edu}
+\leftright{Laboratory for Atmospheric and Space Physics}{website: \href{http://evanhanders.bitbucket.io}{evanhanders.bitbucket.io}}
+\leftright{University of Colorado}{Google Scholar: \href{https://scholar.google.com/citations?user=pOxWQ5sAAAAJ}{pOxWQ5sAAAAJ}}
+\leftright{Boulder, CO, 80302 USA}{arXiv: \href{https://arxiv.org/a/anders\_e\_1.html}{anders\_e\_1}}
+\rtxt{\href{https://www.linkedin.com/in/evanhanders/}{\faLinkedinSquare}/\href{https://github.com/evanhanders/}{\faGithubSquare}/\href{https://bitbucket.org/evanhanders/?visibility=public}{\faBitbucketSquare}: evanhanders}
+
+\input{cv_sections/interests.tex}
+\input{cv_sections/education.tex}
+\input{cv_sections/research_experience.tex}
+\input{cv_sections/grants_fellowships.tex}
+\input{cv_sections/awards.tex}
+\input{cv_sections/publications.tex}
+\input{cv_sections/conferences.tex}
+\input{cv_sections/service.tex}
+\input{cv_sections/teaching_experience.tex}
+\input{cv_sections/outreach.tex}
+
+%%----------------------------------------------------------------------------------------
+%%	WORK EXPERIENCE SECTION
+%%----------------------------------------------------------------------------------------
+%
+%
+%\subsection{Miscellaneous}
+%
+%\cventry{2010--2011}{}{}{}{}{Spent some time finding myself. This was a courageous endeavour that didn't have a job title. It was quite important to my overall development though so I'm adding it to my CV. Also it explains the gap in my otherwise stellar CV.}
+%
+%\cventry{2009--2010}{Computer Repair Specialist}{Buy More}{Burbank}{}{Worked in the Nerd Herd and helped to solve computer problems. Allowed me to become expert in all forms of martial arts and weaponry.}
+%
+%%----------------------------------------------------------------------------------------
+%%	AWARDS SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\section{Awards}
+%
+%\cvitem{2011}{School of Business Postgraduate Scholarship}
+%\cvitem{2010}{Top Achiever Award -- Commerce}
+%
+%%----------------------------------------------------------------------------------------
+%%	COMPUTER SKILLS SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\section{Computer skills}
+%
+%\cvitem{Basic}{\textsc{java}, Adobe Illustrator}
+%\cvitem{Intermediate}{\textsc{python}, \textsc{html}, \LaTeX, OpenOffice, Linux, Microsoft Windows}
+%\cvitem{Advanced}{Computer Hardware and Support}
+%
+%%----------------------------------------------------------------------------------------
+%%	COMMUNICATION SKILLS SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\section{Communication Skills}
+%
+%\cvitem{2010}{Oral Presentation at the California Business Conference}
+%\cvitem{2009}{Poster at the Annual Business Conference in Oregon}
+%
+%%----------------------------------------------------------------------------------------
+%%	LANGUAGES SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\section{Languages}
+%
+%\cvitemwithcomment{English}{Mothertongue}{}
+%\cvitemwithcomment{Spanish}{Intermediate}{Conversationally fluent}
+%\cvitemwithcomment{Dutch}{Basic}{Basic words and phrases only}
+%
+%%----------------------------------------------------------------------------------------
+%%	INTERESTS SECTION
+%%----------------------------------------------------------------------------------------
+%
+%\section{Interests}
+%
+%\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+%
+%\cvlistdoubleitem{Piano}{Chess}
+%\cvlistdoubleitem{Cooking}{Dancing}
+%\cvlistitem{Running}
+%
+%%----------------------------------------------------------------------------------------
+%
+\end{document}
