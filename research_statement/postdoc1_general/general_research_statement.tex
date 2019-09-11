@@ -1,0 +1,115 @@
+\documentclass[aasms,12pt]{article}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+\usepackage[margin=1in]{geometry}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage[skip=2pt,font=small]{caption}
+\captionsetup{width=\textwidth}
+\usepackage{amssymb, amsmath, amsfonts, xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!80!black},
+    urlcolor={blue!80!black}
+}
+
+
+\sectionfont{\normalsize}
+\subsectionfont{\small}
+
+
+%\citestyle{aa}
+\newcommand{\sol}{\ensuremath{\odot}}
+\newcommand{\RB}{Rayleigh-B\'{e}nard }
+\newcommand{\grad}{\ensuremath{\nabla}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\footnotesize{\thepage}}
+
+
+
+
+
+\begin{document}
+\begin{center}
+   \large\textbf{Really clever title Episode IV:}\\
+   \large\textbf{Return of Rotation}\\
+   \vspace{0.2cm}
+   \large{Evan H. Anders}\\
+   \vspace{0.2cm}
+\end{center}
+
+\vspace{-0.6cm}
+
+%Need to resturcture this:
+% Real short intro
+% Then the intro to each problem should go within the problem where I'm describing what I want to do.
+\section{Background \& Motivation}
+The Sun is one of many magnetically active stars.
+A dynamo seated in the turbulent plasma motions of the solar convection zone drives the Sun's magnetism.
+Despite sunspot observations dating back hundreds of years and decades of concentrated efforts, this dynamo is still poorly understood.
+The collection of phenomena that can be referred to as solar activity including coronal mass ejections pose great threats to our power grids, satellites, and astronauts.
+As such, understanding the solar dynamo remains a high priority.
+
+In order to understand the solar dynamo, a thorough understanding of stellar convection is required.
+Recent observations have revealed a so-called ``convective conundrum,'' which has caused us to question the fundamental nature of motions in the solar convection zone.
+Helioseismic measurements have detected flow speeds nearly two orders of magnitude smaller than expected in the deep convection zone \citep{hanasoge&all2012}.
+While more recent observations \citep{greer&all2015} detect flow speeds within the order of magnitude posed by theory, so-called ``giant cells'' at large length scales are missing from these observations.
+While helioseismic observations may be difficult to interpret due to the complex inversions involved, giant cells are also not observed in convective motions at the solar surface \citep{hathaway&all2015}.
+It is possible that giant cells are not driven in the first place; this ``entropy rain'' hypothesis would suggest that cold downflows driven at the solar surface are responsible for carrying the solar luminosity to the base of the convection zone.
+Another possibility is that the dynamical nature of the deep cells is quite different from our expectations of simulations in the unrotationally constrained regime because rotation may be very important for the slow, deep solar motions.
+
+The Sun is a rotating star, and that rotation may strongly influence the dynamics of the solar convection and thus the solar dynamo.
+In the following I propose a few small projects which will help us understand the nature of the interactions of the Sun and its rotation and also the importance of that rotation on the dynamo.
+
+
+
+\section{Proposed project 1: Accelerated Evolution of Angular Momentum profiles}
+Regardless of the mechanism responsible for carrying the solar luminosity, the rotation of the Sun is likely important for the deep solar convection.
+A naive mixing length estimate of the convective overturn time in the deep convective zone is on the order of a month, roughly equal to the solar rotational period.
+However, the observed differential rotation of the Sun is opposite in nature from the differential rotational established by global simulations where rotation is dominant.
+Still, recent work by \citet{featherstone&hindman2016} shows that a rotationally constrained solar interior can suppress convective scales larger than the supergranular scale.
+
+We can't simulate the Sun, or a star.
+Achievable values of turbulence are a lot lower than stellar convergence.
+Even if a supercomputer were available with enough cores to accurately handle the resolution required to model a star, it would take generations of simulation time to even model one overturn.
+And even if we could model one overturn, we couldn't model a relaxation timescale.
+
+Nonrotating turbulent convection is a stiff problem.
+The thermal timescale is much longer than the convective overturn timescale.
+However, convective systems can produce very different dynamics in the relaxed and transient states.
+Moreover, when you add rotation into the mix you add an additional timescale.
+Not only must the thermal profile of the system saturate, but its angular momentum profile must saturate as well.
+This includes the establishment of differential rotation profiles and zonal flows, which are features observed in the Sun.
+
+During my graduate career I developed and verified a mechanism for skipping past the thermal evolution of simple convective simulations.
+This has been well-tested and published in Boussinesq systems but I have also implemented it for simple stratified systems.
+During my time as a postdoc I propose extending this mechanism to global simulations.
+Then I'll also figure out how to essentially make the same mechanism for angular momentum transport.
+
+During my graduate career I've also figured out how to control the rotational constraint on a simulation.
+Once I've developed angular momentum AE, I will use it to study highly rotationally constrained things.
+Probably differential rotation as a function of Rossby number.
+And also convective conundrum things.
+
+\section{Proposed project 2: Transport of angular momentum by Entropy Rain}
+On the other hand, it is possible that solar surface convection and entropy rain are the whole picture.
+But then they need to not only transport the solar luminosity, they also need to NOT transport too much angular momentum.
+What mechanism could do that?
+
+In addition to looking at large-scale, averaged angular momentum transport, I will also study angular momentum transport at the smallest scales.
+In my graduate work I determined that entropy rain is actually a plausible mechanism for transporting the solar luminosity.
+However, I performed that simple analysis in nonrotating, simple atmospheres.
+One problem with the entropy rain hypothesis is that if you have fast raindrops falling from the solar surface to the base of the CZ, then they're carrying angular momentum radially inward and that could be bad.
+
+
+
+\bibliographystyle{apj}
+\bibliography{biblio}
+\end{document}
