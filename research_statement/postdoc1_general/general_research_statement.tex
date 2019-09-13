@@ -38,8 +38,7 @@
 
 \begin{document}
 \begin{center}
-   \large\textbf{Really clever title Episode IV:}\\
-   \large\textbf{Return of Rotation}\\
+   \large\textbf{Constraining the influences of rotation on stellar envelope convection at the smallest and largest scales}\\
    \vspace{0.2cm}
    \large{Evan H. Anders}\\
    \vspace{0.2cm}
@@ -47,40 +46,49 @@
 
 \vspace{-0.6cm}
 
-%Need to resturcture this:
-% Real short intro
-% Then the intro to each problem should go within the problem where I'm describing what I want to do.
 \section{Background \& Motivation}
-The explosion of the field of exoplanets has brought with it fortuitous advances in less expected fields.
-The long lightcurves required to detect exoplanets through the transit method contain a wealth of information regarding activity on the host star.
-These data have been used with asteroseismic techniques to learn a great deal of information about <stuff>
-Furthermore, this is just the beginning for asteroseismic science: satellites like TESS will provide lightcurves for uncountable stars, and this field will continue to reap the benefits of the search for exoplanets.
+The recent advent of exoplanetary science has had a fortuitous side effect: in addition to the thousands of exoplanets that have now been discovered and characterized, there is also a wealth of data on uncountable stars in our galaxy.
+The long lightcurves required to detect exoplanets through the transit method necessarily contain information about the surface of potential host stars.
+These large datasets have enabled the accurate determination of the radii and masses of solar-like stars on the lower main sequence with convective envelopes.
+In addition to these relatively ``easy'' measurements, these asteroseismic techniques allow for the determination of (look up the other stuff that can be determined by asteroseismology).
+Furthermore, this is just the beginning for asteroseismic science: datasets from current and previous missions such as Kepler and TESS have provided and will continue to provide high quality lightcurves for nearby G, K, and M type stars, and soon we will have lightcurves on hand for half a million stars along the lower main sequence.
 
-The fundamental tools involved in asteroseismology depend on one dimensional stellar structure models.
-These models, in turn, depend on one-dimensional parameterizations of convection, often the decades old but relatively reliable mixing length theory (MLT).
-MLT does an adequate, but not perfect, job of describing convection within stars, but there are some well-known instances in which it fails (like the near-surface effect).
+While some asteroseismic measurements are relatively simple to perform, many stellar measurements enabled by asteroseismology depend on approximate knowledge of the interior structure of the star being studied.
+The state-of-the-art method for obtaining this data is the use of one-dimensional models of stellar interiors from codes like MESA \citep{paxton&all2011}.
+These models necessarily depend on one-dimensional parameterizations of convection and often employ the decades-old mixing length theory (MLT).
+MLT does an adequate, but not perfect, job of describing convection within stars, and there are some well-known instances in which it regularly fails.
+For example, 1D stellar models do not correctly produce the surface layers of stars with convective envelopes, but fare better when coupled with three-dimensional globa simulations \citep{jorgensen&weiss2019}.
 
-The Sun is our closest star, and recent observations have shown that simple mixing length theory or standard hydrodynamical simulations do not accurately describe the convection in its outer envelope.
-Recent observations have revealed a so-called ``convective conundrum,'' which has caused us to question the fundamental nature of motions in the solar convection zone.
-Helioseismic measurements have detected flow speeds nearly two orders of magnitude smaller than expected in the deep convection zone \citep{hanasoge&all2012}.
-While more recent observations \citep{greer&all2015} detect flow speeds within the order of magnitude posed by theory, so-called ``giant cells'' at large length scales are missing from these observations.
-While helioseismic observations may be difficult to interpret due to the complex inversions involved, giant cells are also not observed in convective motions at the solar surface \citep{hathaway&all2015}.
+While we are beginning to gain observational insight into stars outside of our solar system, the Sun is our closest star, and helioseismic measurements have revealed a great deal about its interior structure.
+For example, the Sun's differential rotation profile is well known, including a near-surface shear layer and a ``tachocline'' separating the differentially rotating convection zone from the solid-body rotation of the radiative interior.
+Along with some of these large-scale, established flows in the Sun, helioseismology has recently made us question our fundamental understanding of the nature of solar convection.
+Observations by \citet{hanasoge&all2012} place an upper limit on convective velocity magnitudes nearly two orders of magnitude lower than those predicted by simulations or MLT.
+Other heliseismic measurements using different techniques claim detections of velocity magnitudes more in line with what is expected from theory \citep{greer&all2015}, but observe an unexpected decrease in powers at large scales compared to simulations.
+Even observations of convective motions at the solar surface \citep{hathaway&all2015} do not observe these anticipated, large-scale ``giant cells.''
+Together, these observations present the Solar Convective Conundrum, and much theoretical work over the past decade has aimed to grasp what piece, or pieces, of physics long-standing models like MLT are missing.
 
-It is possible that giant cells are not driven in the first place, but rather that cold downflows from the surface carry the solar luminosity through the whole convection zone.
-This ``entropy rain'' hypothesis was suggested almost two decades ago, and more recently has been preliminarily incorporated into a modified mixing length theory \cite{brandenburg2016}.
-Recently, I conducted simulations of atmospheric thermals in stratified domains which suggest that entropy rain is a plausible mechanism for carrying the solar luminosity \cite{andersLB2019}.
-However, it remains unclear what other dynamical effects these entropy rain droplets would have as they transit the solar convection zone.
-Such droplets would certainly carry angular momentum from the solar surface, and the location and manner in which this angular momentum is deposited could have huge implications for flow structures within the Sun, or could render the entropy rain hypothesis null.
+One hypothesis is that giant cells are not driven in the deep convective zone as we expect.
+Rather, cold downflows from the surface carry the solar luminosity through the whole convection zone.
+This ``entropy rain'' hypothesis was first suggested by \citet{spruit1997}, and more recently has been preliminarily incorporated into a modified mixing length theory by \citet{brandenburg2016}.
+Some simple simulations of \citet{kapyla&all2017} suggest that indeeed downflows may be more important than upflows in determining convective properties in envelope convection.
+Recently, I conducted high resolution simulations of one possible dynamical manifestation of entropy rain: atmospheric thermals in stratified domains \citep{andersLB2019}.
+To our surprise, we found that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone through their enthalpy fluxes.
+However, even if entropy rain could plausibly carry the solar luminosity, it remains unclear how else these entropy rain droplets could affect the interior structure of Sun-like stars.
+Specifically, these droplets would certainly carry angular momentum from the solar surface, and the location and manner in which this angular momentum is deposited could have huge implications for flow structures within the Sun, or could render the entropy rain hypothesis null.
 
-While entropy rain is one potential mechanism for carrying the solar luminosity, it has been shown that the effects of rotation alone may be sufficient to explain the solar convective conundrum \citep{featherstone&hindman2016}.
-However, studying well-resolved, rotationally constrained, turbulent simulations is difficult, and these results should be tested in increasingly turbulent domains in order to determine if they hold up in the presence of more turbulent flows.
+Entropy rain is one potential mechanism for carrying the solar luminosity, but it has recently been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum \citep{featherstone&hindman2016}.
+These simulations show that as the degree of rotational constraint, characterized by the Rossby number, increases, so too does the spherical harmonic degree of maximum velocity power of the convection.
+In other words, more rotationally constrained convection suppresses larger scale motions that we would otherwise predict to be driven.
+While solar surface convection is not rotationally constrained, if the deep interior is rotationally constrained and at a low Rossby number then this is a plausible mechanism for the unexpectedly small amount of power at giant cell scales.
+This hypothesis also has a difficulty: simulations of increasingly rotationally constrained convection typically show \emph{anti-solar} differential rotation, rather than solar-like.
+Global simulations which both suppress giant cells and correctly produce the solar differential rotation profile have not been achieved.
 
-Over the course of my postdoctoral studies, I will examine the importance of rotation on convection from the smallest to the largest scales.
+Over the course of my postdoctoral studies, I will examine the importance of rotation on stellar convection and stellar structure from the smallest to the largest scales.
 The small scale (thermal, or plume) experiments, described below in section \ref{sct:thermals}, will aim to continue to verify whether or not entropy rain is a feasible mechanism for transporting stellar luminosity in lower main sequence, solar-like stars.
-The largest scale (global spherical simulations) experiments, described below in section \ref{sec:global_models} will simultaneously develop community tools to use in studying rotating convection, and also apply those tools to push increasingly into more realistic, turbulent parameter regimes.
+The largest scale (global spherical simulations) experiments, described below in section \ref{sct:global_models} will simultaneously develop community tools to use in studying rotating convection, and also apply those tools to simulate increasingly rotationally constrained, turbulent simulations.
 
 
-\section{Proposed project 1: Accelerated Evolution of Angular Momentum profiles}
+\section{Proposed project 1: Transport of angular momentum by Entropy Rain}
 \label{sct:thermals}
 In \citet{andersLB2019}, I studied thermals -- cold entropy perturbations which naturally fall in a marginally stable domain -- and found that they could feasibly transport the solar luminosity below the supergranular scale.
 The simulations conducted there were in non-rotating domains.
@@ -100,16 +108,28 @@ I will study an initial suite of simulations in the laminar regime (as I have do
 After determining which behavioral regimes exist as a function of latitude, I will choose a few latitudes in which characterize these regimes and then perform suites of turbulent simulations for each of these regimes.
 If entropy rain passes this test, then the evidence increasingly suggests that perhaps stellar models should use a modified mixing length theory similar to that of \citet{brandenburg2016}, at least for stars with envelope convection.
 
-\section{Proposed project 2: Transport of angular momentum by Entropy Rain}
+\section{Proposed project 2: Accelerated Evolution of Angular Momentum profiles}
 \label{sct:global_models}
-On the other hand, it is possible that solar surface convection and entropy rain are the whole picture.
-But then they need to not only transport the solar luminosity, they also need to NOT transport too much angular momentum.
-What mechanism could do that?
+Studying well-resolved, rotationally constrained, turbulent simulations is difficult, and these results should be tested in increasingly turbulent domains in order to determine if they hold up in the presence of more turbulent flows.
+While the small-scale models of specific dynamics are useful to study because they can tell us X, Y, Z, it is also useful to study global models.
+Global simulations have shown us mechanisms for simulations to do dynamo-y stuff, and establish meridional flows, etc.
+However, intuition and results from global scale models don't always line up.
+For example, while we think that the solar interior is moderately rotationally constrained -- or at least that rotation is important (overturn time is like rotation period), results from simulations have been perplexing.
+While stars whose dynamics are not constrained by rotation establish solar-like differential rotation profiles, stars in the rotationally dominated regime establish antisolar differential rotation profiles.
+It is possible that this is transitional behavior from the rotationally unconstrained regime to the rotationally constrained regime.
+But studying developed differential rotation profiles is taxing -- much simulation time is spent ``spinning up'' the star into the evolved profile, and only then can science be done.
 
-In addition to looking at large-scale, averaged angular momentum transport, I will also study angular momentum transport at the smallest scales.
-In my graduate work I determined that entropy rain is actually a plausible mechanism for transporting the solar luminosity.
-However, I performed that simple analysis in nonrotating, simple atmospheres.
-One problem with the entropy rain hypothesis is that if you have fast raindrops falling from the solar surface to the base of the CZ, then they're carrying angular momentum radially inward and that could be bad.
+During my graduate career, I studied a mechanism for accelerating the long thermal relaxation timescale in convective systems.
+This mechanism is published for Boussinesq convection and has been adapated to stratified, compressible convection in plane-parallel systems within our research group to be used in forthcoming work.
+At even modest values of the Rayleigh number, we found that we could reach a converged state an order of magnitude more rapidly than waiting for a standard thermal relaxation timescale.
+These speedups make achieving thermal relaxation in moderately turbulent systems much less computationally expensive but also allow us to run more turbulent, stellar-like simulations using the available computational power on modern supercomputers.
+
+During my postdoctoral studies, I propose extending this method to global simulations in spherical domains.
+I will first implement the same thermal relaxation mechanisms in nonrotational systems to ensure that everything works ok.
+Then I will extend this method to rotational systems to appropriately evolve the evolution of the angular momentum profile in a convective simulation.
+
+Once I have faith in this, I will use these techniques to push simulations both into the rapidly rotating regime (in order to see if differential rotation profiles are whack), and into the highly turbulent regime (in order to capture more stellar-like convection).
+
 
 
 
