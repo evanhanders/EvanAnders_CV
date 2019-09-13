@@ -47,17 +47,17 @@
 \vspace{-0.6cm}
 
 \section{Background \& Motivation}
-The recent advent of exoplanetary science has had a fortuitous side effect: in addition to the thousands of exoplanets that have now been discovered and characterized, there is also a wealth of data on uncountable stars in our galaxy.
-The long lightcurves required to detect exoplanets through the transit method necessarily contain information about the surface of potential host stars.
+The recent advent of exoplanetary science has had a fortuitous side effect: in addition to the thousands of exoplanets that have now been discovered and characterized, there is also a wealth of photometry data availble for thousands of stars in our galaxy.
+The long time baselines required to detect exoplanets through the transit method necessarily contain information about the surface of potential host stars.
 These large datasets have enabled the accurate determination of the radii and masses of solar-like stars on the lower main sequence with convective envelopes.
-In addition to these relatively ``easy'' measurements, these asteroseismic techniques allow for the determination of (look up the other stuff that can be determined by asteroseismology).
+In addition to these relatively straightforward measurements, these asteroseismic techniques allow for the determination of (look up the other stuff that can be determined by asteroseismology).
 Furthermore, this is just the beginning for asteroseismic science: datasets from current and previous missions such as Kepler and TESS have provided and will continue to provide high quality lightcurves for nearby G, K, and M type stars, and soon we will have lightcurves on hand for half a million stars along the lower main sequence.
 
 While some asteroseismic measurements are relatively simple to perform, many stellar measurements enabled by asteroseismology depend on approximate knowledge of the interior structure of the star being studied.
 The state-of-the-art method for obtaining this data is the use of one-dimensional models of stellar interiors from codes like MESA \citep{paxton&all2011}.
 These models necessarily depend on one-dimensional parameterizations of convection and often employ the decades-old mixing length theory (MLT).
 MLT does an adequate, but not perfect, job of describing convection within stars, and there are some well-known instances in which it regularly fails.
-For example, 1D stellar models do not correctly produce the surface layers of stars with convective envelopes, but fare better when coupled with three-dimensional globa simulations \citep{jorgensen&weiss2019}.
+For example, 1D stellar models do not correctly produce the surface layers of stars with convective envelopes, but recent work suggests they fare better when coupled with three-dimensional surface simulations \citep{jorgensen&weiss2019}.
 
 While we are beginning to gain observational insight into stars outside of our solar system, the Sun is our closest star, and helioseismic measurements have revealed a great deal about its interior structure.
 For example, the Sun's differential rotation profile is well known, including a near-surface shear layer and a ``tachocline'' separating the differentially rotating convection zone from the solid-body rotation of the radiative interior.
@@ -102,7 +102,8 @@ The thermal simulations in \citet{andersLB2019} had a characteristic Reynolds nu
 We found that the dynamics of these thermals were laminar, but that viscous and thermal diffusion were unimportant in the soluation.
 Furthermore, at lower reynolds numbers (e.g., 100-300), we found that viscosity and diffusion became significant and greatly changed the manner in which the thermals evolved.
 We are currently working on studying turbulent thermals with reynolds numbers of O(6000), as studied in \citet{lecoanet&jeevanjee2019}.
-While global simulations provide great insight into the manner in which a fully convective domains self-consistently establishes broad scale structures, the individual flows achievable in global simulations naturally feel dissipation more strongly than these simulations. 
+
+While global simulations provide great insight into the manner in which a fully convective domain self-consistently establishes broad scale structures, the individual flows achievable in global simulations naturally feel dissipation more strongly than these simulations of thermals. 
 Global simulations may fit tens or hundreds of plume structures in their full domain, and while they may achieve the same domain-wide reynolds numbers, the reynolds numbers on the scale of the individual flows are naturally lower than those that we can achieve here.
 As a result, these simulations give us insight into dynamics on small scales that cannot be achieved in large scale simulations.
 
@@ -140,7 +141,8 @@ These speedups make achieving thermal relaxation in moderately turbulent systems
 During my postdoctoral studies, I propose extending this method to global simulations in spherical domains.
 This extension will involve two steps: first, I will implement a method for achieving thermal relaxation rapidly, as I have done previously.
 Then, I will build upon that previous work and implement a routine which rapidly relaxes the angular momentum profile of a global simulation.
-As I did in \citet{anders&all2018}, I will verify that this method produces the same results as a long relaxation in modest parameter regimes to build trust in it at the extreme parameter regimes that are interesting and otherwise unfeasible to explore.
+As I did in \citet{anders&all2018}, I will verify that this method produces the same results as a long relaxation in modest parameter regimes to build trust in them ethod.
+Once this trust is established, this tool can feasibly be employed in extreme parameter regimes that are interesting and otherwise unfeasible to explore.
 Once developed, this tool will of course be made publicly available.
 
 After developing this tool, I will use it to try to determine if global simulations can be produced which both suppress giant cells and properly create the solar differential rotation profile.
