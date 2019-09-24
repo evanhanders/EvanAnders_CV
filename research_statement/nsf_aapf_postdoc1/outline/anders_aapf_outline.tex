@@ -1,0 +1,164 @@
+\documentclass[aasms,12pt]{article}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+\usepackage[margin=1in]{geometry}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage[skip=2pt,font=small]{caption}
+\captionsetup{width=\textwidth}
+\usepackage{amssymb, amsmath, amsfonts, xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!80!black},
+    urlcolor={blue!80!black}
+}
+
+
+\sectionfont{\normalsize}
+\subsectionfont{\small}
+
+
+%\citestyle{aa}
+\newcommand{\sol}{\ensuremath{\odot}}
+\newcommand{\RB}{Rayleigh-B\'{e}nard }
+\newcommand{\grad}{\ensuremath{\nabla}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\footnotesize{\thepage}}
+
+
+
+
+
+\begin{document}
+\begin{center}
+   \large\textbf{AAPF outline}\\
+   \vspace{0.2cm}
+\end{center}
+
+\vspace{-0.6cm}
+
+\section{The need for improved modeling of rotation and magnetism on solar and stellar convection}
+\subsection{Understanding stellar structure in the asteroseismic age}
+
+\begin{itemize}
+\item The \emph{Kepler} age has brought with it tons of data on stars, and a great byproduct of the search for exoplanets is a better understanding of stellar interiors through asteroseismology.
+\item Asteroseismology is really good at getting some measurements right, like mass and radius of solar-like stars. (and describe what else it does well)
+\item Asteroseismology is dependent on stellar structure models, but those parameterize convection, and we are learning that we really don't understand stellar convection...
+\end{itemize}
+
+\subsection{The Solar Convective Conundrum}
+
+\begin{itemize}
+\item Helioseismic measurements don't line up with expectations from simulations in two ways: magnitude (generally) and magnitude at large scales (giant cells).
+\item Two hypotheses for the lack of giant cells are entropy rain and a rotationally constrained deep CZ.
+\item We've investigated entropy rain a bit and it seems to actually be plausible.
+\item However, a simpler explanation is that the interior is rotationally constrained. Although this also runs into other problems where e.g., rotationally constrained sims get anti-solar differential rotation.
+\item Oh and these effects exist in a magnetized environment, too.
+\end{itemize}
+
+\subsection{The need for an understanding of solar and stellar convection.}
+
+\begin{itemize}
+\item Standard ``we need to understand the dynamo because it can mess up our technological society.''
+\item Also, we need to understand convection in the context of our Sun to best use the wealth of asteroseismic data becoming available continually.
+\item So here I propose to do some basic studies into the nature of how vector fields (rotation and magnetism) affect stellar convection and structure.
+\end{itemize}
+
+\section{Vector transport by convection at the smallest scales}
+\begin{itemize}
+\item Understanding how the smallest scales of convection transport vectors can help us to constrain which parts of physics are important across parameter space.
+\item By simulating smaller scales we can achieve higher resolution, less laminar flows which more accurately reflect the physics happening in the Sun and stars.
+\item We understand how convection transports \emph{scalars} at small scales, even in stratified, solar-like environments.
+\item Vector transport is more complex, and my first studies will try to constrain how angular momentum and magnetic field are transported by convection at small scales (thermals and boxes).
+\end{itemize}
+
+\subsection{Task A: Vector transport by individual thermals}
+\begin{itemize}
+\item Thermals are regions of buoyant atmospheric fluid which fall and become buoyant vortex rings.
+\item The parameter space of these simulations is: Reynolds number, Prandtl number, and stratification (and Mach number).
+\item Adding more physics (magnetism, rotation) adds more dimensions to parameter space, so we will collapse this part of parameter space into: Pr = 1, high stratification, and laminar or turbulent.
+\item This will allow us to explor how angular momentum and magnetism are transported in terms of parameter spaces which are important to those phenomena.
+\end{itemize}
+
+\subsubsection{Task A.1: Transport of angular momentum by thermals}
+\begin{itemize}
+\item The new parameters here are Rossby number and latitude.
+\item We'll figure out behavior in different latitude regimes (0, 45, 90)$^{\circ}$.
+\item We'll figure out behavior in rotationally constrained (low Ro) and unconstrained regimes (high Ro).
+\item All this will be done in laminar studies, but we'll also study select simulations turbulently.
+\end{itemize}
+
+\subsubsection{Task A.2: Transport of magnetic fields by thermals}
+\begin{itemize}
+\item The new parameters here are something like a Chandrasekhar number, magnetic Pr, and initial distribution of magnetic field.
+\item We'll study two magnetic field configurations (strong vertical field and a sheet of field).
+\item We'll study magnetic Pr = 1 and magnetic Pr = 0.1 or 10 (whichever regime stars are in, I forget).
+\item We'll study the regime of magnetism is important, and magnetism is unimportant.
+\item All this will be done in laminar studies, but we'll also study select simulations turbulently.
+\end{itemize}
+
+
+\subsection{Task B: Vector transport by time-evolving convection in plane-parallel atmospheres}
+\begin{itemize}
+\item Thermals are great because they're single discrete events, but convection is an ongiong continuous process and its time-averaged statistics and evolution are important to characterize; so we'll complicate things a small amount by doing convection in a box.
+\item The interactions between unstable and stable layers is interesting, in particular how vector transport acts at the interface.
+\item The interface can be characterized by a stiffness, and we'll study high and low stiffness.
+\item These simulations will encompass a similar parameter space to the thermals (narrowed down by those results), and stiff and squishy interfaces.
+\end{itemize}
+
+
+\section{Accelerated Vector Transport in Global Simulations}
+\label{sct:global_models}
+
+\begin{itemize}
+\item The work done on small scales will inform a suite of large-scale models in the regimes where magnetism and/or rotation are important.
+\item Stars are 3D so we need to understand convection in these geometries.
+\item We can use these 3D sims to better describe \& constrain 1D models
+\end{itemize}
+
+\subsection{Building the tools for accelerated global simulations}
+
+\begin{itemize}
+\item We know how to accelerate thermal evolution, and this can even be done through proper choice of boundary conditions.
+\item However large scale mean flows driven by convection often take a long time to spin up and this is essentially wasted time.
+\item Using the knowledge gained in small scale simulations and the results of large scale simulations, we will build a tool to accelerate  this spin-up.
+\item We will verify that this tool works in a moderate parameter regime.
+\item We will use this tool to push to previously unachievable regimes.
+\end{itemize}
+
+\subsection{Linking 3D tools to stellar structure evolution}
+
+\begin{itemize}
+\item Preliminary work linking stellar structure models and 3D sims has been done to great effect.
+\item These accelerated atmosphere tools are equivalent to taking large timesteps which superstep convective dynamics, just like stellar structure timesteps.
+\item If time permits, we will link global simulations with 1D MESA models in order to take large timesteps in MESA with actual convective dynamics that know about rotation and/or magnetism.
+\end{itemize}
+
+
+\section{Collaborative studies at CIERA and Northwestern University}
+\label{sct:northwestern}
+
+\begin{itemize}
+\item Description of why this will be a good place.
+\end{itemize}
+
+
+\section{Teaching and Outreach}
+\label{sct:outreach}
+
+\begin{itemize}
+\item Outreach plans I have and how they synergize.
+\end{itemize}
+
+
+\section{Summary and Perspectives}
+\label{sct:summary}
+
+\end{document}
