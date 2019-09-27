@@ -22,6 +22,14 @@
 
 
 %\citestyle{aa}
+\newcommand{\apj}{The Astrophysical Journal}
+\newcommand{\apjl}{The Astrophysical Journal Letters}
+\newcommand{\apjs}{The Astrophysical Journal Supplemental Series}
+\newcommand{\aap}{Astronomy \& Astrophysics}
+\newcommand{\aaps}{Astronomy \& Astrophysics Supplemental Series}
+\newcommand{\mnras}{Monthly Notices of the Royal Astronomical Society}
+\newcommand{\baas}{Bulletin of the American Astronomical Society}
+\newcommand{\zap}{Zeitschrift für Astrophysik}
 \newcommand{\sol}{\ensuremath{\odot}}
 \newcommand{\RB}{Rayleigh-B\'{e}nard }
 \newcommand{\grad}{\ensuremath{\nabla}}
@@ -49,41 +57,42 @@
 \section{The need for improved modeling of rotation on solar and stellar magnetism}
 
 \subsection{Understanding stellar structure in the asteroseismic age}
-The recent advent of exoplanetary science has had a fortuitous side effect: in addition to the thousands of exoplanets that have now been discovered and characterized, there is also a wealth of photometry data availble for thousands of stars in our galaxy.
-The long time baselines required to detect exoplanets through the transit method necessarily contain information about the surface of potential host stars.
-These large datasets have enabled the accurate determination of the radii and masses of solar-like stars on the lower main sequence with convective envelopes.
-In addition to these relatively straightforward measurements, these asteroseismic techniques allow for the determination of (look up the other stuff that can be determined by asteroseismology).
-Furthermore, this is just the beginning for asteroseismic science: datasets from current and previous missions such as Kepler and TESS have provided and will continue to provide high quality lightcurves for nearby G, K, and M type stars, and soon we will have lightcurves on hand for half a million stars along the lower main sequence.
+The advent of asteroseismic science has closely paralleled that of exoplanetary science.
+The early small samples of stellar pulsations obtained by ground-based observatories \citep[e.g.,][and others]{kjeldsen&frandsen1991, bouchy&carrier2001, bedding&all2001} have given way to datasets of more than $10^4$ stars \citep[e.g.,][]{yu&all2018, santos&all2019b} in the age of CoRoT, Kepler, and K2 data.
+With another 20,000 asteroseismically-interesting targets in the TESS satellite's two-year nominal mission \citep{schofield&all2019} and more interesting data from the future WFIRST and PLATO missions, it is expected that by 2030 we should have observations of $10^7$ pulsating red giants and $10^5$ dwarfs and subgiants in hand  \citep{huber&all2019}.
+In addition to learning about the nature of stars aside from our Sun, asteroseismology enables us to fairly accurately determine the age of stars, thus enabling galactic archaeology, in addition to enabling us to determine the mass and radius of stars with solar-like pulsations, thus enabling the measurement of exoplanetary radii from the transit method.
+Asteroseismic measurements generally rely on stellar structure models, and these models have some known deficiencies \citep{buldgen2019}, in particular their handling of complex phenomena like rotation, convection, and magnetism.
+With the exponential rise in asteroseismic targets, and the projected continuation of this rise, it is crucial that the we continue to invest in the theory informing these stellar models and measurements.
 
-While some asteroseismic measurements are relatively simple to perform, many stellar measurements enabled by asteroseismology depend on approximate knowledge of the interior structure of the star being studied.
-The state-of-the-art method for obtaining this data is the use of one-dimensional models of stellar interiors from codes like MESA \citep{paxton&all2011}.
-These models necessarily depend on one-dimensional parameterizations of convection and often employ the decades-old mixing length theory (MLT).
-MLT does an adequate, but not perfect, job of describing convection within stars, and there are some well-known instances in which it regularly fails.
+The state-of-the-art method for obtaining stellar strucuture data is the use of one-dimensional models of stellar interiors from codes like MESA \citep{paxton&all2011}.
+The coupling of MESA models and the GYRE code \citep{townsend&teitler2013} has enabled efficient identification of pulsational modes in a wide variety of stars.
+Unfortunately, MESA models necessarily depend on one-dimensional parameterizations of convection and often employ the decades-old mixing length theory \citep[MLT,][]{bohm-vitense1958}.
+MLT does an adequate job of describing convection within stars, but there are some well-known instances in which it regularly fails.
 For example, 1D stellar models do not correctly produce the surface layers of stars with convective envelopes, but recent work suggests they fare better when coupled with three-dimensional surface simulations \citep{jorgensen&weiss2019}.
+Furthermore, these one-dimensional models assume spherical symmetry and generally neglect the effects of rotation and magnetism.
+The numerous observations of flare stars and recent asteroseismic observations which have detected magnetic field-induced frequency shifts \citep{santos&all2018} suggest that magnetism should not be neglected, and recent work shows that the specific configuration of the magnetic field impacts asteroseismic measurements \citep{thomas&all2019}.
+Furthermore, it is well known that the sun exhibits differential rotation characterized by latitudinal variations in its rotational profile in the solar convection zone \citep{thompson&all1996, schou&all1998}, and differential rotation has now been observed in stars beyond the Sun \citep{benomar&all2018}.
+These observations all suggest that a 1-dimensional parameterization of convection, and a neglection of complicating effects, cannot sufficiently capture the complexities of stars.
 
 \subsection{The Solar Convective Conundrum}
-While we are beginning to gain observational insight into stars outside of our solar system, the Sun is our closest star, and helioseismic measurements have revealed a great deal about its interior structure.
-For example, the Sun's differential rotation profile is well known, including a near-surface shear layer and a ``tachocline'' separating the differentially rotating convection zone from the solid-body rotation of the radiative interior.
-Along with some of these large-scale, established flows in the Sun, helioseismology has recently made us question our fundamental understanding of the nature of solar convection.
+The Sun is our closest star, and the only star for which we have high-resolution, spatially-resolved observations in years-long datasets.
+These datasets have enabled helioseismic measurements of the solar interior, resulting in our modern understanding of the solar differential \citep{schou&all1998} among other complex flow structures such as meridional circulation.
+In addition to revealing large-scale internal structures in the Sun, the observational constraints being placed by helioseismology have called into question our fundamental understanding of the nature of solar convection.
 Observations by \citet{hanasoge&all2012} place an upper limit on convective velocity magnitudes nearly two orders of magnitude lower than those predicted by simulations or MLT.
 Other heliseismic measurements using different techniques claim detections of velocity magnitudes more in line with what is expected from theory \citep{greer&all2015}, but observe an unexpected decrease in powers at large scales compared to simulations.
 Even observations of convective motions at the solar surface \citep{hathaway&all2015} do not observe these anticipated, large-scale ``giant cells.''
-Together, these observations present the Solar Convective Conundrum, and much theoretical work over the past decade has aimed to grasp what piece, or pieces, of physics long-standing models like MLT are missing.
+These observations constitute a piece of the Solar Convective Conundrum, and much theoretical work over the past decade has aimed to grasp what piece, or pieces, of physics long-standing models like MLT are missing.
+Two primary hypothesis aiming to explain the lack of giant cells in the Sun are the ``Entropy Rain'' hypothesis and a suggestion that the solar convective interior is rotationally constrained.
 
-One hypothesis is that giant cells are not driven in the deep convective zone as we expect.
-Rather, cold downflows from the surface carry the solar luminosity through the whole convection zone.
-This ``entropy rain'' hypothesis was first suggested by \citet{spruit1997}, and more recently has been preliminarily incorporated into a modified mixing length theory by \citet{brandenburg2016}.
-Some simple simulations of \citet{kapyla&all2017} suggest that indeeed downflows may be more important than upflows in determining convective properties in envelope convection.
+The entropy rain hypothesis, first suggested by \citet{spruit1997}, suggests that downflows alone carry the solar luminosity through the solar convection zone, and has been preliminarily incorporated into a modified mixing length theory by \citet{brandenburg2016}.
+Some simple simulations of \citet{kapyla&all2017} suggest that indeeed downflows may be more important than upflows in determining convective properties in stellar envelope convection.
 Recently, I conducted high resolution simulations of one possible dynamical manifestation of entropy rain: atmospheric thermals in stratified domains \citep{andersLB2019}.
-To our surprise, we found that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone through their enthalpy fluxes.
-However, even if entropy rain could plausibly carry the solar luminosity, it remains unclear how else these entropy rain droplets could affect the interior structure of Sun-like stars.
-Specifically, these droplets would certainly carry angular momentum from the solar surface, and the location and manner in which this angular momentum is deposited could have huge implications for flow structures within the Sun, or could render the entropy rain hypothesis null.
+We found that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone through their enthalpy fluxes.
+However, even if such a mechanism could carry the solar luminosity, the manner in which these entropy rain droplets transport angular momentum and magnetic fields is deposited could have huge implications for flow structures within the Sun.
 
-Entropy rain is one potential mechanism for carrying the solar luminosity, but it has recently been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum \citep{featherstone&hindman2016}.
+It has also been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum \citep{featherstone&hindman2016}.
 These simulations show that as the degree of rotational constraint, characterized by the Rossby number, increases, so too does the spherical harmonic degree of maximum velocity power of the convection.
-In other words, more rotationally constrained convection suppresses larger scale motions that we would otherwise predict to be driven.
-While solar surface convection is not rotationally constrained, if the deep interior is rotationally constrained and at a low Rossby number then this is a plausible mechanism for the unexpectedly small amount of power at giant cell scales.
-This hypothesis also has a difficulty: simulations of increasingly rotationally constrained convection typically show \emph{anti-solar} differential rotation, rather than solar-like.
+However, simulations of increasingly rotationally constrained convection typically show \emph{anti-solar} differential rotation, rather than solar-like.
 Global simulations which both suppress giant cells and correctly produce the solar differential rotation profile have not been achieved.
 
 Over the course of my postdoctoral studies, I will examine the importance of rotation on stellar convection and stellar structure from the smallest to the largest scales.
@@ -128,6 +137,13 @@ Laminar simulations will simulate up to a coefficient resolution of 512x256$^2$,
 Turbulent simulations will simulate up to a coefficient resolution of 1024x512$^2$, and each simulation in this regime represents approximately a quarter of a million cpu-hours.
 
 \subsubsection{Task A.1: Transport of angular momentum by thermals}
+
+\begin{figure*}[t!]
+    \includegraphics[width=\textwidth]{./figs/rossby_plot.png}
+    \caption{ 
+	\label{fig:rossby_plot} }
+\end{figure*}
+
 During my doctoral work, I studied rapidly rotating convection in f-plane cartesian atmospheres \citep{anders&all2019}, and I propose to study thermals in similar domains.
 Placing thermals in f-plane atmospheres adds two additional axes to the parameter space of the problem: latitude, and importance of rotation (characterized by a Rossby number)
 I will first study an initial suite of simulations in the laminar regime in order to verify how the manner in which entropy rain deposits angular momentum as a function of both stellar latitude and the Rossby number.
@@ -202,10 +218,63 @@ Since stellar rotation times are relatively easy to measure from lightcurve data
 
 \section{Collaborative studies at CIERA and Northwestern University}
 \label{sct:northwestern}
+\begin{itemize}
+\item Daniel \& Yoram
+\item Cross-disciplinary awesomeness of CIERA %(https://ciera.northwestern.edu/directory/?filter_keyword=&filter_tax_ciera_person_type=all&filter_tax_ciera_research_topic=all&filter_tax_ciera_research_method=theory-computational)
+\item Arriving when CIERA is moving to its new building -- fresh start.
+\item HPC: (https://ciera.northwestern.edu/high-performance-computing/). Two clusters. CIERA cluster (9 nodes x 28 cores). Northwestern Quest supercomputer 11,800 cores.
+\end{itemize}
 
 
-\section{Teaching and Outreach: Need some words here}
+\section{Teaching and Outreach}
 \label{sct:outreach}
+The path to a career in the US STEM workforce is a leaky pipeline.
+Data show that in particular, underrepresented minority groups and women pursue careers in STEM fields at a rate which is disproportionately low compared to the share of the total population that those groups constitute \citep{corbett&hill2015, nsf2019}.
+While a great deal of focus is rightly placed on changing the career outlooks of these groups before the collegiate level, the pipeline continues to leak at the baccalaureate and post-baccalaureate levels, and underrepresentation becomes more severe.
+
+During my graduate studies, I spent three years working with the University of Colorado's CU-STARs group.
+CU-STARs is a combined ``outreach'' and ``inreach'' program with the dual aims of increasing STEM engagement for students at underserved, rural schools across Colorado while decreasing attrition of underrepresented groups in CU Boulder's Astrophysical and Planetary Sciences department.
+Undergraduate students from CU in this group, or ``STARs,'' are provided with an inclusive community, peer mentoring (graduate student - undergraduate pairs), and opportunities to develop scientist skills.
+In turn, STARs are also given opportunities to teach high schoolers about fun topics in astronomy and astrophysics with hands-on demos.
+My role as a graduate student administrator in this group was to help coordinate, plan, and run outreach trips to rural schools across Colorado, mentor undergraduate students, develop courses and demo materials for courses in exoplanety discovery via the transit method, black holes, and atmospheric fluid dynamics.
+
+
+
+\subsection{Outreach: Reach for the stars}
+Reach for the Stars does a great job of engaging high school students with STEM in an authentic, inquiry-based way.
+Discussion of why authentic experiences in scientific inquiry are important.
+Discussion of the cool stuff that Reach for the Stars is already doing.
+Name-drop of NSF funding.
+
+Here's what I'd like to bring to the program:
+\begin{itemize}
+\item Professional development of graduate student fellows through in-depth redesign of inquiry activities and backwards design process.
+\begin{itemize}
+\item backwards design
+\item assessment and teaching as a scientific discipline
+\end{itemize}
+\item 
+\end{itemize}
+
+
+\subsection{Inreach: Peer mentorship for the retention of undergraduates and early graduate students}
+Mentoring has long been known to play a significant role in increasing retention and helping new departmental members acclimate to the department climate \citep{hunt&michael1983}.
+Establishing robust mentoring programs based on evidence and knowledge of the recent literature in mentorship \citep[as in e.g.,][]{crisp&all2009, crisp&all2017} can be one critical component of helping broaden participation of underrepresented and marginalized groups in the STEM workforce.
+During my years at Northwestern, I propose to work with the experts in Northwestern's \href{https://www.northwestern.edu/searle/index.html}{Searle Center for Advanced Teaching and Learning} to develop peer mentoring programs within Northwestern University's applied math department and the department of physics and astrophysics.
+The goal of this program will be to connect entering undergraduate or graduate students mentees with mentors who are a few years more developed in their career.
+
+Things that I need to think about more:
+\begin{itemize}
+\item mentor training
+\item coffee funds
+\item schedule and frequency
+\item post docs?
+\end{itemize}
+
+
+
+\subsection{My career development}
+
 
 
 \section{Summary and Perspectives}
