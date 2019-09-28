@@ -22,6 +22,7 @@
 
 
 %\citestyle{aa}
+\newcommand{\aj}{The Astronomical Journal}
 \newcommand{\apj}{The Astrophysical Journal}
 \newcommand{\apjl}{The Astrophysical Journal Letters}
 \newcommand{\apjs}{The Astrophysical Journal Supplemental Series}
@@ -54,7 +55,7 @@
 
 \vspace{-0.6cm}
 
-\section{The need for improved modeling of rotation on solar and stellar magnetism}
+\section{The need for improved models of rotation and magnetism in stellar convection}
 
 \subsection{Understanding stellar structure in the asteroseismic age}
 The advent of asteroseismic science has closely paralleled that of exoplanetary science.
@@ -73,43 +74,59 @@ Furthermore, these one-dimensional models assume spherical symmetry and generall
 The numerous observations of flare stars and recent asteroseismic observations which have detected magnetic field-induced frequency shifts \citep{santos&all2018} suggest that magnetism should not be neglected, and recent work shows that the specific configuration of the magnetic field impacts asteroseismic measurements \citep{thomas&all2019}.
 Furthermore, it is well known that the sun exhibits differential rotation characterized by latitudinal variations in its rotational profile in the solar convection zone \citep{thompson&all1996, schou&all1998}, and differential rotation has now been observed in stars beyond the Sun \citep{benomar&all2018}.
 These observations all suggest that a 1-dimensional parameterization of convection, and a neglection of complicating effects, cannot sufficiently capture the complexities of stars.
+In order to properly and fully utilize the large stores of incoming asteroseismic data, we must improve the models on which asteroseismic inversions rely.
 
 \subsection{The Solar Convective Conundrum}
-The Sun is our closest star, and the only star for which we have high-resolution, spatially-resolved observations in years-long datasets.
-These datasets have enabled helioseismic measurements of the solar interior, resulting in our modern understanding of the solar differential \citep{schou&all1998} among other complex flow structures such as meridional circulation.
-In addition to revealing large-scale internal structures in the Sun, the observational constraints being placed by helioseismology have called into question our fundamental understanding of the nature of solar convection.
-Observations by \citet{hanasoge&all2012} place an upper limit on convective velocity magnitudes nearly two orders of magnitude lower than those predicted by simulations or MLT.
+The Sun is our closest star, and it is a magnetically active star.
+The collection of phenomena generally referred to as solar activity, including flares and coronal mass ejections, pose a threat to our increasingly technological society.
+These phenomena can wipe out power grids and harm satellites and astronauts.
+Predictive power of solar phenomena has been a decades-long research goal, but will be out of reach until we have a detailed understanding of the dynamo that drives solar activity.
+This dynamo is seated in the turbulent convective plasma motions of the Sun, and recent observations have called into question even our most fundamental understanding of solar convection.
+
+Helioseismic observations by \citet{hanasoge&all2012} place an upper limit on solar convective velocity magnitudes nearly two orders of magnitude lower than those predicted by simulations or MLT.
 Other heliseismic measurements using different techniques claim detections of velocity magnitudes more in line with what is expected from theory \citep{greer&all2015}, but observe an unexpected decrease in powers at large scales compared to simulations.
-Even observations of convective motions at the solar surface \citep{hathaway&all2015} do not observe these anticipated, large-scale ``giant cells.''
-These observations constitute a piece of the Solar Convective Conundrum, and much theoretical work over the past decade has aimed to grasp what piece, or pieces, of physics long-standing models like MLT are missing.
-Two primary hypothesis aiming to explain the lack of giant cells in the Sun are the ``Entropy Rain'' hypothesis and a suggestion that the solar convective interior is rotationally constrained.
+Even observations of convective motions at the solar surface \citep{hathaway&all2015} do not observe these anticipated, large-scale motions.
+Put simply, we do not see the theorized ``giant cells'' which should be observable, large-scale motions originating from buoyant motions originating deep in the solar convection zone.
+This lack of giant cells consitutes part of the Solar Convective Conundrum, and two primary hypothesis which aim to explain their absence are the ``Entropy Rain'' hypothesis and a suggestion that the solar convective interior is rotationally constrained.
 
 The entropy rain hypothesis, first suggested by \citet{spruit1997}, suggests that downflows alone carry the solar luminosity through the solar convection zone, and has been preliminarily incorporated into a modified mixing length theory by \citet{brandenburg2016}.
 Some simple simulations of \citet{kapyla&all2017} suggest that indeeed downflows may be more important than upflows in determining convective properties in stellar envelope convection.
 Recently, I conducted high resolution simulations of one possible dynamical manifestation of entropy rain: atmospheric thermals in stratified domains \citep{andersLB2019}.
 We found that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone through their enthalpy fluxes.
-However, even if such a mechanism could carry the solar luminosity, the manner in which these entropy rain droplets transport angular momentum and magnetic fields is deposited could have huge implications for flow structures within the Sun.
+However, most of the work surrounding the entropy rain hypothesis has ignored the fact that the Sun is magnetic, and the Sun rotates.
+Even if entropy rain can transport the solar luminosity, it is still unclear if such a convective mechanism could properly transport angular momemtum or magnetic fields in the Sun.
 
-It has also been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum \citep{featherstone&hindman2016}.
-These simulations show that as the degree of rotational constraint, characterized by the Rossby number, increases, so too does the spherical harmonic degree of maximum velocity power of the convection.
-However, simulations of increasingly rotationally constrained convection typically show \emph{anti-solar} differential rotation, rather than solar-like.
+Outside of the entropy rain picture, it has also been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum.
+Simulations by \citet{featherstone&hindman2016} show that as the degree of rotational constraint increases, characterized by the Rossby number, so too does the spherical harmonic degree of maximum velocity power of the convection.
+However, simulations which nominally rotate at the solar rate show \emph{anti-solar} differential rotation \citep{gastine&all2014}, and simulations at very low rossby number exhibit either differential rotation that is too-cylindrical or more reminiscent of Jupiter than the Sun \citep{brun&all2017}.
 Global simulations which both suppress giant cells and correctly produce the solar differential rotation profile have not been achieved.
 
-Over the course of my postdoctoral studies, I will examine the importance of rotation on stellar convection and stellar structure from the smallest to the largest scales.
-The small scale (thermal, or plume) experiments, described below in section \ref{sct:thermals}, will aim to continue to verify whether or not entropy rain is a feasible mechanism for transporting stellar luminosity in lower main sequence, solar-like stars.
-The largest scale (global spherical simulations) experiments, described below in section \ref{sct:global_models} will simultaneously develop community tools to use in studying rotating convection, and also apply those tools to simulate increasingly rotationally constrained, turbulent simulations.
+Observations in both the solar and stellar context have taught us that our understanding of stellar convection is incomplete.
+One particular point of weakness in our theoretical understanding is how angular momentum transport behaves in stellar interiors, and tied to that is a lack of understanding of magnetic field transport.
+Over the course of my postdoctoral studies, I will examine these transport mechanisms from the smallest to the largest scales.
+The small scale (thermal and plane-parallel convection) experiments, described below in section \ref{sct:thermals}, will aim to continue to verify whether or not entropy rain is a feasible mechanism for transporting stellar luminosity in lower main sequence, solar-like stars while also gaining a better physical understanding of how small-scale flows transport vector fields.
+The largest scale (global spherical simulations) experiments, described below in section \ref{sct:global_models} will simultaneously develop community tools to use in studying rotating magnetoconvection, and also apply those tools to simulate increasingly rotationally constrained, turbulent simulations.
 I will use the Dedalus pseudospectral framework \citep{burns&all2019}, which I have become proficient at using during my graduate career, to carry out these investigations.
 
-
-\section{Vector transport by convection at the smallest scales}
+\section{Intellectual Merit: Vector transport by convection at the smallest scales and largest scales}
 \label{sct:thermals}
 Stellar convection is a turbulent process.
-While modern computers are incapable of simulating small-scale fluid motions at Reynolds and Peclet numbers like those present in the Sun, modern simulations can achieve turbulent dynamics (see e.g.,).
-I propose to gain insight into the mechanisms that stellar convection utilizes to transport vector fields by studying dynamics of convection at the smallest scales in order to understand turbulent effects.
-Furthermore, most simulations of compressible convection to date are in the high Mach number limit; however, through clever use of numerical techniques we are now capable of studying low Mach number, fully compressible convection \citep{anders&brown2017}.
-Much of the convection in the envelopes of lower main sequence stars is thought to be at Mach numbers much lower than unity, and so a detailed understanding of the manner in which convective transport differs in this regime compared to the high Mach number regime is crucial.
+Modern computer resources cannot simulate turbulence, quantified by e.g., a Reynolds number (Re), at the same levels as those present in the Sun or stars.
+However, in small-scale clean experiments, turbulent dynamics can be resolved and studied \citep[as in e.g.,][]{lecoanet&jeevanjee2019}.
+I propose to study convection at the smallest scales in order to understand how convection motions -- laminar and turbulent -- transport angular momentum and magnetic fields.
+Furthermore, through clever use of numerical techniques and implicit-explicit (IMEX) timestepping methods \citep{anders&brown2017}, I will study compressible dynamics in the low Mach number regime.
+This regime is the appropriate regime for much of the convection in the envelopes of lower main sequence stars, but is often studied using approximations like the Anelastic equations.
 
-In order to determine the nature of vector transport by turbulent, low Mach number convection, I will use two styles of simulations as laid out below in task A and task B.
+In order to quantify the transport of these vector fields, I will pursue a couple of simple questions.
+First, where do the fluid motions transport these vector fields -- are they deposited below the convection zone, in the midst of it, or somewhere else?
+Second, how do the presence of these vector fields feed back upon and affect the convective dynamics?
+These questions will be pursued using three types of numerical simulations.
+In task A, I will study simulations of discrete events, or thermals \citep[as in ][]{andersLB2019}, in order to understand precisely the answer to these questions when studying one dynamical event.
+In task B, I will study simulations of time-dependent, three-dimensional convection \citep[as in ][]{anders&brown2017} in order to gain an understanding of how an ensemble of convective motions behave in a statistical sense.
+In task C, I will study simulation sof time-dependent, three-dimensional convection in global spherical domains in the context of the understanding gained in tasks A and B to determine how rotation and magnetism interact in the relevant (spherical) geometries.
+As in \citet{andersLB2019}, I will develop an analytical theory that can be tested and verified in the laminar regime before studying select simulations in the turbulent regime.
+These specific studies are laid out in more detail below, and each task is expected to take one full year of my three-year postdoctoral fellowship.
+
 
 \subsection{Task A: Vector transport by individual thermals}
 Thermals are regions of cold (or hot) fluid which accelerate due to buoyancy forces.
@@ -118,167 +135,212 @@ Thermals are well understood in the Boussinesq limit and have been studied exten
 Recently, I studied thermals as a model for solar convection and came to understand the effects of stratification on the propagation and entrainment properties of thermals \citep{andersLB2019}.
 I conducted high resolution simulations of these thermals, showed that their evolution agreed well with our developed theory, and demonstrated that if solar downflows behave like thermals, as in the entropy rain hypothesis, the solar luminosity could feasibly be carried by downflows alone in the deep solar interior.
 One benefit of studying thermals is that they are discrete fluid events that are simple to simulate from initial conditions until they reach their final state.
-\emph{Plumes}, or continuously cooled regions of fluid, are likely a better model for surface downflow lanes in solar surface convection.
-However, past work has shown that in stratified domains, buoyant vortex rings pinch off of plumes and continue to propagate downwards.
-As a result, the vortex ring evolution of thermals is perhaps an excellent model for solar downflows at the smallest scales.
-As past results (Glatzmaier) have shown that downflows in convection can effectively pump magnetic fields downwards and current results \citep{kapyla&all2017} suggest that downflows are likely more important than we recently thought, thermals provide an excellent tool for understanding how important small scale motions are for vector transport.
-
-In \citep{andersLB2019}, we studied thermals in the laminar regime.
-The thermal simulations in \citet{andersLB2019} had a characteristic Reynolds number of approximately 600 \emph{on the length scale of the thermal}.
-Such a Reynolds number is difficult if not impossible to achieve on the length scale of downflow lanes in global simulations of convection.
-During my postdoctoral studies, I will extend my study of stratified thermals to those which are truly turbulent, whose Reynolds numbers are 6000.
-This has already been achieved in the Boussinesq limit by \citet{lecoanet&jeevanjee2019}, and initial results show that resolving the dynamics of thermals at these values in stratified domains is possible.
+\citet{tobias&all1998} showed that downflows in convection can effectively pump magnetic fields downwards in certain regimes and more recently \citet{kapyla&all2017} showed that downflows are perhaps the most important dynamical driver of solar convection.
+Thermals provide an excellent model of stellar downflows and are therefore an excellent tool to utilize to answer the overarching questions being asked here.
 
 In \citet{andersLB2019}, we came to understand the scalar transport properties of these thermals with depth in nonrotating, nonmagnetized domains.
-While the thermal simulations I studied previously had two fundamental control parameters (the degree of dissipation or turbulence, characterized by the Reynolds number, and the degree of stratification).
-I now propose incorporating rotational and magnetohydrodynamical effects into these simulations.
-All simulations will be decomposed in Dedalus using a (vertical) Chebyshev basis and two (horizontal) fourier bases.
-Laminar simulations will simulate up to a coefficient resolution of 512x256$^2$, and each simulation in this regime represents roughly 25,000 cpu-hours.
-Turbulent simulations will simulate up to a coefficient resolution of 1024x512$^2$, and each simulation in this regime represents approximately a quarter of a million cpu-hours.
+The thermal simulations I studied previously had three fundamental control parameters: the degree of dissipation or turbulence (characterized by the Reynolds number, Re), the degree of stratification (characterized by the number of density scale heights, $N_\rho$), and the ratio of viscous to thermal diffusivity (characterized by a Prandtl number, Pr).
+I now propose incorporating rotational and magnetohydrodynamical effects into these simulations, each of which will add additional dimensions of parameter space.
+In order to study the effects that interest us, we will fix the Prandtl number (to 1, or perhaps in the low, solar-like regime, at 0.1) and the degree of stratification (to $N_\rho = 3$), and study both Re = 600 (laminar) and Re $\sim$ 6000 (turbulent) simulations.
+This will allow us to more thoroughly study the interesting, new parameter space expansions of the interesting physics here.
+\citet{lecoanet&jeevanjee2019} showed that turbulence does not seem to affect the entrainment processes and scalar transport at work in these thermals, however it does result in smaller scale structures which will likely be important for these vector fields.
+
+Fortunately, these simulations are inexpensive.
+While the standard thermal evolution is a fundamentally two-dimensional problem (the buoyant direction and the radial direction), the addition of magnetism or rotation will likely necessitate full three-dimensional simulations.
+Still, some select cases can be explored in two-dimensional, cylindrical regimes, at very low cost of tens to hundreds of cpu-hours.
+Laminar three-dimensional simulations can be fully resolved at high resolution using on the order of $10^4$ cpu-hours, while turbulent three-dimensional simulations cost $10^5$ cpu-hours each.
 
 \subsubsection{Task A.1: Transport of angular momentum by thermals}
+In order to study the effects of rotation, I will study thermals in f-plane cartesian domains.
+These are plane-parallel atmospheres assumed to be at a constant latitude, and thus experiencing coriolis effects from a global rotation rate.
+These studies will incorporate two new dimensions to parameter space which should be explored in the laminar regime: latitude, and the importance of rotation (characterized by a Rossby number, Ro).
+I propose to study thermals at three latitudes: equatorial latitudes (where gravity and rotation are perpendicular), mid-latitudes (e.g., $45^\circ$), and at polar latitudes (where gravity and rotation are parallel).
+At each of these latitudes, I will study the regimes where the effects of rotation are dominant (at low Ro), and where the effects of rotation are of similar magnitude to advection (at moderate Ro).
+After understanding all six permutations of these parameters in the laminar regime, I will study select turbulent simulations in all regimes which exhibit distinctly different behavior.
 
+In addition to helping gain a better picture of how downflows transport angular momentum, these thermals will specifically help us determine if the entropy rain hypothesis could feasibly maintain the solar differential rotation profile while also carrying the solar luminosity.
+Furthermore, we will find whether certain degrees of rotational constraint or latitudes prevent downflows from transiting convective envelopes (whether they are deflected, or broken apart).
+
+\subsubsection{Task A.2: Transport of magnetic fields by thermals}
+In addition to studying thermals under the influence of rotation, I will study thermals in the presence of magnetism but absence of rotation.
+The inclusion of magnetism in a resistive magnetohydrodynamical implementation again adds two new parameters: the strength of magnetic diffusivity (characterized by a magnetic Prandtl number, Pm), and a measure of the strength of the magnetic fields (characterized by something like the plasma beta or the Chandrasekhar number in magnetoconvection).
+In addition to these new parameters, the inclusion of magnetism requires a choice of initial magnetic field setup.
+I will study a fixed value of Pm $< 1$, such that it is in the regime relevent for stars.
+I will then study strong, moderate, and weak magnetic fields.
+The magnetic field geometries will be a strong background magnetic field (both aligned with the buoyant direction, and antialigned), and one in which the magnetic field is localized in a thin horizontal sheet \citep[as in][]{tobias&all1998}.
+
+These simulations will help determine if entropy rain is possible in strongly magnetised stars and whether entropy rain droplets could be an important element of a stellar dynamo -- both on small scales due to their natural circulation which could bend magnetic fields, and on large scales as they transit convective zones.
+
+\subsection{Task B: Vector transport of time-dependent convection in plane-parallel atmospheres}
 \begin{figure*}[t!]
     \includegraphics[width=\textwidth]{./figs/rossby_plot.png}
-    \caption{ 
+    \caption{(left, Fig 1b of \citet{anders&all2019}) The Rossby number, Ro, is difficult to predict as a function of the Rayleigh number, Ra, in rotating convection.
+	Along traditional ``convective Rossby number'' (green) paths through parameter space, Ro increases as a function of Ra, and along constant supercriticality paths (blue) it decreases.
+	Walking along paths along the newly discovered ``predictive Rossby number'' (orange) seems to hold the value of Ro, and thus the degree of rotational constraint, constant.
+	(right eight panels, Fig. 2 of \citet{anders&all2019}) As you decrease the Rossby number (from left to right), traditional granular convective patterns give way to quasi-two-dimensional vortical columns of convection with very little difference between the top of the atmosphere and the atmospheric midplane (top row vs. bottom row).
+	It is clear to see that changing the Rossby number massively effects convective dynamics and therefore choosing a value of Ro that reflects the astrophysical object of interest being studied (e.g., the Sun) is crucial.
 	\label{fig:rossby_plot} }
 \end{figure*}
 
-During my doctoral work, I studied rapidly rotating convection in f-plane cartesian atmospheres \citep{anders&all2019}, and I propose to study thermals in similar domains.
-Placing thermals in f-plane atmospheres adds two additional axes to the parameter space of the problem: latitude, and importance of rotation (characterized by a Rossby number)
-I will first study an initial suite of simulations in the laminar regime in order to verify how the manner in which entropy rain deposits angular momentum as a function of both stellar latitude and the Rossby number.
-After characterizing the behavioral regimes of thermals as a function of latitude and rotational constraint, I will target each of these behavioral regimes with smaller suites (3-5 simulations) in the turbulent regime.
-These simulations will allow us to determine whether or not solar downflows could reasonably establish the solar meridional circulation or differential rotation profiles.
-Furthermore, we will find whether certain degrees of rotational constraint or latitudes prevent downflows from transiting convective envelopes.
 
-\subsubsection{Task A.2: Transport of magnetic fields by thermals}
-The second suite of proposed simulations is in plane-parallel boxes in nonrotating reference frames.
-The inclusion of magnetism again adds two new parameters: the magnetic prandtl number, indicating whether or not magnetic fields are highly diffusive, and a measure of the strenght of the magnetic fields, similar to a plasma beta or the Chandrasekhar number in magnetoconvection.
-In addition to these new parameters, the inclusion of magnetism requires a choice of initial magnetic field setup.
-Two obvious choices are one in which the thermal is launched in a strong background magnetic field, and one in which the magnetic field is localized in a thin horizontal sheet (Glatzmaier).
+Task B will build naturally both on the work of task A and on the low mach number, fully compressible work I studied during my graduate career \citep{anders&brown2017, anders&all2019}.
+This task will have two phases: a study of rotating convection and a study of magnetoconvection.
+In all cases, I am particularly interested with the manner in which convective motions interact with and transport momentum in the presence of stable layer.
+Thus, these simulations will include an upper convective region and a lower stable region, introducing a new dimension to the parameter space: the stiffness of the convective-radiative boundary \citep[or, whether or not convective motions can penetrate the stable region, as in][]{couston&all2017}.
+Most modern convective simulations study dynamics in the regime of low stiffness, but if low Mach number flows in the Sun impact a very stable radiative layer, it is quite possible that solar downflows feel a stiff boundary.
+Thus, I will study the differences in vector transport achieved at low and high stiffness.
 
-\subsection{Task B: Vector transport by time-evolving convection in plane-parallel atmospheres}
-While the thermal simulations conducted in Task A will allow for detailed study of the manner in which individual dynamical events transport these vector fields of interest, direct measurements of the effects of an ensemble of convective elements are impossible in those simulations.
-The next phase of my postdoctoral studies will take one step to larger length scales, and rather than studying individual downflows will study an ensemble of downflows in a local, plane-parallel box.
-Such local simulations have been used to great effect in the solar community due to their less expensive nature than global simulations.
+\subsubsection{Task B.1: Transport of angular momentum by convection}
+The simulation setup here will be precisely the same as in Task A.1, but where time-dependent convection is studied instead of thermals.
+During my graduate career, I indentified how to study low mach number, fully compressible convection \citep{anders&brown2017} and how to set the output degree of rotational constraint (Rossby, Ro) using input values \citep[][and Fig. \ref{fig:rossby_plot}]{anders&all2019}.
+As a result, performing the same sweep of parameter space as in Task A.1 should be straightforward.
+These simulations will aim to determine how stiff and squishy interfaces with stable regions affect transport of angular momentum in a time-averaged sense.
+In the Sun, the interior stable layer rotates uniformly while the convection zone rotates differentially, and thus one desired outcome of this work is to find which parameter space regime either transmits no angular momentum to the stable layer, or a regime where the transmission of angular momentum is constant as a function of latitude (is this right? need to think).
+Finding this regime will help us identify the flow regime of the deep solar convection zone and understand why giant cells are not driven there.
 
-Here, these simulations will contain a simple model of the convective region of a solar like star: an upper region which is unstable to convection connected to a lower region which is convectively stable.
-The basic parameters of such a setup are the degree of stratification, the Mach number of the convection, and the stiffness of the stable region (or, how effectively convective motions are able to continue propagating into that stable region).
+\subsubsection{Task B.2: Transport of magnetic fields by convection}
+This task is similar to Task A.2, but is less straightforward than Task B.1.
+In the case of magnetoconvection, it is not yet known how to precisely control the output value of (plasma beta? What's the right value?).
+Thus, the first step of Task B.2 will be to determine how the (output value) of the flows is set by the Chandrasekhar number and the Rayleigh number.
+Once this is determined, a simple sweep through parameter space, as in task A.2 and B.1 will be performed.
+Once again, the primary question I aim to answer is how convective motions transport magnetic field across a stable region.
+\citet{tobias&all1998} showed that when the interface is squishy, convective motions can effectively pump magnetic fields across it.
+It is unclear if the same is true for stiff interfaces, and in such a case it is important to understand if the magnetic field is pumped into the layer or remains in the convection zone.
+The base of the solar convection zone -- the tachocline -- is not only a boundary region of a convecting and stable region, but is also a region with a large amount of shear where the solar differential rotation gives way to the uniformly rotating interior.
+The shearing motions in this region are thought to be crucial for the solar dynamo, and so understanding which regimes allow for magnetic field transport into that region will be crucial for better understanding dynamos in solar-type stars.
 
-I don't know what the main question is that's going to be studied in the rotating regime.
 
-It's often thought that downflows pump magnetic field down into the tachocline, but is that possible if you have a stiff interface between the stable and convective region?
-In this case, does the magnetic field stay available for the convection?
-
-\section{Accelerated Vector Transport in Global Simulations}
+\subsection{Task C: Dynamo simulations in proper solar or stellar regimes}
 \label{sct:global_models}
-\subsection{Building the tools for accelerated global simulations}
-The experiments laid out in section \ref{sct:thermals} will be foundational for the capstone projects of my postdoctoral studies: global simulations of rotating convection and magnetoconvection in spherical domains.
-Studies of global dynamo simulations have provided fascinating insight into the workings of stellar convection, including showing us that stars can self-consistently generate wreaths of magnetism and undergo magnetic polarity changes such as those observed in the solar dynamo.
-Global simulations have also presented a perplexing result in relation to the Sun's differential rotation profile.
-The Sun has a fast-rotating equator (rotates every 25 days) and slow rotating poles (rotates every 35 days), and deep convection is believed to be rotationally constrained.
-However, when global simulations examine rotationally constrained convection, they find \emph{antisolar} differential rotation (fast poles, slow equator).
-The belief that deep convection is rotationally constrained is, however, fairly well-founded in mixing length theory, and recently it has been suggested that a rotationally constrained interior may be a solution to the suppression of giant cells in the Sun \citep{featherstone&hindman2016}.
-These two results are counter to one another: the Sun may need to be rotationally constrained given the flows that we see at the surface, but if it is rotationally constrained, then how did it establish its differential rotation profile?
+The experiments laid out in Tasks A \& B foundational for the capstone projects of my postdoctoral studies: global simulations of rotating magnetoconvection in spherical domains, or dynamo simulations.
+The tools to perform these simulations in Dedalus already exist (TODO: see pretty figure and X references), but will be more robust by the time this phase of my project begins.
+This task will likewise have two phases, both of which will be informed by the results of tasks A and B.
 
-Unfortunately, global simulations are costly.
-The wall time of state-of-the-art, marginally turbulent simulations which display interesting dynamo or rotational statistics are often quoted on timescales of months to roughly a year.
+\subsubsection{Task C.1: Creating tools to accelerate the evolution of mean angular momentum and magnetic field profiles}
+One major barrier to performing global dynamo simulations is that they are costly.
+The wall time of state-of-the-art simulations which display interesting dynamo or rotational statistics are best estimated to take timescales of months.
 Some of these costs are unavoidable: highly resolved turbulent simulations necessarily take small timesteps, and therefore results come slowly.
-However, some of the expense of these simulations is in some cases time wasted.
-System structure and mean flows, such as differential rotation, often build up on the order of \emph{diffusive} timescales, rather than convective overturn timescales.
-As we strive to push simulations into increasingly realistic regimes, the separation between these timescales becomes more extreme, and it can take thousands of overturn times for one diffusive time to pass.
-These long evolutionary timescales are a problem, because they limit our ability to understand the dynamical nature of convection in the Sun.
+However, some of the expense of these simulations is often time wasted.
+System structure and mean flows, such as differential rotation, often converge over timescales which are much larger than convective overturn timescales.
+For example, the thermal structure of the Sun is thought to evolve over its Kelvin-Helmholtz timescale of $10^7$ years, which is significantly longer than its convective overturn time of five minutes at the solar surface.
+As we strive to push simulations into increasingly realistic regimes, the separation between these timescales becomes more extreme (eventually approaching that of the Sun), and it can take unaffordable numbers of overturn times for atmospheric structure and mean flows to evolve.
+These long evolutionary timescales are a problem, because they limit our ability to understand the dynamical nature of convection in stars.
 
 During my graduate career, I studied a mechanism for accelerating the long thermal relaxation timescale in convective systems.
 This mechanism is published for Boussinesq convection \citep{anders&all2018} and has been adapated to stratified, compressible convection in plane-parallel systems within our research group to be used in forthcoming work.
 At even modest values of the Rayleigh number, we found that we could reach a converged state using an order of magnitude fewer computational resources than when waiting for a standard thermal relaxation timescale.
-These speedups make achieving thermal relaxation in moderately turbulent systems much less computationally expensive and also allow us to study converged dynamics in more turbulent, stellar-like simulations than would otherwise be achievable on modern computing resources.
+These speedups make achieving thermal relaxation in state-of-the-art simulations feasible.
 
-During my postdoctoral studies, I propose extending my accelerated evolution (AE) method to the transport of vector properties in global simulations.
-This extension will be grounded in the theoretical understanding gained at the small scales discussed in section \ref{sct:global_models}.
+During my postdoctoral studies, I will extend my accelerated evolution (AE) method to the transport of angular momentum and magnetism in dynamo simulations.
+The development of this extension will be grounded in an understanding of the transport mechanisms of these quantities which I will gain in tasks A and B.
 In essence, the procedure described in \citet{ander&all2018} is one which allows the user to take timesteps for the mean state and the mean flows which are much larger than those allowed by convection.
 As I did in \citet{anders&all2018}, I will verify that this method produces the same results as a long relaxation in modest parameter regimes to build trust in the method.
-Once this trust is established, this tool can feasibly be employed in extreme parameter regimes that are interesting and otherwise unfeasible to explore.
-Once developed, this tool will of course be made publicly available.
+Once developed, this tool will of course be made publicly available (as described in the part of the proposal where I describe these things).
 
-After developing this tool, I will use it to try to determine if global simulations can be produced which both suppress giant cells and properly create the solar differential rotation profile.
-The overturn timescale predicted by MLT for deep convection and the solar rotational timescale are both approximately one month, and so it is possible that the Sun is in an interesting transitional regime between nonrotating and rotationally constrained convection.
-I will use the tools I develop here to densely sample parameter space in this regime in order to verify whether or not solar-like convection can be observed.
-In my graduate studies I determined that the degree of rotational constraint in convective simulations in cartesian domains can be straightforwardly specified \citep{anders&all2019}, so this should be quite achievable.
+\subsubsection{Task C.2: Relaxed simulations of the solar dynamo}
+Global simulations are expensive (on the order of $10^6$ cpu-hours per run), and so only a select few of these simulations can be conducted.
+I will study simulations of the interior solar convection zone in the low-Ro regime, as some results suggest may be appropriate, and in the regime where both magnetism and fluid advection are relatively equally balanced (TODO: Is this the right regime and if not how do we determine it?)
+Using the tool developed in task C.1, I will accelerate the evolution of these simulations in order to study their result with well-developed mean flows and relaxed thermodynamic mean profiles.
+I hope to find that in the parameter regimes that we expect the Sun to exist (from observations, the work of others, and the work in tasks A and B), the global simulations develop a solar-like differential rotation, a sharp tachocline, and a solar-like dynamo.
 
-I need to add something here about magnetic fields.
-
-\subsection{Linking 3D tools to stellar structure evolution}
-
-In addition to helping solve the convective conundrum, these accelerated evolution tools could have great benefits for asteroseismic research.
+These simulations will be largely aimed at helping solve the convective conundrum, but the accelerated evolution tools which will be developed and tested here could have great benefits for asteroseismic research.
 New research is beginning to couple three-dimensional, global simulations with 1-dimensional stellar structure tools in order to more accurately produce stellar structure profiles \citep{jorgensen&weiss2019}.
 The fast equilibration of angular momentum and thermal profiles described here is essentially equivalent to taking timesteps which superstep the convective motions, similar to those taken in any one-dimensional stellar structure model.
-These techniques presented here would therefore allow the coupling of 1-dimensional stellar structure codes with realistic statistics from three-dimensional convection to create converged stellar profiles.
-Since stellar rotation times are relatively easy to measure from lightcurve data, asteroseismic inversions could take advantage of stellar structure profiles specifically evolved using three-dimensional convection and the proper degree of rotational constraint once these tools are developed.
+These techniques presented here would therefore allow the coupling of 1-dimensional stellar structure codes with realistic statistics from three-dimensional convection to create converged stellar profiles, including latitudinal variations like differential rotation.
+While the linking of these disparate techniques is beyond the scope of my postdoctoral research, I will design the code with this eventual use case in mind such that future implementation of such a method -- by myself or others -- is fairly straightforward.
 
 \section{Collaborative studies at CIERA and Northwestern University}
 \label{sct:northwestern}
-\begin{itemize}
-\item Daniel \& Yoram
-\item Cross-disciplinary awesomeness of CIERA %(https://ciera.northwestern.edu/directory/?filter_keyword=&filter_tax_ciera_person_type=all&filter_tax_ciera_research_topic=all&filter_tax_ciera_research_method=theory-computational)
-\item Arriving when CIERA is moving to its new building -- fresh start.
-\item HPC: (https://ciera.northwestern.edu/high-performance-computing/). Two clusters. CIERA cluster (9 nodes x 28 cores). Northwestern Quest supercomputer 11,800 cores.
-\end{itemize}
+Northwestern university, and specifically the CIERA institue, is the perfect location for me to carry out the work proposed here.
+Dr. Daniel Lecoanet, who will be my primary advisor and collaborator, will be arriving in the Fall of 2020, and I would be arriving concurrently.
+As one of the code's founders, Dr. Lecoanet an expert in Dedalus and his past work on thermals \citep{lecoanet&jeevanjee2019, tarshis&all2018}, convection \citep{lecoanet&quataert2013, lecoanet&all2014, couston&all2017}, rotating convection \citep{couston&all2019}, and global simulations \citep{lecoanet&all2018} make him excellently qualified to advise me on the projects proposed here.
+Furthermore, I have already published one paper in collaboration with Dr. Lecoanet and so there would be no lag in figuring out a successful collaborative and professional relationship upon my arrival.
+In addition to Dr. Lecoanet, Dr. Yoram Lithwick would be an excellent partner for collaboration due to his past work on rotating convection \citep{BDLithwick2014} and his continuing collaborations on studying careful and numerical problems in fluid disks \citep{LDLithwick2019} and planetary systems \citep{hadden&lithwick2018} would provide excellent opportunities for collaboration.
+Despite working on disparate applications, I also anticipate that the work proposed here will benefit from fruitful conversations with other members of the institute, such as Dr. Sasha Tchekhovskoy, whose background in general relativistic MHD simulations is extensive \citep[as in e.g.,][]{tchekhovskoy&bromberg2016}.
+
+In addition to the collaborative opportunities available at CIERA, being housed at CIERA will provide me with access to high performance computing resources which will be crucial to the work here.
+The small in-house 252-core CIERA cluster will enable small-scale exploratory work that will assist in developing my understanding of the bounds of parameter space.
+Northwestern's larger 11,800-core Quest supercomputer has sufficient resources for most of the 3D simulations presented in this work, all of which should be performable on 1024 cores.
+In order to increase my access to computational resources and to allow for larger scale runs, I will leverage my AAPF fellowship and apply for time on NSF XSEDE resources such as Stampede2, Comet, or Bridges.
+
+Furthermore, in addition to the focused educational and outreach projects below, being centered at CIERA will provide me with numerous small scale opportunities to participate in public outreach.
+CIERA's Astronomy on Tap program as well as its CIERA Astronomer Evenings provide bite-sized and accessible ways to interact with the public.
+Dearborn Observatory's observation tours are very similar to the public open houses I helped host at CU Boulder's Sommers-Bausch observatory.
+The state-of-the-art Adler planetarium also provides similar opportunities such as its \emph{`Scopes in the City} program or its Space Visualization Lab astronomy conversations.
 
 
-\section{Teaching and Outreach}
+\section{Broader Impacts: Supporting the growth of young career scientists as educators and individuals}
 \label{sct:outreach}
+Through the implementation of two small programs which leverage collaborations with existing programs or institutes at Northwestern, I aim to support diverse young career students at the university level with a network of supportive peers while also creating meaningful opportunities for them to develop as educators and professionals.
+Their development will also result in the teaching of authentic inquiry at the high school level, thereby serving the broader community.
+
+Side note: NSF language that is applicable and that I need to work in here: ``Such outcomes include, but are not limited to: full participation of women, persons with disabilities, and underrepresented minorities in science, technology, engineering, and mathematics (STEM); improved STEM education and educator development at any level; increased public scientific literacy and public engagement with science and technology; ...development of a diverse, globally competitive STEM workforce...''
+
+
+
+\subsection{Teaching and Outreach: Preparing early career scientists as teachers}
+During my graduate career I twice participated in the University of California Santa Cruz's Institute for Scientist and Engineering Educators Professional Development Program (UCSC ISEE PDP), an NSF-funded program which teaches early career scientists the basics of teaching pedagogy in the context of developing and teaching an authentic STEM inquiry activity.
+While the PDP is open to graduate students, postdocs, and faculty members at all universities in the US, in general only a small group of individuals from any one institution can participate in a given year.
+My experiences in this program helped me gain confidence in knowing that teaching is an important piece of my future career, and laid the foundation of my knowledge of what it means to be a teacher and how teaching can be informed by scientific literature.
+I propose to develop a one-semester course for graduate students and senior undergraduate students which teaches the basics of teaching pedagogy and culminates in authentic teaching experiences in either high school classrooms.
+I will spend 10-15\% of my time during my first year as a postdoctoral researcher developing and establishing the infrastructure for this course, then I plan to teach the course in the Fall of 2021 and 2022.
+Over the course of Spring and Summer I will iterate and improve on my course materials based on student performance and feedback, and in Spring and Summer of 2023 I will ensure that the course materials are made available to Northwestern faculty before my fellowship ends.
+
+The culminating project of this course will be an authentic teaching experience for the students, something which many young scientists do not have in their undergraduate or graduate preparation.
+In order to coordinate these teaching experiences, I will leverage connections with the CIERA-based and NSF-funded \href{http://gk12.ciera.northwestern.edu/}{Reach for the Stars} program, a GK-12 program.
+Reach for the Stars is a selective program which offers a small number of graduate students an opportunity to spend 10-15 hours per week in the high school classroom leading young students through authentic scientific inquiry experiences while teaching those students how to think computationally and use computational tools.
+Exposing young students to authentic scientific inquiry activities is crucial because students not only learn STEM content but also participate in using STEM practices, such as creating hypotheses or designing and carrying out investigations.
+Reach for the Stars' \href{https://avault.github.io/}{Vault} program does an excellent job of providing a space for students to participate in these practices.
+These practices are often not explicitly taught, and this can make it difficult for scientists to communicate their processes.
+Fortunately modern literature \citep[e.g.,][]{dasgupta&all2014} is breaking down struggles that students face in learning the \emph{practices} of science, which can help guide our design of in-the-classroom activities which focus on teaching these practices.
+This class will complement Reach for the Stars by providing an opportunity for professional development to a larger number of students which is overall a smaller time commitment and less selective while still offering the students an opportunity for professional growth and impactful outreach.
+
+One guiding principle of proper course design is backwards design \citep{wiggins&mctighe1998}, which is \emph{logically} foward, but \emph{in practice} backwards from how many courses are designed.
+In essence backward design states that you start with the learning outcomes you want your students to achieve, then you design careful assessments to determine whether or not those learning goals were met, and \emph{only then} do you design the course content.
+An understanding of the backwards design process is one of the learning goals I have for students who take this course, but I will also use these principles in the design of this course.
+Since the culminating project of the course for the students will be to teach a topic in the high school classroom, I will rely on the high school teachers to provide us with a learning outcome that fits their curriculum, and it will then be the role of the students to work backwards from that goal in the design of their inquiry activity.
+
+I will design specific tasks that students will undergo during Fall 2020 - Spring 2021, but in general the course will cover four broad topics, each of which has been heavily influenced by the groundwork and structure of ISEE's PDP program.
+In the first unit, students will learn about backwards design in the context of inquiry activities, including specific care about how to set both content and practice learning goals for their students and different activity structures which leave space for authentic inquiry while also ensuring students arrive at those learning outcomes.
+In the second unit, we will discuss different types of assessments, when these types of assessments are appropriate, how to create honest and fair rubrics, and how to align a rubric with an assessment.
+In the third unit, we will discuss equity and inclusion, including published research regarding the effects that inequities have on students, and discuss how to design inclusive activities with multiple pathways for success so that all learners can achieve the learning goals.
+In the fourst unit, students will experience the culmination of the work that they have done through the semester by teaching in the college classroom, and then we will discuss methods for iterating on course design in order to improve it for the future.
+
+This course will provide young career scientists with a foundation in how to teach, things to consider while teaching, and will also give them an opportunity to try out some teaching practices in a fairly low-stakes setting.
+The students will be graded on their thoughtful creation, analysis, and reflection on their course design rather than on the specific teaching outcomes of their activity.
+Furthermore, the culminating project for each group of students is by definition an outreach activity: the students will go into nearby high school classrooms, engage with young students about science, provide authentic and inclusive experiences in STEM, and in doing so broadly impact the nearby community.
+
+\subsection{Inreach: Peer mentorship for the retention of undergraduates and early graduate students}
 The path to a career in the US STEM workforce is a leaky pipeline.
 Data show that in particular, underrepresented minority groups and women pursue careers in STEM fields at a rate which is disproportionately low compared to the share of the total population that those groups constitute \citep{corbett&hill2015, nsf2019}.
 While a great deal of focus is rightly placed on changing the career outlooks of these groups before the collegiate level, the pipeline continues to leak at the baccalaureate and post-baccalaureate levels, and underrepresentation becomes more severe.
 
-During my graduate studies, I spent three years working with the University of Colorado's CU-STARs group.
-CU-STARs is a combined ``outreach'' and ``inreach'' program with the dual aims of increasing STEM engagement for students at underserved, rural schools across Colorado while decreasing attrition of underrepresented groups in CU Boulder's Astrophysical and Planetary Sciences department.
-Undergraduate students from CU in this group, or ``STARs,'' are provided with an inclusive community, peer mentoring (graduate student - undergraduate pairs), and opportunities to develop scientist skills.
-In turn, STARs are also given opportunities to teach high schoolers about fun topics in astronomy and astrophysics with hands-on demos.
-My role as a graduate student administrator in this group was to help coordinate, plan, and run outreach trips to rural schools across Colorado, mentor undergraduate students, develop courses and demo materials for courses in exoplanety discovery via the transit method, black holes, and atmospheric fluid dynamics.
-
-
-
-\subsection{Outreach: Reach for the stars}
-Reach for the Stars does a great job of engaging high school students with STEM in an authentic, inquiry-based way.
-Discussion of why authentic experiences in scientific inquiry are important.
-Discussion of the cool stuff that Reach for the Stars is already doing.
-Name-drop of NSF funding.
-
-Here's what I'd like to bring to the program:
-\begin{itemize}
-\item Professional development of graduate student fellows through in-depth redesign of inquiry activities and backwards design process.
-\begin{itemize}
-\item backwards design
-\item assessment and teaching as a scientific discipline
-\end{itemize}
-\item 
-\end{itemize}
-
-
-\subsection{Inreach: Peer mentorship for the retention of undergraduates and early graduate students}
 Mentoring has long been known to play a significant role in increasing retention and helping new departmental members acclimate to the department climate \citep{hunt&michael1983}.
 Establishing robust mentoring programs based on evidence and knowledge of the recent literature in mentorship \citep[as in e.g.,][]{crisp&all2009, crisp&all2017} can be one critical component of helping broaden participation of underrepresented and marginalized groups in the STEM workforce.
+During my graduate studies, I spent three years working with the University of Colorado's CU-STARs group.
+CU-STARs is a combined ``outreach'' and ``inreach'' program with the dual aims of increasing STEM engagement for students at underserved, rural schools across Colorado while decreasing attrition of underrepresented groups in CU Boulder's Astrophysical and Planetary Sciences department.
+One of my many roles as a graduate student administrator in this group was to mentor undergraduate students, although we were never formally trained in mentoring, nor did we have a robust mentoring structure in place to support mentors and mentees alike.
+
 During my years at Northwestern, I propose to work with the experts in Northwestern's \href{https://www.northwestern.edu/searle/index.html}{Searle Center for Advanced Teaching and Learning} to develop peer mentoring programs within Northwestern University's applied math department and the department of physics and astrophysics.
-The goal of this program will be to connect entering undergraduate or graduate students mentees with mentors who are a few years more developed in their career.
+The goal of this program will be to connect students with peers who are slightly more advanced in their careers.
+For example, entering undergraduate mentees would connect with junior or senior undergraduates in the field; senior undergraduates mentees could connect with young graduate student mentors; young graduate student mentees could connect with senior graduate students; and senior graduate students could connect with postdoctoral students.
+In general, we would aim to connect young scientists who are still at a close enough level of their career to fully understand the experiences of one another to give young students advice and provide them with a professional support network.
 
-Things that I need to think about more:
-\begin{itemize}
-\item mentor training
-\item coffee funds
-\item schedule and frequency
-\item post docs?
-\end{itemize}
+I will lay the groundwork for this organization in my first year at Northwestern and plan to roll it out in my second year, starting in the fall of 2021.
+My first year will be spent collaborating with my hosting department, as well as other very related departments like the department of Physics and Astronomy, in order to gain university buy-in at the faculty level to ensure that this program will continue to run after I leave.
+I will also collaborate with the Searle Center and others to ensure that I establish proper training for mentees.
+Furthermore, I will begin searching at the University level for sustainable \href{https://www.northwestern.edu/studentorgs/org-officers/funding/index.html}{funding} so that this organization can support the purchasing of coffee for mentor meetings.
+I will also aim to secure enough funding for the organization to buy snacks for infrequent social meetings.
 
-
-
-\subsection{My career development}
+\subsection{Personal career growth and development}
+Need to write this in more words, but basically my past experiences have shown me that I truly enjoy both research and teaching.
+Setting up these programs will allow me to grow in the teaching / service aspect of an academic career while also giving younger students a taste of that aspect of this career path so that they can help decide if they like it.
 
 
 
 \section{Summary and Perspectives}
 \label{sct:summary}
+TODO
 
 \bibliographystyle{apj}
 \bibliography{biblio}
