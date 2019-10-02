@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{epstopdf}
+\usepackage{anyfontsize}
 \usepackage[skip=2pt,font=small]{caption}
 \captionsetup{width=\textwidth}
 \usepackage{amssymb, amsmath, amsfonts, xcolor}
@@ -41,13 +42,18 @@
 \renewcommand{\headrulewidth}{0pt}
 \cfoot{\footnotesize{\thepage}}
 
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\normalfont\fontsize{15pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[runin]{\normalfont\fontsize{13.5pt}{15pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
 
 
 
 
 \begin{document}
 \begin{center}
-   \large\textbf{Constraining magnetic and angular momentum transport in stellar envelope convection from the smallest to largest scales}\\
+   \large\textbf{Constraining magnetic and angular momentum transport in stellar convection}\\
    \vspace{0.2cm}
    \large{Evan H. Anders}\\
    \vspace{0.2cm}
@@ -55,14 +61,14 @@
 
 \vspace{-0.6cm}
 
-\section{The need for improved models of rotation and magnetism in stellar convection}
+\section{Motivation}
 
-\subsection{Understanding stellar structure in the asteroseismic age}
+\subsection{Asteroseismology}
 The advent of asteroseismic science has closely paralleled that of exoplanetary science.
 The early small samples of stellar pulsations obtained by ground-based observatories \citep[e.g.,][and others]{kjeldsen&frandsen1991, bouchy&carrier2001, bedding&all2001} have given way to datasets of more than $10^4$ stars \citep[e.g.,][]{yu&all2018, santos&all2019b} in the age of CoRoT, Kepler, and K2 data.
 With another 20,000 asteroseismically-interesting targets in the TESS satellite's two-year nominal mission \citep{schofield&all2019} and more interesting data from the future WFIRST and PLATO missions, it is expected that by 2030 we should have observations of $10^7$ pulsating red giants and $10^5$ dwarfs and subgiants in hand  \citep{huber&all2019}.
 In addition to learning about the nature of stars aside from our Sun, asteroseismology enables us to fairly accurately determine the age of stars, thus enabling galactic archaeology, in addition to enabling us to determine the mass and radius of stars with solar-like pulsations, thus enabling the measurement of exoplanetary radii from the transit method.
-Asteroseismic measurements generally rely on stellar structure models, and these models have some known deficiencies \citep{buldgen2019}, in particular their handling of complex phenomena like rotation, convection, and magnetism.
+Asteroseismic measurements generally rely on stellar structure models, and these models have some known deficiencies \citep{buldgen2019}, in particular their handling of complex phenomena like convection, rotation, and magnetism.
 With the exponential rise in asteroseismic targets, and the projected continuation of this rise, it is crucial that the we continue to invest in the theory informing these stellar models and measurements.
 
 The state-of-the-art method for obtaining stellar strucuture data is the use of one-dimensional models of stellar interiors from codes like MESA \citep{paxton&all2011}.
@@ -84,31 +90,34 @@ Predictive power of solar phenomena has been a decades-long research goal, but w
 This dynamo is seated in the turbulent convective plasma motions of the Sun, and recent observations have called into question even our most fundamental understanding of solar convection.
 
 Helioseismic observations by \citet{hanasoge&all2012} place an upper limit on solar convective velocity magnitudes nearly two orders of magnitude lower than those predicted by simulations or MLT.
-Other heliseismic measurements using different techniques claim detections of velocity magnitudes more in line with what is expected from theory \citep{greer&all2015}, but observe an unexpected decrease in powers at large scales compared to simulations.
+Other helioseismic measurements using different techniques claim detections of velocity magnitudes more in line with what is expected from theory \citep{greer&all2015}, but observe an unexpected decrease in powers at large scales compared to simulations.
 Even observations of convective motions at the solar surface \citep{hathaway&all2015} do not observe these anticipated, large-scale motions.
-Put simply, we do not see the theorized ``giant cells'' which should be observable, large-scale motions originating from buoyant motions originating deep in the solar convection zone.
+Put simply, we do not see the theorized, large-scale ``giant cells'' which would be observational manifestations of buoyant motions driven deep in the solar convection zone.
 This lack of giant cells consitutes part of the Solar Convective Conundrum, and two primary hypothesis which aim to explain their absence are the ``Entropy Rain'' hypothesis and a suggestion that the solar convective interior is rotationally constrained.
 
 The entropy rain hypothesis, first suggested by \citet{spruit1997}, suggests that downflows alone carry the solar luminosity through the solar convection zone, and has been preliminarily incorporated into a modified mixing length theory by \citet{brandenburg2016}.
 Some simple simulations of \citet{kapyla&all2017} suggest that indeeed downflows may be more important than upflows in determining convective properties in stellar envelope convection.
-Recently, I conducted high resolution simulations of one possible dynamical manifestation of entropy rain: atmospheric thermals in stratified domains \citep{andersLB2019}.
-We found that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone through their enthalpy fluxes.
-However, most of the work surrounding the entropy rain hypothesis has ignored the fact that the Sun is magnetic, and the Sun rotates.
-Even if entropy rain can transport the solar luminosity, it is still unclear if such a convective mechanism could properly transport angular momemtum or magnetic fields in the Sun.
+I conducted some recent theoretical work which suggests that such a mechanism could plausibly carry the solar luminosity in the deep solar convection zone \citep{andersLB2019}.
+However, most or all of the work surrounding the entropy rain hypothesis neglects magnetism and rotation.
+It is unclear how these complicating effects interact with fast, small downflows like entropy rain, and it is unclear how these raindrops would alter the rotational or magnetic structure of the Sun.
 
 Outside of the entropy rain picture, it has also been suggested that the effects of rotation alone may be sufficient to explain the solar convective conundrum.
-Simulations by \citet{featherstone&hindman2016} show that as the degree of rotational constraint increases, characterized by the Rossby number, so too does the spherical harmonic degree of maximum velocity power of the convection.
+Simulations by \citet{featherstone&hindman2016} show that as convective flows become more rotationally constrained, the spherical harmonic degree of maximum velocity power of the convection increases.
 However, simulations which nominally rotate at the solar rate show \emph{anti-solar} differential rotation \citep{gastine&all2014}, and simulations at very low rossby number exhibit either differential rotation that is too-cylindrical or more reminiscent of Jupiter than the Sun \citep{brun&all2017}.
 Global simulations which both suppress giant cells and correctly produce the solar differential rotation profile have not been achieved.
 
-Observations in both the solar and stellar context have taught us that our understanding of stellar convection is incomplete.
-One particular point of weakness in our theoretical understanding is how angular momentum transport behaves in stellar interiors, and tied to that is a lack of understanding of magnetic field transport.
-Over the course of my postdoctoral studies, I will examine these transport mechanisms from the smallest to the largest scales.
-The small scale (thermal and plane-parallel convection) experiments, described below in section \ref{sct:thermals}, will aim to continue to verify whether or not entropy rain is a feasible mechanism for transporting stellar luminosity in lower main sequence, solar-like stars while also gaining a better physical understanding of how small-scale flows transport vector fields.
-The largest scale (global spherical simulations) experiments, described below in section \ref{sct:global_models} will simultaneously develop community tools to use in studying rotating magnetoconvection, and also apply those tools to simulate increasingly rotationally constrained, turbulent simulations.
-I will use the Dedalus pseudospectral framework \citep{burns&all2019}, which I have become proficient at using during my graduate career, to carry out these investigations.
+\subsection{Modern convective simulations}
+Early simulations in stellar-like convection often focused on convection at moderate scales in Cartesian box geometries.
+This work taught us a great deal about some of the complications faced by stellar convection in contained experiments.
+Over the past couple of decades, these simple models have generally been replaced by either global dynamo models in spherical geometry or local Cartesian models with realistic physics.
+In either case, one of the primary drivers of these simulations has been an attempt to reproduce solar or stellar observations.
+This has been achieved with great success: small-scale simulations beautifully resemble magnetic sunspots to the eye, and global simulations produce cycling dynamos and differential rotations like those of the Sun.
+While still conducted, small scale simulations where vast swathes of important parameter spaces can be explored have become rare.
 
-\section{Intellectual Merit: Vector transport by convection at the smallest scales and largest scales}
+As discussed in sections, observations in both the solar and stellar context have taught us that our understanding of stellar convection is incomplete.
+It is therefore important for those of us who aim to understand stellar convection to utilize all of these tools available to us to study convection simulations which blah.
+
+\section{Intellectual Merit: Convective Transport Across All Scales}
 \label{sct:thermals}
 Stellar convection is a turbulent process.
 Modern computer resources cannot simulate turbulence, quantified by e.g., a Reynolds number (Re), at the same levels as those present in the Sun or stars.
@@ -127,8 +136,14 @@ In task C, I will study simulation sof time-dependent, three-dimensional convect
 As in \citet{andersLB2019}, I will develop an analytical theory that can be tested and verified in the laminar regime before studying select simulations in the turbulent regime.
 These specific studies are laid out in more detail below, and each task is expected to take one full year of my three-year postdoctoral fellowship.
 
+Over the course of my postdoctoral studies, I will examine these transport mechanisms from the smallest to the largest scales.
+The small scale (thermal and plane-parallel convection) experiments, described below in section \ref{sct:thermals}, will aim to continue to verify whether or not entropy rain is a feasible mechanism for transporting stellar luminosity in lower main sequence, solar-like stars while also gaining a better physical understanding of how small-scale flows transport vector fields.
+The largest scale (global spherical simulations) experiments, described below in section \ref{sct:global_models} will simultaneously develop community tools to use in studying rotating magnetoconvection, and also apply those tools to simulate increasingly rotationally constrained, turbulent simulations.
+I will use the Dedalus pseudospectral framework \citep{burns&all2019}, which I have become proficient at using during my graduate career, to carry out these investigations.
 
-\subsection{Task A: Vector transport by individual thermals}
+
+
+\subsection{Task A: Local transport by individual downflows}
 Thermals are regions of cold (or hot) fluid which accelerate due to buoyancy forces.
 During a spin-up period, thermals shape themselves into buoyant vortex rings, and the vorticity of these rings entrains environmental fluid, causing these structures to grow \citep{lecoanet&jeevanjee2019}.
 Thermals are well understood in the Boussinesq limit and have been studied extensively in the atmospheric context, and are thought to be the nucleus of the cloud formation process in Earth's atmosphere.
@@ -171,14 +186,14 @@ The magnetic field geometries will be a strong background magnetic field (both a
 
 These simulations will help determine if entropy rain is possible in strongly magnetised stars and whether entropy rain droplets could be an important element of a stellar dynamo -- both on small scales due to their natural circulation which could bend magnetic fields, and on large scales as they transit convective zones.
 
-\subsection{Task B: Vector transport of time-dependent convection in plane-parallel atmospheres}
+\subsection{Task B: Mesoscale transport in cartesian geometry}
 \begin{figure*}[t!]
     \includegraphics[width=\textwidth]{./figs/rossby_plot.png}
     \caption{(left, Fig 1b of \citet{anders&all2019}) The Rossby number, Ro, is difficult to predict as a function of the Rayleigh number, Ra, in rotating convection.
 	Along traditional ``convective Rossby number'' (green) paths through parameter space, Ro increases as a function of Ra, and along constant supercriticality paths (blue) it decreases.
 	Walking along paths along the newly discovered ``predictive Rossby number'' (orange) seems to hold the value of Ro, and thus the degree of rotational constraint, constant.
 	(right eight panels, Fig. 2 of \citet{anders&all2019}) As you decrease the Rossby number (from left to right), traditional granular convective patterns give way to quasi-two-dimensional vortical columns of convection with very little difference between the top of the atmosphere and the atmospheric midplane (top row vs. bottom row).
-	It is clear to see that changing the Rossby number massively effects convective dynamics and therefore choosing a value of Ro that reflects the astrophysical object of interest being studied (e.g., the Sun) is crucial.
+	It is clear to see that changing the Rossby number strongly affects convective dynamics and therefore choosing a value of Ro that reflects the astrophysical object of interest being studied (e.g., the Sun) is crucial.
 	\label{fig:rossby_plot} }
 \end{figure*}
 
@@ -210,7 +225,7 @@ The base of the solar convection zone -- the tachocline -- is not only a boundar
 The shearing motions in this region are thought to be crucial for the solar dynamo, and so understanding which regimes allow for magnetic field transport into that region will be crucial for better understanding dynamos in solar-type stars.
 
 
-\subsection{Task C: Dynamo simulations in proper solar or stellar regimes}
+\subsection{Task C: Global transport in spherical geometry}
 \label{sct:global_models}
 The experiments laid out in Tasks A \& B foundational for the capstone projects of my postdoctoral studies: global simulations of rotating magnetoconvection in spherical domains, or dynamo simulations.
 The tools to perform these simulations in Dedalus already exist (TODO: see pretty figure and X references), but will be more robust by the time this phase of my project begins.
