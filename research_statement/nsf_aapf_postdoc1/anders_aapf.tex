@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{epstopdf}
 \usepackage{anyfontsize}
+\usepackage{wrapfig}
 \usepackage[skip=2pt,font=small]{caption}
 \captionsetup{width=\textwidth}
 \usepackage{amssymb, amsmath, amsfonts, xcolor}
@@ -153,12 +154,21 @@ One benefit of studying thermals is that they are discrete fluid events that are
 \citet{tobias&all1998} showed that downflows in convection can effectively pump magnetic fields downwards in certain regimes and more recently \citet{kapyla&all2017} showed that downflows are perhaps the most important dynamical driver of solar convection.
 Thermals provide an excellent model of stellar downflows and are therefore an excellent tool to utilize to answer the overarching questions being asked here.
 
+
 In \citet{andersLB2019}, we came to understand the scalar transport properties of these thermals with depth in nonrotating, nonmagnetized domains.
 The thermal simulations I studied previously had three fundamental control parameters: the degree of dissipation or turbulence (characterized by the Reynolds number, Re), the degree of stratification (characterized by the number of density scale heights, $N_\rho$), and the ratio of viscous to thermal diffusivity (characterized by a Prandtl number, Pr).
 I now propose incorporating rotational and magnetohydrodynamical effects into these simulations, each of which will add additional dimensions of parameter space.
 In order to study the effects that interest us, we will fix the Prandtl number (to 1, or perhaps in the low, solar-like regime, at 0.1) and the degree of stratification (to $N_\rho = 3$), and study both Re = 600 (laminar) and Re $\sim$ 6000 (turbulent) simulations.
 This will allow us to more thoroughly study the interesting, new parameter space expansions of the interesting physics here.
 \citet{lecoanet&jeevanjee2019} showed that turbulence does not seem to affect the entrainment processes and scalar transport at work in these thermals, however it does result in smaller scale structures which will likely be important for these vector fields.
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+	\begin{center}
+    \includegraphics[width=0.48\textwidth]{./figs/thermals_comparison.png}
+	\end{center}
+    \caption{
+	\label{fig:thermals_comparison} }
+\end{wrapfigure}
 
 Fortunately, these simulations are inexpensive.
 While the standard thermal evolution is a fundamentally two-dimensional problem (the buoyant direction and the radial direction), the addition of magnetism or rotation will likely necessitate full three-dimensional simulations.
