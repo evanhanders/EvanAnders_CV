@@ -1,4 +1,4 @@
-\documentclass[aasms,12pt]{article}
+\documentclass[aasms,11pt]{article}
 \usepackage{natbib}
 \setlength{\bibsep}{0pt plus 0.3ex}
 \usepackage[margin=1in]{geometry}
@@ -41,12 +41,30 @@
 \pagestyle{fancy}
 \fancyhf{} % sets both header and footer to nothing
 \renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\rfoot{\footnotesize{Evan H. Anders NSF AAPF 2019}}
+\lfoot{\footnotesize{\leftmark}}
+%\lfoot{\footnotesize{\leftmark}}%\thesection: \sectiontitle}}
 \cfoot{\footnotesize{\thepage}}
 
+\makeatletter
+\renewcommand{\sectionmark}[1]{%
+  \markboth{\ifnum \c@secnumdepth>\z@
+      \thesection: \hskip 1em\relax
+    \fi #1}{}}
+\makeatother
+
 \usepackage{titlesec}
-\titleformat{\section}[hang]{\normalfont\fontsize{15pt}{18pt}\selectfont\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}[runin]{\normalfont\fontsize{13.5pt}{15pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+%\titleformat{\abstract}[runin]{\normalfont\normalsize\bfseries}{\theabstract}{1em}{}
+\titleformat{\section}[hang]{\normalfont\fontsize{14pt}{17pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[runin]{\normalfont\fontsize{12.5pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\renewenvironment{abstract}
+{
+\noindent \par{\bfseries \abstractname.}}
+{\medskip\noindent 
+}
 
 
 
@@ -54,15 +72,30 @@
 
 \begin{document}
 \begin{center}
-   \large\textbf{Constraining magnetic and angular momentum transport in stellar convection}\\
+   \Large\textbf{Convective Conundrums in the Asteroseismic Age: }\\
+   \Large\textbf{The interplay of rotation and magnetism in stellar convection  }\\
    \vspace{0.2cm}
    \large{Evan H. Anders}\\
    \vspace{0.2cm}
 \end{center}
 
+\vspace{-0.4cm}
+
+\begin{abstract}
+The past two decades have seen an impressive rise in our understanding of the interior structure of the Sun and countless other stars through helioseismic and asteroseismic techniques.
+These observations often rely on inversions which are informed by simple models of stellar convection which do not include the important effects of magnetism and rotation.
+Furthermore, these helioseismic observations of the Sun have called into question even our most fundamental understanding of stellar convection -- a problem widely referred to as the Solar Convective Conundrum.
+Recent literature has suggested that complicating effects, such as rotation, may be the crucial pieces missing in our understanding.
+During my postdoctoral studies, I propose to study how rotation and magnetism affect the dynamics of stellar convection from the smallest to the largest scales.
+I will conduct detailed studies of individual stellar downflows and mesoscale studies of convective interactions at the radiative-convective interface.
+I will further develop community tools to decrease the computational cost of global simulations of stellar convection, enabling improved stellar models and synthetic observables.
+\end{abstract}
+
 \vspace{-0.6cm}
 
 \section{Motivation}
+\sectionmark{Motivation}
+\vspace{-9pt}
 
 \subsection{Asteroseismology}
 The advent of asteroseismic science has closely paralleled that of exoplanetary science.
@@ -108,19 +141,25 @@ However, simulations which nominally rotate at the solar rate show \emph{anti-so
 Global simulations which both suppress giant cells and correctly produce the solar differential rotation profile have not been achieved.
 
 \subsection{Modern convective simulations}
-Early simulations in stellar-like convection often focused on convection at moderate scales in Cartesian box geometries.
-This work taught us a great deal about some of the complications faced by stellar convection in contained experiments.
-Over the past couple of decades, these simple models have generally been replaced by either global dynamo models in spherical geometry or local Cartesian models with realistic physics.
-In either case, one of the primary drivers of these simulations has been an attempt to reproduce solar or stellar observations.
-This has been achieved with great success: small-scale simulations beautifully resemble magnetic sunspots to the eye, and global simulations produce cycling dynamos and differential rotations like those of the Sun.
+Early simulations in stellar-like convection \citep{graham1975, hurlburt&all1984, cattaneo&all1991, brummell&all1996, brummell&all1998} often sought to understand the nature of convection in toy models.
+Simple geometries (Cartesian) were employed, and the nature of convection in the presence of one or more complicating effects (namely, stratification, rotation, magnetism, etc.) were explored.
+As computational resources become stronger, these experiments gave way to simulations which aim to reproduce solar or stellar convection.
+Small scale Cartesian domains of magnetohydrodynamic convection coupled with radiative transfer have produced results which look strikingly like solar surface convection and sunspots \citep{stein&nordlund1998, rempel&all2009, stein&nordlund2012, rempel2014}.
+Large scale, ``global'' simulations of spherical rotating magnetoconvection have recreated cycling dynamos and differential rotation profiles \citep{brown&all2010, brown&all2011, guerrero&all2016, brun&all2017, strugarek&all2018}.
+In addition to visually resembling features of solar convection, these modern simulations are being treated as observations.
+For example, the simulations of \citet{rempel2014} have been treated extensively as high-resolution observations \citep[see e.g.,][and others]{vankooten&cranmer2017, shchukina&trujillo2019} due to the precise knowledge of thermodynamic quantities as a function of depth, which cannot be simply obtained in true observations.
+We are furthermore entering an age in which the wave spectrum in the outer layers of stellar simulations are being compared to those expected in asteroseismic theory \citep{edelmann&all2019}.
 
-In fact simulations of solar surface convection and even waves driven in stellar envelopes are now being used as synthetic observables and treated as true observations.
-In light of our lack of understanding of the fundamentals of convection, it is important for us to step back and use simple simulations to actually understand fundamentally how stellar convection works.
-Small scale simulations where vast swathes of important parameter spaces can be explored have become rare, but they can act as an important guide to large scale simulations.
-DKIST!
-
+In the context of the coming asteroseismic observations, and in particular in the soon-arriving first light of the NSF's Daniel K. Inouye Solar Telescope (DKIST), having high-resolution synthetic observables on hand is extremely useful for calibration and scientific purposes.
+However, in light of the convective conundrum, it is critical that we, as a community of modellers, take a step back and aim to understand the fundamental processes underlying stellar convection to ensure that our synthetic observables model fluid motions in the proper regime of stellar convection.
+Small scale simulations where vast areas of parameter space can be explored like the earliest simulations have become rare \citep{wood&brummell2012, wood&brummell2018}.
+However, the vast computational resources now available allow for large studies of these simplified systems, and the highly laminar results of the simulations of two or more decades ago are still the state-of-the-art.
+In our modern studies of simulations, simplified models \citep{brummell&all1998} should work hand-in-hand with complex local models \citep{rempel2014} and global models \citep{strugarek&all2018} to paint the fullest picture of stellar convection.
 
 \section{Intellectual Merit: Convection Across All Scales with Rotation and Magnetism}
+\sectionmark{Intellectual Merit}
+\vspace{-9pt}
+
 \label{sct:thermals}
 
 Stellar convection is a turbulent process, but modern computer resources cannot simulate resolved turbulent flows like those present in stars.
@@ -268,9 +307,10 @@ The computational cost of task A should be feasible to obtain on Northwestern's 
 In order to increase my access to computational resources and to allow for larger scale runs in tasks B and C, I will leverage my AAPF fellowship and apply for time on NSF XSEDE resources such as Stampede2, Comet, or Bridges.
 
 
-
-
 \section{Collaborative studies at CIERA}
+\sectionmark{CIERA}
+\vspace{-9pt}
+
 \label{sct:northwestern}
 Northwestern university, and specifically the CIERA institue, is the perfect location for me to carry out the work proposed here.
 Dr. Daniel Lecoanet, who will be my primary advisor and collaborator, will be arriving in the Fall of 2020, and I would be arriving concurrently.
@@ -284,80 +324,88 @@ CIERA's Astronomy on Tap program as well as its CIERA Astronomer Evenings provid
 Dearborn Observatory's observation tours are very similar to the public open houses I helped host at CU Boulder's Sommers-Bausch observatory.
 The state-of-the-art Adler planetarium also provides similar opportunities such as its \emph{`Scopes in the City} program or its Space Visualization Lab astronomy conversations.
 
+\section{Broader Impacts: Supporting young career scientists as educators and individuals}
+\sectionmark{Broader Impacts}
+\vspace{-9pt}
 
-\section{Broader Impacts: Supporting the growth of young career scientists as educators and individuals}
 \label{sct:outreach}
-Through the implementation of two small programs which leverage collaborations with existing programs or institutes at Northwestern, I aim to support diverse young career students at the university level with a network of supportive peers while also creating meaningful opportunities for them to develop as educators and professionals.
-Their development will also result in the teaching of authentic inquiry at the high school level, thereby serving the broader community.
-
-Side note: NSF language that is applicable and that I need to work in here: ``Such outcomes include, but are not limited to: full participation of women, persons with disabilities, and underrepresented minorities in science, technology, engineering, and mathematics (STEM); improved STEM education and educator development at any level; increased public scientific literacy and public engagement with science and technology; ...development of a diverse, globally competitive STEM workforce...''
-
-
+During my time at CIERA I will implement two small programs which leverage existing programs and institutes at Northwesten and whose outcomes align with NSF broader impact goals.
+The first program, described in section \ref{sct:inquiry_class} will improve STEM educator development at the university level while also increasing public engagement with science at the high school level.
+The second program, described in section \ref{sct:mentoring} will help improve participation of women, persons with disabilities, and underrepresented minorities in STEM.
 
 \subsection{Teaching/Outreach: Developing early career scientists as teachers}
-During my graduate career I twice participated in the University of California Santa Cruz's Institute for Scientist and Engineering Educators Professional Development Program (UCSC ISEE PDP), an NSF-funded program which teaches early career scientists the basics of teaching pedagogy in the context of developing and teaching an authentic STEM inquiry activity.
-While the PDP is open to graduate students, postdocs, and faculty members at all universities in the US, in general only a small group of individuals from any one institution can participate in a given year.
-My experiences in this program helped me gain confidence in knowing that teaching is an important piece of my future career, and laid the foundation of my knowledge of what it means to be a teacher and how teaching can be informed by scientific literature.
-I propose to develop a one-semester course for graduate students and senior undergraduate students which teaches the basics of teaching pedagogy and culminates in authentic teaching experiences in either high school classrooms.
-I will spend 10-15\% of my time during my first year as a postdoctoral researcher developing and establishing the infrastructure for this course, then I plan to teach the course in the Fall of 2021 and 2022.
-Over the course of Spring and Summer I will iterate and improve on my course materials based on student performance and feedback, and in Spring and Summer of 2023 I will ensure that the course materials are made available to Northwestern faculty before my fellowship ends.
+\label{sct:inquiry_class}
+I propose to work collaboratively with the CIERA-based and NSF-funded \href{http://gk12.ciera.northwestern.edu/}{Reach for the Stars} program, a GK-12 program, to develop a one-quarter course for graduate students and senior undergraduate students which teaches the basics of teaching pedagogy and culminates in authentic teaching experiences in high school classrooms.
+Many Many young scientists do not have an opportunity to learn about teaching pedagogy or to develop any part of a curriculum during their undergraduate or graduate preparation, and this course will provide this opportunity in a contained scope.
+I will spend 10-15\% of my time during my first year as a postdoctoral researcher developing and establishing the infrastructure for this course, then I plan to teach the course in the winter quarter of 2022 and 2023.
+Over the course of spring, summer, and fall, I will iterate and improve on my course materials based on student performance and feedback; during in spring and summer of 2023 I will further ensure that the course materials are made available to Northwestern faculty before my fellowship ends.
 
-The culminating project of this course will be an authentic teaching experience for the students, something which many young scientists do not have in their undergraduate or graduate preparation.
-In order to coordinate these teaching experiences, I will leverage connections with the CIERA-based and NSF-funded \href{http://gk12.ciera.northwestern.edu/}{Reach for the Stars} program, a GK-12 program.
-Reach for the Stars is a selective program which offers a small number of graduate students an opportunity to spend 10-15 hours per week in the high school classroom leading young students through authentic scientific inquiry experiences while teaching those students how to think computationally and use computational tools.
-Exposing young students to authentic scientific inquiry activities is crucial because students not only learn STEM content but also participate in using STEM practices, such as creating hypotheses or designing and carrying out investigations.
-Reach for the Stars' \href{https://avault.github.io/}{Vault} program does an excellent job of providing a space for students to participate in these practices.
-These practices are often not explicitly taught, and this can make it difficult for scientists to communicate their processes.
-Fortunately modern literature \citep[e.g.,][]{dasgupta&all2014} is breaking down struggles that students face in learning the \emph{practices} of science, which can help guide our design of in-the-classroom activities which focus on teaching these practices.
-This class will complement Reach for the Stars by providing an opportunity for professional development to a larger number of students which is overall a smaller time commitment and less selective while still offering the students an opportunity for professional growth and impactful outreach.
+Students will work in small groups to design a multi-day, authentic learning experience that is guided by a specific set of learning goals in a high school curriculum.
+I will leverage connections with Reach for the Stars in order to partner with high school teachers who will both provide a venue for course students to teach in and who will set the learning goals around which the activities will be designed.
+Reach for the Stars is a selective program which offers a small number of graduate students an opportunity to spend 10-15 hours per week in high school classrooms leading young students through authentic scientific inquiry experiences while teaching those students how to think computationally and use computational tools.
+This class will complement Reach for the Stars by providing an opportunity for professional growth and impactful outreach to a larger number of students which is overall a smaller time commitment and less selective.
 
 One guiding principle of proper course design is backwards design \citep{wiggins&mctighe1998}, which is \emph{logically} foward, but \emph{in practice} backwards from how many courses are designed.
 In essence backward design states that you start with the learning outcomes you want your students to achieve, then you design careful assessments to determine whether or not those learning goals were met, and \emph{only then} do you design the course content.
-An understanding of the backwards design process is one of the learning goals I have for students who take this course, but I will also use these principles in the design of this course.
-Since the culminating project of the course for the students will be to teach a topic in the high school classroom, I will rely on the high school teachers to provide us with a learning outcome that fits their curriculum, and it will then be the role of the students to work backwards from that goal in the design of their inquiry activity.
+Students who take this course will use the backwards design process to design their inquiry activities, and working under the constraints set by the high school curriculum will enforce this content.
+In general, this course will cover four broad topics, each of which has been heavily influenced by the groundwork and structure of ISEE's PDP program, and NSF-funded program (see section \ref{sct:personal_growth}):
+\begin{enumerate}
+\vspace{-9pt}
+\item Students will learn backwards design, and apply those principles in the context of their activity.
+Students will learn how to set clear learning goals which leave space for authentic inquiry while also ensuring their learners arrive at desired learning outcomes.
+\vspace{-9pt}
+\item Students will learn about different types of assessments (e.g., tests, worksheets, etc.), when these assessments are appropriate, how to create honest and fair rubrics, and how to align a rubric with an assessment.
+\vspace{-9pt}
+\item Students will learn about and discuss equity and inclusion in the context of course design, including reading published research regarding the effects that inequities have on student achievement, and incorporating elements of inclusive design into their activities with multiple pathways for success so that all learners can achieve the learning goals.
+\vspace{-9pt}
+\item students will teaching in the high school classroom, and then will learn about and practice methods for iterating on course design in order to improve it for improved learning outcomes in the future.
+\vspace{-9pt}
+\end{enumerate}
 
-I will design specific tasks that students will undergo during Fall 2020 - Spring 2021, but in general the course will cover four broad topics, each of which has been heavily influenced by the groundwork and structure of ISEE's PDP program.
-In the first unit, students will learn about backwards design in the context of inquiry activities, including specific care about how to set both content and practice learning goals for their students and different activity structures which leave space for authentic inquiry while also ensuring students arrive at those learning outcomes.
-In the second unit, we will discuss different types of assessments, when these types of assessments are appropriate, how to create honest and fair rubrics, and how to align a rubric with an assessment.
-In the third unit, we will discuss equity and inclusion, including published research regarding the effects that inequities have on students, and discuss how to design inclusive activities with multiple pathways for success so that all learners can achieve the learning goals.
-In the fourst unit, students will experience the culmination of the work that they have done through the semester by teaching in the college classroom, and then we will discuss methods for iterating on course design in order to improve it for the future.
+This course will develop scientist educators by providing young career scientists with a foundation in teaching pedagogy, and will also give them an opportunity to try out some teaching practices in a fairly low-stakes setting.
+Assessments throughout the course will grade students on their creation, analysis of, and reflection on their course design rather than on the specific teaching outcomes of their activity.
+Furthermore, the culminating project for each group of students is by definition an outreach activity: the students will go into nearby high school classrooms, engage with young students about science, provide authentic and inclusive experiences in STEM, and in doing so increase STEM engagement in the nearby community.
+These outreach activities will expose high school students to authentic STEM practices, such as creating hypotheses or designing and carrying out investigations.
+These practices are often not explicitly taught, and this can make it difficult for scientists to communicate their processes.
+Reach for the Stars' \href{https://avault.github.io/}{Vault} program does an excellent job of providing a space for students to participate in these practices.
+While designing this course, I will collaborate with Reach for the Stars and utilize modern literature \citep[e.g.,][]{dasgupta&all2014} to ensure that students in my course understand struggles that students face in learning the practices of science so that their learners can engage with STEM in this meaningful way.
 
-This course will provide young career scientists with a foundation in how to teach, things to consider while teaching, and will also give them an opportunity to try out some teaching practices in a fairly low-stakes setting.
-The students will be graded on their thoughtful creation, analysis, and reflection on their course design rather than on the specific teaching outcomes of their activity.
-Furthermore, the culminating project for each group of students is by definition an outreach activity: the students will go into nearby high school classrooms, engage with young students about science, provide authentic and inclusive experiences in STEM, and in doing so broadly impact the nearby community.
-
-\subsection{Inreach: Undergraduate and graduate peer mentorship}
-The path to a career in the US STEM workforce is a leaky pipeline.
-Data show that in particular, underrepresented minority groups and women pursue careers in STEM fields at a rate which is disproportionately low compared to the share of the total population that those groups constitute \citep{corbett&hill2015, nsf2019}.
-While a great deal of focus is rightly placed on changing the career outlooks of these groups before the collegiate level, the pipeline continues to leak at the baccalaureate and post-baccalaureate levels, and underrepresentation becomes more severe.
-
-Mentoring has long been known to play a significant role in increasing retention and helping new departmental members acclimate to the department climate \citep{hunt&michael1983}.
-Establishing robust mentoring programs based on evidence and knowledge of the recent literature in mentorship \citep[as in e.g.,][]{crisp&all2009, crisp&all2017} can be one critical component of helping broaden participation of underrepresented and marginalized groups in the STEM workforce.
-During my graduate studies, I spent three years working with the University of Colorado's CU-STARs group.
-CU-STARs is a combined ``outreach'' and ``inreach'' program with the dual aims of increasing STEM engagement for students at underserved, rural schools across Colorado while decreasing attrition of underrepresented groups in CU Boulder's Astrophysical and Planetary Sciences department.
-One of my many roles as a graduate student administrator in this group was to mentor undergraduate students, although we were never formally trained in mentoring, nor did we have a robust mentoring structure in place to support mentors and mentees alike.
-
-During my years at Northwestern, I propose to work with the experts in Northwestern's \href{https://www.northwestern.edu/searle/index.html}{Searle Center for Advanced Teaching and Learning} to develop peer mentoring programs within Northwestern University's applied math department and the department of physics and astrophysics.
+\subsection{Undergraduate and graduate peer mentorship}
+\label{sct:mentoring}
+I propose to work with the experts in Northwestern's \href{https://www.northwestern.edu/searle/index.html}{Searle Center for Advanced Teaching and Learning} to develop peer mentoring programs within STEM departments at Northwestern University.
 The goal of this program will be to connect students with peers who are slightly more advanced in their careers.
 For example, entering undergraduate mentees would connect with junior or senior undergraduates in the field; senior undergraduates mentees could connect with young graduate student mentors; young graduate student mentees could connect with senior graduate students; and senior graduate students could connect with postdoctoral students.
 In general, we would aim to connect young scientists who are still at a close enough level of their career to fully understand the experiences of one another to give young students advice and provide them with a professional support network.
 
-I will lay the groundwork for this organization in my first year at Northwestern and plan to roll it out in my second year, starting in the fall of 2021.
-My first year will be spent collaborating with my hosting department, as well as other very related departments like the department of Physics and Astronomy, in order to gain university buy-in at the faculty level to ensure that this program will continue to run after I leave.
+It is well known that the path to a career in the US STEM workforce is a leaky pipeline.
+Data show that in particular, women and many minority groups pursue careers in STEM fields at a rate which is disproportionately low compared to the share of the total population that those groups constitute \citep{corbett&hill2015, nsf2019}, and they are therefore underrepresented in the STEM workforce.
+While a great deal of focus is rightly placed on changing the career outlooks of these groups before the collegiate level, underrepresentation becomes increasingly more severe at the baccalaureate and post-baccalaureate levels.
+Mentoring has long been known to play a significant role in increasing retention and helping new departmental members acclimate to the department climate \citep{hunt&michael1983}.
+Establishing robust mentoring programs based on evidence and knowledge of the recent literature in mentorship \citep[as in e.g.,][]{crisp&all2009, crisp&all2017} can be one critical component of helping broaden participation of underrepresented and marginalized groups in the STEM workforce.
+
+I will lay the groundwork for this program in the remaining 10-15\% of my education time in my first year at Northwestern and roll it out during the fall quarter of 2021.
+My first year will be spent collaborating with the departments of Physics and Astronomy, Applied Math, and others in order to gain university buy-in at the faculty level to ensure that this program will continue to run after I leave.
 I will also collaborate with the Searle Center and others to ensure that I establish proper training for mentees.
-Furthermore, I will begin searching at the University level for sustainable \href{https://www.northwestern.edu/studentorgs/org-officers/funding/index.html}{funding} so that this organization can support the purchasing of coffee for mentor meetings.
-I will also aim to secure enough funding for the organization to buy snacks for infrequent social meetings.
+Furthermore, I will begin searching at the University level for sustainable \href{https://www.northwestern.edu/studentorgs/org-officers/funding/index.html}{funding} so that this organization can support the purchasing of coffee and snacks for mentor meetings in order to encourage increased participation.
 
 \subsection{Personal career growth and development}
-Need to write this in more words, but basically my past experiences have shown me that I truly enjoy both research and teaching.
-Setting up these programs will allow me to grow in the teaching / service aspect of an academic career while also giving younger students a taste of that aspect of this career path so that they can help decide if they like it.
+\label{sct:personal_growth}
+During my graduate career I participated twice in the University of California Santa Cruz's Institute for Scientist and Engineering Educators Professional Development Program (UCSC ISEE PDP), an NSF-funded program during which early career scientists spend roughly 100 hours learning the basics of teaching pedagogy while developing and teaching an authentic STEM inquiry activity.
+My experiences in this program gave me confidence that I enjoy teaching and want it to be a part of my future career as a professor.
+By developing the course proposed in section \ref{sct:inquiry_class}, I will get to continue to hone my own course design and teaching skills while also providing many early career scientists an opportunity to interact with teaching in a substantial way.
+
+During my graduate studies, I further spent three years as a graduate student administrator with the CU-STARs group (University of Colorado Science Technology and Astronomy RecruitS).
+CU-STARs is a combined ``outreach'' and ``inreach'' program with the dual aims of increasing STEM engagement for students at underserved, rural schools across Colorado while decreasing attrition of underrepresented groups in CU Boulder's Astrophysical and Planetary Sciences department.
+My work in this group has helped lay a foundation for my success in both of the tasks proposed here.
+Through my outreach experience in this group, I have an understanding of how to interact with high school programs and teachers, which will be necessary for the development of my course in section \ref{sct:inquiry_class}.
+Furthermore, one of my many roles as a graduate student administrator in this group was to mentor undergraduate students, and this experience has laid the groundwork for my desire to set up the mentoring program described in section \ref{sct:mentoring}.
+
+My eventual career goal is to become a professor at the university level.
+I know that in addition to research duties, being a professor includes a great deal of teaching, departmental service, and collaboration with university institutions.
+These proposed programs will help me to continue to develop as a teacher, as a negoatiator, and as an active contributor to a healthy departmental culture.
 
 
-
-\section{Summary and Perspectives}
-\label{sct:summary}
-TODO
-
+\newpage
 \bibliographystyle{apj}
 \bibliography{biblio}
 \end{document}
