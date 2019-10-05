@@ -1,0 +1,114 @@
+\documentclass[aasms,11pt]{article}
+\usepackage{natbib}
+\setlength{\bibsep}{0pt plus 0.3ex}
+\usepackage[margin=1in]{geometry}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage{anyfontsize}
+\usepackage{wrapfig}
+\usepackage[skip=2pt,font=small]{caption}
+\captionsetup{width=\textwidth}
+\usepackage{amssymb, amsmath, amsfonts, xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!80!black},
+    urlcolor={blue!80!black}
+}
+
+
+\sectionfont{\normalsize}
+\subsectionfont{\small}
+
+
+%\citestyle{aa}
+\newcommand{\aj}{The Astronomical Journal}
+\newcommand{\apj}{The Astrophysical Journal}
+\newcommand{\apjl}{The Astrophysical Journal Letters}
+\newcommand{\apjs}{The Astrophysical Journal Supplemental Series}
+\newcommand{\aap}{Astronomy \& Astrophysics}
+\newcommand{\aaps}{Astronomy \& Astrophysics Supplemental Series}
+\newcommand{\mnras}{Monthly Notices of the Royal Astronomical Society}
+\newcommand{\baas}{Bulletin of the American Astronomical Society}
+\newcommand{\zap}{Zeitschrift für Astrophysik}
+\newcommand{\sol}{\ensuremath{\odot}}
+\newcommand{\RB}{Rayleigh-B\'{e}nard }
+\newcommand{\grad}{\ensuremath{\nabla}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\rfoot{\footnotesize{Evan H. Anders NSF AAPF 2019}}
+\lfoot{\footnotesize{\leftmark}}
+%\lfoot{\footnotesize{\leftmark}}%\thesection: \sectiontitle}}
+\cfoot{\footnotesize{\thepage}}
+
+\makeatletter
+\renewcommand{\sectionmark}[1]{%
+  \markboth{\ifnum \c@secnumdepth>\z@
+      \thesection: \hskip 1em\relax
+    \fi #1}{}}
+\makeatother
+
+\usepackage{titlesec}
+%\titleformat{\abstract}[runin]{\normalfont\normalsize\bfseries}{\theabstract}{1em}{}
+\titleformat{\section}[runin]{\normalfont\fontsize{11pt}{17pt}\selectfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}[runin]{\normalfont\fontsize{12.5pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\renewenvironment{abstract}
+{
+\noindent \par{\bfseries \abstractname.}}
+{\medskip\noindent 
+}
+
+
+
+
+
+\begin{document}
+
+\section{Overview}
+\vspace{-11pt}
+Observations of pulsating stars have become plentiful, but asteroseismic processing of these observations require stellar structure models which depend upon simple parameterizations of convection. 
+These parameterizations such as Mixing Length Theory neglect the nonlocal nature of convective downflows and the complicating effects of magnetism and rotation. 
+Closer to home, observations of the Sun have revealed that our theoretical intuition for the simplest aspects of stellar convection occurs are flawed, a problem referred to as the Solar Convective Conundrum. 
+The Sun is a magnetically active star, and the collection of phenomena referred to as solar activity threaten satellites, astronauts, and power grids in our increasingly technological society. 
+Understanding the nature of stellar convection is crucial for understanding modern stellar observations as well as our own Sun.
+
+
+Historically, numerical simulations of convection in local Cartesian domains and global spherical domains have been useful tools for building theory or creating synthetic observations, but in recent decades simplified models which aim to fundamentally understand convection have been neglected.
+Here I propose a three-phase sequence of studies of solar and stellar convection using the Dedalus pseudospectral framework which studies both simplified and complex convective models. 
+In task A, I will simulate convection at the smallest scales and come to understand how magnetism and rotation interact with intense stratified downflows. 
+In task B, I will simulate mesoscale convection at the convective-radiative interface deep inside of solar-type stars to gain an understanding of dynamo pumping mechanisms across that interface. 
+In task C, I will develop a Dedalus-based community tool to reduce the computational cost of global spherical simulations, and I will utilize this tool to study dynamo processes in properly equilibrated simulations.
+
+In addition to these research studies, I will participate in teaching, mentorship, and outreach through the preparation of two small programs. 
+I will develop a class on teaching pedagogy, to be taught one quarter each year, which gives senior undergraduate and graduate students a change to practice curriculum development and culminates in an authentic outreach experience in high school classrooms. 
+I will also secondarily develop a peer mentoring program for undergraduate and graduate students in select Northwestern STEM departments.
+
+\vspace{-7pt}
+\section{Intellectural Merit}
+\vspace{-11pt}
+The simulations proposed are necssary and timely. 
+Current convective models cannot explain the Convective Conundrum and the combined effects of downflows, rotation, and magnetism is unclear and has not been well explored. 
+Furthermore, simple simulations of stellar structure are an integral piece of asteroseismic measurements, which are being used not only to examine stellar interiors but also to determine the sizes of exoplanets and also in galactic archaeology. 
+Simulations-as-observations are being widely used to understand solar surface convection and to prepare for first light on the NSF-supported DKIST telescope.
+
+The work proposed here will provide critical knowledge which can help sort out the Convective Conundrum and improve future stellar structure models. 
+These advances will help instill confidence in the use of convective simulations as observations through helping determine which simulations are in flow regimes similar to stars and the Sun. 
+In addition to improving future convective simulations and understanding of stellar structure, these studies will have far-reaching effects to galactic and exoplanetary astrophysics.
+
+\vspace{-7pt}
+\section{Broader Impacts}
+\vspace{-11pt}
+I will design a course which teaches young career scientists the basics of teaching pedagogy and gives them outreach and teaching experience in the high school classroom.
+This course will improve STEM educator development at the university level while also increasing public engagement with science at the high school level. 
+I will further set up a university-level peer mentoring program which will help improve participation of women, persons with disabilities, and underrepresented minorities in STEM. 
+Furthermore, the research goals of this project will improve societal understanding of the solar dynamo, which will help inform space weather forcasting efforts who aim to protect our increasingly technological society from solar activity.
+
+\end{document}
