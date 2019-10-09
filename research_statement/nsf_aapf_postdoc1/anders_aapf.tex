@@ -169,13 +169,14 @@ Through understanding convective dynamics at the smallest scales and using that 
 Over the course of my postdoctoral studies, I will take advantage of the flexibility of the Dedalus pseudospectral framework \citep{burns&all2019}, which I have become proficient at using during my graduate career, to study numerical simulations at three different scales.
 In task A (section \ref{sct:taskA}), I will study simulations of discrete events, or thermals \citep[as in ][]{andersLB2019}, which model stellar convective downflows and can achieve high levels of turbulence.
 In task B (section \ref{sct:taskB}), I will study simulations of mesoscale convection \citep[as in ][]{anders&brown2017} to gain an understanding of how these effects behave in the presence of the convective-radiative interface.
-In task C (section \ref{sct:taskC}), I will study simulations of global stellar convection, developing and using new tools within the Dedalus framework to study the importance of rotation and magnetism over relaxational timescales.
+In task C (section \ref{sct:taskC}), I will study simulations of global stellar convection, developing and using new tools within the Dedalus framework to study the importance of rotation and magnetism over Kelvin-Helmholtz timescales.
 Each task is expected to take one full year of my three-year postdoctoral fellowship.
 Over the course of these three tasks, I will aim to understand two fundamental questions.
 First, how do convective motions transport angular momentum and magnetic fields, and does resolving turbulent flows change this answer?
 Second, how do rotation and magnetism feed back upon convective dynamics?
 
-\subsection{Task A: Dynamics of individual downflows}
+\paragraph{\fontsize{12.5pt}{14pt}\selectfont Task A: Dynamics of individual downflows}
+\normalsize
 \label{sct:taskA}
 \begin{wrapfigure}{l}{0.4\textwidth}
 	\begin{center}
@@ -184,7 +185,7 @@ Second, how do rotation and magnetism feed back upon convective dynamics?
 	\vspace{-15pt}
 	\end{center}
     \caption{
-	3D visualizations of the entropic signature of evolved thermals in the laminar (left) and turbulent (right) regimes.
+	3D visualizations of the entropy perturbation of evolved thermals in the laminar (left) and turbulent (right) regimes.
 	\label{fig:thermals_comparison} }
 \end{wrapfigure}
 
@@ -202,13 +203,13 @@ Recently, I studied thermals as a model for solar convection and came to underst
 %I now propose to extend that stratified work to further include the effects of rotation and magnetism.
 
 Thermals provide an excellent model of stellar downflows because they are relatively easy to model analytically and to simulate.
-Hydrodynamic thermals in stratified domains have a solution which is essentially fully specified by: (a) the stratification that they feel and (b) whether they are laminar or turbulent.
+Hydrodynamic thermals in stratified domains have a solution which is essentially fully specified by: (a) the stratification of the background atmosphere and (b) whether they are laminar or turbulent.
 Thanks to my work in \citet{andersLB2019}, the influence of stratification on thermals is now understood.
 During my postdoctoral studies, I will study thermals in a fixed high-stratification regime and gain a theoretical and experimental understanding of the effects of magnetism and rotation on thermal evolution.
 In a purely hydrodynamical context, \citet{lecoanet&jeevanjee2019} showed that turbulence does not appreciably change the evolution of thermals.
 However, turbulence creates smaller scale structures in the propagating thermals which may be important in the context of rotation or magnetism.
 
-\subsubsection{Task A.1: Rotational filtering of downflows}
+\paragraph{Task A.1: Rotational filtering of downflows}
 \label{sct:taskA1}
 In order to study the effects of rotation, I will study thermals in simple Cartesian domains.
 These plane-parallel atmospheres exist at a fixed latitude and experiencing Coriolis forces from a global rotation rate.
@@ -219,7 +220,7 @@ I will initially study laminar thermals to understand parameter space, but will 
 The primary goal of these studies will be to determine at which latitudes, and at which degrees of rotational constraint do Coriolis forces prevent thermals from transiting the convection zone.
 These results will help determine which stellar regimes could benefit from the implementation of a nonlocal mixing length theory \citep[as in][]{brandenburg2016}.
 
-\subsubsection{Task A.2: Transport of magnetism by downflows}
+\paragraph{Task A.2: Transport of magnetism by downflows}
 \label{sct:taskA2}
 I will secondarily study thermals in the presence of magnetism but absence of rotation.
 The inclusion of magnetism requires a choice of initial magnetic field setup, and I will study both cases in which there is a uniform background field and where there is a thin horizontal sheet of magnetism for the thermal to pass through \citep[as in][]{tobias&all1998}.
@@ -227,7 +228,9 @@ I will vary the orientation of the initial magnetic fields and the degree of inf
 These simulations will help determine how the role downflows play in the transport and generation of magnetic fields in the solar dynamo.
 This work will further constrain regimes in which magnetism prevents downflows from transiting convection zones, analagously to task A.1. 
 
-\subsection{Task B: Mesoscale interactions at the tachocline}
+
+\paragraph{\fontsize{12.5pt}{14pt}\selectfont Task B: Mesoscale interactions at the radiative-convective boundary}
+\normalsize
 \label{sct:taskB}
 \begin{figure*}[t!]
     \includegraphics[width=\textwidth]{./figs/rossby_plot.png}
@@ -240,20 +243,22 @@ This work will further constrain regimes in which magnetism prevents downflows f
 \end{figure*}
 
 In solar-like stars, the strongly stratified convective zone overlies a stable interior radiative zone.
-In the Sun, the region which separates these two zones is called the tachocline, and is characterized by both a transition from instability to stability and also a strong shear in the angular velocity as the differential rotation of the convective zone gives way to the uniformly rotating solar interior.
-I will refer to the radiative-convective boundary as a ``tachocline,'' and here I propose studying convective interactions at such an interface in the absence of angular velocity shear. 
+In the Sun, the radiative-convective boundary (RCB) is characterized by a transition from moderate instability to strong stability.
 Recent results suggest that convecting regions which reside above stable layers may depend primarily on downflows to transport energy fluxes \citep{kapyla&all2017}.
-This begs the question: how does increased stratification in the convective zone, and the more intense downflows that accompany it, affect interactions at the tachocline?
-A further piece of disagreement in current theory centers around the depth to which convective motions penetrate below the tachocline.
-The magnitude of deep convective velocities and the strength of stability of the radiative zone should determine this, but deep velocity magnitudes are poorly constrained.
-As a result, I propose studying how the stiffness of this interface, which characterizes whether convective motions feel a soft or hard tachocline \citep{couston&all2017}, affects the transport of angular momentum and magnetic fields into the radiative zone.
+This begs the question: how does increased stratification in the convective zone, and the more intense downflows that accompany it, affect interactions at the RCB?
+A further piece of disagreement \citep{hotta2017} in current theory centers around the depth to which convective motions penetrate below the RCB.
+Helioseismic measurements suggest that the RCB is thin -- roughly 5\% of a pressure scale height \citep{basu1997}.
+Historically simulations have strongly overestimated this \citep[][and others]{kapyla2018}.
+Many simulations are in the wrong stiffness regime \citep{brummell&all2002}, although an analysis of energy fluxes suggests 40\% of a pressure scale height \citep{rempel2004}.
+Furthermore, the strength of magnetic fields can appreciably change deep velocity magnitudes, leading to reduced overshoot \citep{hotta&all2015}.
+As a result, I propose studying how the stiffness of this interface, which characterizes whether convective motions feel a soft or hard RCB \citep{couston&all2017}, affects the transport of angular momentum and magnetic fields into the radiative zone.
 
 Flow balances in evolved convective dynamics are often difficult to predict from input parameters.
-However, during my graduate career, I indentified and verified mechanisms for controlling the evolved Mach number \citep{anders&brown2017} and degree of rotational constraint \citep[][and Fig. \ref{fig:rossby_plot}]{anders&all2019} in mesoscale convection simulations.
+However, during my graduate career, I indentified and verified mechanisms for controlling the Mach number \citep{anders&brown2017} and degree of rotational constraint \citep[][and Fig. \ref{fig:rossby_plot}]{anders&all2019} of the statistically stationary convecting state in mesoscale convection simulations.
 The first step of Task B will use similar techniques in order to determine how to set the degree of magnetic constraint in these magnetorotational simulations.
-Using that knowledge and the knowledge of task A, I will study the importance of stratifiation and stiffness of the tachocline in regimes in rotating magnetoconvection which are interesting in the stellar context.
+Using that knowledge and the knowledge of task A, I will study the importance of stratifiation and stiffness of the RCB in regimes in rotating magnetoconvection which are interesting in the stellar context.
 
-\subsubsection{Task B.1: Controlling the importance of magnetism}
+\paragraph{Task B.1: Controlling the importance of magnetism}
 \label{sct:taskB1}
 In simple models of convection, it is straightforward to control the degree of turbulence of the evolved state.
 Once complicating physics are included, such as rotation and magnetism, determining the nature of evolved convective flows becomes increasingly difficult.
@@ -261,42 +266,43 @@ Interactions between boundary conditions, boundary layers, and bulk dynamics are
 In \citet{anders&all2019}, I determined an appropriate path through parameter space for holding the degree of rotational constraint constant.
 In this subtask, I will study nonrotational magnetoconvection and determine how to control the importance of magnetic interactions on convective flows.
 
-\subsubsection{Task B.2: Downflow interactions at a stiff tachocline}
+\paragraph{Task B.2: Downflow interactions at a stiff RCB}
 \label{sct:taskB2}
-A strongly stratified convection zone should be characterized by intense downflows, and in this subtask I will determine how these downflows interact with different types of tachocline.
-I will study very stiff tachoclines, which act similar to hard boundaries, and very soft tachoclines which convective motions can easily pass through.
-\citet{tobias&all1998} showed that convective motions can effectively pump magnetic fields across soft tachoclines in certain parameter regimes.
-Here I will extend that work  to determine if magnetic fields and angular momentum are capable of being pumped into stiff tachoclines by convective motions.
+A strongly stratified convection zone should be characterized by intense downflows, and in this subtask I will determine how these downflows interact with different types of RCB.
+I will study very stiff RCBs, which act similar to hard boundaries, and very soft RCBs which convective motions can easily pass through.
+\citet{tobias&all1998} showed that convective motions can effectively pump magnetic fields across soft RCBs in certain parameter regimes.
+Here I will extend that work  to determine if magnetic fields and angular momentum are capable of being pumped into stiff RCBs by convective motions.
 These simulations will be guided by the work done in Task A, and will be studied at latitudinal, rotational, and magnetic regimes in which downflows should be able to persist through the solar convective zone.
-It is widely believed that the tachocline is a critical piece of the solar dynamo, but if convective motions are not able to pump magnetic fields into a stiff tachocline, then a different mechanism must be responsible for generating new magnetic fields.
-Furthermore, a stiff tachocline could potentially insulate the solar radiative interior from convectively-driven angular momentum transport, which could help explain the uniformly rotating solar interior.
-In short, these suites of simulations will ask whether our picture of the solar dynamo should change in the presence of a stiff tachocline.
+It is widely believed that the RCB is a critical piece of the solar dynamo, but if convective motions are not able to pump magnetic fields into a stiff RCB, then a different mechanism must be responsible for generating new magnetic fields.
+Furthermore, a stiff RCB could potentially insulate the solar radiative interior from convectively-driven angular momentum transport, which could help explain the uniformly rotating solar interior.
+In short, these suites of simulations will ask whether our picture of the solar dynamo should change in the presence of a stiff RCB.
 
-\subsection{Task C: Global studies in relaxed atmospheres}
+\paragraph{\fontsize{12.5pt}{14pt}\selectfont Task C: Global studies in relaxed atmospheres}
+\normalsize
 \label{sct:taskC}
 The capstone project of my postdoctoral studies will study convection at the largest scales: global spherical simulations of rotating magnetoconvection.
 The tools to perform these simulations in Dedalus already exist \citep{lecoanet&all2018} and have been tested.
-One major barrier to performing global simulations is that they are costly, and some of these costs are unavoidable: highly resolved, moderately turbulent simulations necessarily take small timesteps, and therefore results come slowly.
+One major barrier to performing global simulations is that they are costly, and some of these costs are unavoidable: highly resolved, turbulent simulations necessarily take small timesteps, and therefore simulation times are very long.
 However, some of the expense of these simulations is often time wasted waiting for the atmospheric structure and mean flows to converge to an equilibrium state.
 For example, the thermal structure of the Sun is thought to evolve over its Kelvin-Helmholtz timescale of $10^7$ years, which is significantly longer than its convective overturn time of five minutes at the solar surface, although still much shorter than its main sequence lifetime.
 As simulations approach the parameter regime of stars, relaxation and dynamical timescales become extremely disparate, and in general numericists must choose between having state-of-the-art turbulence or converged, statistically equilibrium dynamics -- but not both.
 During this third task, I will develop, test, and utilize a community tool which effectively establishes mean flows and evolves atmospheric structures by taking much larger timesteps than those of convection.
-By doing so, I will enable global dynamo simulations which are both relaxed and exhibiting state-of-the-art turbulence.
+By doing so, I will enable global dynamo simulations which are both in thermal equilibrium and exhibiting state-of-the-art turbulence.
 
 During my graduate career, I studied a mechanism for accelerating the long thermal relaxation timescale in convective systems \citep{anders&all2018}.
 In this work, we discovered that a tool like the one I am proposing here can be feasibly implemented and tested for accuracy, albeit we previously studied this in a very simple system.
-While studying moderately turbulent flows, we found that our tool reached a relaxed state using an order of magnitude fewer computational resources than when waiting for a standard thermal relaxation timescale.
+While studying turbulent flows, we found that our tool reached a relaxed state using an order of magnitude fewer computational resources than when waiting for a standard thermal relaxation timescale.
 These speedups make achieving thermal relaxation in state-of-the-art simulations feasible.
 
-\subsubsection{Task C.1: Accelerated evolution of global simulations}
+\paragraph{Task C.1: Accelerated evolution of global simulations}
 \label{sct:taskC1}
 During my postdoctoral studies, I will extend my accelerated evolution method to the evolution of thermodynamic and angular momentum profiles in global simulations.
 The development of this extension will be grounded in understandings gained in tasks A and B.
-In particular, task A will inform which terms in the equations importantly adjust the mean field in certain regimes, and task B will inform how to implement this technique near tachocline-like interfaces.
+In particular, task A will inform which terms in the equations importantly adjust the mean field in certain regimes, and task B will inform how to implement this technique near RCB-like interfaces.
 As I did in \citet{anders&all2018}, I will verify that this method produces the same results as a long relaxation in modest parameter regimes to build trust in the method.
 Once developed, this Dedalus module will be made publicly available.
 
-\subsubsection{Task C.2: Relaxed simulations of the solar dynamo}
+\paragraph{Task C.2: Relaxed simulations of the solar dynamo}
 \label{sct:taskC2}
 I will study simulations of the interior solar convection zone in regimes where flows feel the effects of both rotation and magnetism, using the knowledge from task B.1 to determine how to set up such simulations.
 Using the tool developed in task C.1, I will accelerate the evolution of these simulations.
@@ -418,34 +424,34 @@ Furthermore, one of my many roles as a graduate student administrator in STARs w
 I know that in addition to research duties, being a professor includes a great deal of teaching, departmental service, and collaboration with university institutions.
 These proposed programs will help me to continue to develop as a teacher, as a negoatiator, and as an active contributor to a healthy departmental culture.
 
-\section{Summary and Perspectives}
-\vspace{-6pt}
-Observations of pulsating stars are becoming plentiful, and asteroseismic processing of those observations requires models which depend upon simple studies of convection.
-However, observations of the Sun have revealed that our parameterizations of convection do not adequately describe this complex process in the stellar and solar context.
-Numerical simulations at all scales and all levels of complexity have been useful tools for building theory and understanding or reproducing observations.
-Modern simulations often focus on overly complex systems, and here I propose simulations at both small and large scales which sequentially build upon and inform one another.
-
-The simulations proposed are necssary and timely.
-As continued observations pour into our databases from current and future missions, it is crucial that we do not allow the theoretical pieces of observational pipelines to be neglected.
-Current convective models cannot explain the Convective Conundrum and the combined effects of downflows, rotation, and magnetism is unclear and has not been well explored.
-Furthermore, at a time when simulations are increasingly being treated as obervations, the development of tools such as those in Task C which help ensure that convective models more accurately reflect the physics at work in stars is crucial.
-
-The fundamental problems presented here are of broad scientific interest, but are specifically topics of NSF investigation, as evidenced by the NSF's support for the DKIST telescope which will soon come online.
-The collaborative studies centered at CIERA will address the following key questions:
-\begin{itemize}
-\vspace{-9pt}
-\item Is the Sun in a regime where entropy rain is its dominant convective process and in which rotation and magnetism do not prevent this mechanism from occuring?
-\vspace{-9pt}
-\item Is the stability of the tachocline important in driving the solar dynamo and the Sun's latitudinal differential rotation profile?
-\vspace{-9pt}
-\item What rotational regime is the Sun in, and what can we learn about dynamo evolution in that regime?
-\vspace{-9pt}
-\end{itemize}
-
-As stated previously, the work designed as Task A will occupy my research time during my first year while I lay the groundwork for my mentorship program and course on teaching pedagogy.
-Task B will occupy my time during my second year, while I launch my mentorship program, teach my class for the first time, and work to improve both of these programs.
-I will cap off my time at CIERA with task C while I work to ensure that the programs and classes that I set up smoothly transition to new leadership when I leave so that future students can continue to benefit from these programs.
-
+%\section{Summary and Perspectives}
+%\vspace{-6pt}
+%Observations of pulsating stars are becoming plentiful, and asteroseismic processing of those observations requires models which depend upon simple studies of convection.
+%However, observations of the Sun have revealed that our parameterizations of convection do not adequately describe this complex process in the stellar and solar context.
+%Numerical simulations at all scales and all levels of complexity have been useful tools for building theory and understanding or reproducing observations.
+%Modern simulations often focus on overly complex systems, and here I propose simulations at both small and large scales which sequentially build upon and inform one another.
+%
+%The simulations proposed are necssary and timely.
+%As continued observations pour into our databases from current and future missions, it is crucial that we do not allow the theoretical pieces of observational pipelines to be neglected.
+%Current convective models cannot explain the Convective Conundrum and the combined effects of downflows, rotation, and magnetism is unclear and has not been well explored.
+%Furthermore, at a time when simulations are increasingly being treated as obervations, the development of tools such as those in Task C which help ensure that convective models more accurately reflect the physics at work in stars is crucial.
+%
+%The fundamental problems presented here are of broad scientific interest, but are specifically topics of NSF investigation, as evidenced by the NSF's support for the DKIST telescope which will soon come online.
+%The collaborative studies centered at CIERA will address the following key questions:
+%\begin{itemize}
+%\vspace{-9pt}
+%\item Is the Sun in a regime where entropy rain is its dominant convective process and in which rotation and magnetism do not prevent this mechanism from occuring?
+%\vspace{-9pt}
+%\item Is the stability of the RCB important in driving the solar dynamo and the Sun's latitudinal differential rotation profile?
+%\vspace{-9pt}
+%\item What rotational regime is the Sun in, and what can we learn about dynamo evolution in that regime?
+%\vspace{-9pt}
+%\end{itemize}
+%
+%As stated previously, the work designed as Task A will occupy my research time during my first year while I lay the groundwork for my mentorship program and course on teaching pedagogy.
+%Task B will occupy my time during my second year, while I launch my mentorship program, teach my class for the first time, and work to improve both of these programs.
+%I will cap off my time at CIERA with task C while I work to ensure that the programs and classes that I set up smoothly transition to new leadership when I leave so that future students can continue to benefit from these programs.
+%
 
 \newpage
 \bibliographystyle{yahapj}
