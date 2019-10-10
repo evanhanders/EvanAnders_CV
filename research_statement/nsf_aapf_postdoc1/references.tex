@@ -1,0 +1,39 @@
+\documentclass[11pt, preprint]{aastex}
+%%%%%%begin preamble
+\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{pdfpages} % breaks with aastex6
+\usepackage{import}
+
+\usepackage{color}
+\hypersetup{
+  colorlinks   = true,
+  %citecolor    = blue
+  citecolor    = gray
+  % gray is not being found!?!
+  % gray is found if pdfpages is used... crap.
+  %citecolor    = grey
+  %citecolor    = Gray
+}
+
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\pagenumbering{gobble}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommand{\nosection}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{#1}}
+\newcommand{\nosubsection}[1]{%
+  \refstepcounter{subsection}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+  \markright{#1}}
+
+\begin{document}
+\nosection{References}
+\bibliographystyle{apj_title}
+\input{anders_aapf.bbl}
+\end{document}
