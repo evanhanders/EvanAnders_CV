@@ -1,6 +1,6 @@
 \documentclass[11pt, preprint]{aastex}
 %%%%%%begin preamble
-\usepackage[hmargin=1.05in, vmargin=1in]{geometry} % Margins
+\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{natbib}
@@ -26,9 +26,11 @@
 \setcounter{tocdepth}{2}
 %% headers
 \usepackage{fancyhdr}
-\pagestyle{empty}
-\pagenumbering{gobble}
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\pagestyle{fancy}
+\lhead{}
+\renewcommand{\headrulewidth}{0pt}
+%\pagenumbering{gobble}
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 \renewcommand{\vec}{\ensuremath{\boldsymbol}}
 \newcommand{\dedalus}{\href{http://dedalus-project.org}{Dedalus}}
