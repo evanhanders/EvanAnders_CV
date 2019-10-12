@@ -353,12 +353,12 @@
   \@parboxrestore 
 }% 
 \def\close@footnotetext#1{% 
-  \color@begingroup 
-   \@makefntext{% 
-    \rule\z@\footnotesep\ignorespaces 
-    #1\@finalstrut\strutbox 
-   }% 
-  \color@endgroup 
+%  \color@begingroup 
+%   \@makefntext{% 
+%    \rule\z@\footnotesep\ignorespaces 
+%    #1\@finalstrut\strutbox 
+%   }% 
+%  \color@endgroup 
  \egroup 
 }% 
 \def\@footnotetext{% Implict #1 
@@ -570,11 +570,11 @@
  \class@typeout 
 }% 
 \def\revtex@pageid{% 
- \xdef\@thefnmark{\null}% 
- \@footnotetext{% 
-  This \revtex@genre\space was prepared with the 
-  \revtex@org\space \LaTeX\ macros v\revtex@ver.% 
- }% 
+% \xdef\@thefnmark{\null}% 
+% \@footnotetext{% 
+%  This \revtex@genre\space was prepared with the 
+%  \revtex@org\space \LaTeX\ macros v\revtex@ver.% 
+% }% 
 }% 
 \def\ps@plaintop{% 
  \let\@mkboth\@gobbletwo 

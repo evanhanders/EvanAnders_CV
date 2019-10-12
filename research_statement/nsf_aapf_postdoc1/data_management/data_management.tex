@@ -1,111 +1,92 @@
-\documentclass[aasms,11pt]{article}
-\usepackage{natbib}
-\setlength{\bibsep}{0pt plus 0.3ex}
-\usepackage[margin=1in]{geometry}
-\usepackage{sectsty}
-\usepackage{graphicx}
+\documentclass[11pt, preprint]{aastex}
+%%%%%%begin preamble
+\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
 \usepackage{hyperref}
-\usepackage{epstopdf}
-\usepackage{anyfontsize}
+\usepackage{url}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pdfpages} % breaks with aastex6
+\usepackage{import}
 \usepackage{wrapfig}
-\usepackage[skip=2pt,font=small]{caption}
-\captionsetup{width=\textwidth}
-\usepackage{amssymb, amsmath, amsfonts, xcolor}
+
+\usepackage{color}
 \hypersetup{
-    colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!80!black},
-    urlcolor={blue!80!black}
+  colorlinks   = true,
+  %citecolor    = blue
+  citecolor    = gray
+  % gray is not being found!?!
+  % gray is found if pdfpages is used... crap.
+  %citecolor    = grey
+  %citecolor    = Gray
 }
 
-
-\sectionfont{\normalsize}
-\subsectionfont{\small}
-
-
-%\citestyle{aa}
-\newcommand{\aj}{The Astronomical Journal}
-\newcommand{\apj}{The Astrophysical Journal}
-\newcommand{\apjl}{The Astrophysical Journal Letters}
-\newcommand{\apjs}{The Astrophysical Journal Supplemental Series}
-\newcommand{\aap}{Astronomy \& Astrophysics}
-\newcommand{\aaps}{Astronomy \& Astrophysics Supplemental Series}
-\newcommand{\mnras}{Monthly Notices of the Royal Astronomical Society}
-\newcommand{\baas}{Bulletin of the American Astronomical Society}
-\newcommand{\zap}{Zeitschrift für Astrophysik}
-\newcommand{\sol}{\ensuremath{\odot}}
-\newcommand{\RB}{Rayleigh-B\'{e}nard }
-\newcommand{\grad}{\ensuremath{\nabla}}
-
+\setcounter{tocdepth}{2}
+%% headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{} % sets both header and footer to nothing
+\lhead{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\rfoot{\footnotesize{Evan H. Anders NSF AAPF 2019}}
-\lfoot{\footnotesize{\leftmark}}
-%\lfoot{\footnotesize{\leftmark}}%\thesection: \sectiontitle}}
-\cfoot{\footnotesize{\thepage}}
+%\pagenumbering{gobble}
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
-\makeatletter
-\renewcommand{\sectionmark}[1]{%
-  \markboth{\ifnum \c@secnumdepth>\z@
-      \thesection: \hskip 1em\relax
-    \fi #1}{}}
-\makeatother
+\renewcommand{\vec}{\ensuremath{\boldsymbol}}
+\newcommand{\dedalus}{\href{http://dedalus-project.org}{Dedalus}}
+\newcommand{\del}{\ensuremath{\vec{\nabla}}}
+\newcommand{\scrS}{\ensuremath{\mathcal{S}}}
 
-\usepackage{titlesec}
-%\titleformat{\abstract}[runin]{\normalfont\normalsize\bfseries}{\theabstract}{1em}{}
-\titleformat{\section}[runin]{\normalfont\fontsize{14pt}{17pt}\selectfont\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}[runin]{\normalfont\fontsize{12.5pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\newcommand{\nosection}[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \markright{#1}}
+\newcommand{\nosubsection}[1]{%
+  \refstepcounter{subsection}%
+  \addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection}#1}%
+  \markright{#1}}
 
-\renewenvironment{abstract}
-{
-\noindent \par{\bfseries \abstractname.}}
-{\medskip\noindent 
-}
-
-
+\usepackage{atbegshi}
+%%%%%%end preamble
 
 
 
 \begin{document}
-\begin{center}
-\Large{Data Management Plan}
-\end{center}
+\title{Data Management Plan}
+\maketitle
+\thispagestyle{fancy}
+
+\section{Importance of proper data practices}
+Modern science revolves around computer code: it is used to run simulations, analyze data, and create publishable figures and papers.
+If this code is not curated properly, subtle but crucial errors can creep into it and undermine the veracity of the scientific results \citep{soergel2015}.
+While it is nearly impossible to build completely bug-free code, by following proper data handling practices, such as the use of version control, errors in scientific codes can be reduced.
+Furthermore, open-source, published, and freely accessible code has been found to increase citation count and reproduceability \citep{piwowar&vision2013}.
+Thus, the data management practices that I will follow, outlined below, will serve to not only increase the trustworthiness of published results but also increase the visability and impact of the work I carry out during my fellowship studies.
 
 \section{Description of expected data products}
-The research I am proposing here is purely computational, and there will be three types of data produced in these studes: code, raw data, and processed data.
-All data products will be open-source and all code will be free to use under the GNU General Public License.
+The research I am proposing here is purely computational, and there will be three types of data produced in these studes: Python code, raw data, and processed data.
+All products will be made open-source, openly-licensed, and free to use.
 
-\subsection{Code}
-The primary data product that will be produced is the code that is use to run and process simulations.
-The Dedalus code, on which my simulations will be built, is an open-source Python code licensed under the GNU General Public License (GPL); as a result, the code that I use to run my simulations will be Python files, and will be made open source under the same license.
-As I have done in the past, each time I publish a new paper, I will create a Zenodo repository of supplemental materials that has a specific doi to preserve the code I used in the production of that work.
-Day-to-day, the code that I use is developed and stored in version controlled Git repositories, and in addition to the ``hard copies'' in Zenodo repositories, I will ensure that my cutting-edge Git repositories are open to the public as well.
-Despite the open-source nature of Dedalus, there can still be a steep learning curve between installation and successfully running simulations, and this hurts reproduceability and transparency in science.
-These distribution plans should help ensure that even relatively novice users of Dedalus will be able to find our code and recreate our simulations.
+\subsection{Python code}
+Each task will generate and run Python code which runs computer simulations, post-processes raw data, and generates publication-quality figures.
+Code used to run simulations and post-process data will be stored in version-controlled Git repository and made open to the public upon publication of any related work.
+These Git repositories will be linked to Zenodo repositories which automatically generate referencable DOIs upon the release of official code versions.
+By releasing official code versions in this way, I will ensure that future work will be able to reproduce my published results running precisely the same code.
+The code that I use to generate publication-quality figures will be packaged into separate Zenodo repositories, along with data (see below), and released upon submission of any work.
+These distribution plans will ensure that even novice users of Python or the Dedalus code will have direct access to my full research pipeline, and will be able to reproduce my simulations and produced figures with ease.
 
-\subsection{Raw data}
-Dedalus creates data in an HDF5 output format, which allows for extreme output versatility during simulation runs.
-As a general rule, storing raw data describing the full flow, temperature, and field data of a simulation with a modest resolution and output cadence easily exceeds terabytes in data.
-Such large quantities of data are cumbersome to make publically available.
+\subsection{Raw \& processed simulation data}
+The simulations that I will run in Dedalus will create rawdata in an HDF5 output format, which allows for extreme output versatility during simulation runs and simple location of data products afterwards.
+Unfortunately, it is not straightforward to publish complete datasets of the full time evolution of these simulations.
+Individual simulations can easily produce over a Terabyte of data each, and such large quantities of data are cumbersome to make publically available, or to interact with as a consumer.
 
-Rather than making the full set of simulation data available for all simulation times, we will instead publish select ``checkpoint'' data at simulation times which are physically interesting.
-These checkpoints will not only contain the full state of the simulation at a select time, but can also be easily loaded into the publicly-available code if the curious reader wants to reproduce our results without starting a simulation from scratch.
-Furthermore, by only publishing select, interesting checkpoint data, we can ensure that the volume of data being published is small enough that these checkpoints can be conveniently found in the same Zenodo repositories as our code, or in the supplemental materials of the published work.
+Rather than making the full set of simulation data available for all simulation times, I will instead publish select ``checkpoint'' data at simulation times.
+These checkpoints will contain the full simulation state and can be partnered with my released code in order to re-run key times in my published simulations.
+Upon the publication of time series data, or data which take long time averages, I will ensure that I publish a checkpoint that aligns with the beginning of these time intervals to improve reproduceability.
 
-For select state-of-the-art simulations, full raw datasets will be moved into mass storage on NSF XSEDE resources such as DATA OASIS, PYLON, and RANCH.
-These data will be publically available but will only be given out upon request due to their massive nature.
+In addition to these raw checkpoint files, often times published figures feature a large collection of volume-averaged scalar data points, or partially averaged 1D profiles.
+All such data which appear in simulation figures, as well as some additional potentially useful measurements, will be published alongside figure generation code in Zenodo repositories.
 
-\subsection{Processed data}
-Often when studying simulations, we focus our efforts on the evolution of scalar quantities or 1D profiles.
-These data products have a relatively small memory footprint, and so full time traces of these outputs will be made publicly available in Dedalus' native HDF5 format.
-Time-averaged and statistical scalar quantities used in analysis or figure creation will additionally be made available in a simple~.csv format.
-
-
-
-
-
+\bibliographystyle{apj_title}
+\bibliography{biblio.bib}
 \end{document}
