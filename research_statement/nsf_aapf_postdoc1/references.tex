@@ -19,9 +19,11 @@
 }
 
 \usepackage{fancyhdr}
-\pagestyle{empty}
-\pagenumbering{gobble}
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\pagestyle{fancy}
+\lhead{}
+\renewcommand{\headrulewidth}{0pt}
+%\pagenumbering{gobble}
+%\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
 \newcommand{\nosection}[1]{%
   \refstepcounter{section}%

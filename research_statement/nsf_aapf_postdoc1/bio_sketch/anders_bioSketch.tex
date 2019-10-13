@@ -1,4 +1,4 @@
-\documentclass[11pt, preprint]{aastex62}
+\documentclass[11pt, preprint]{aastex}
 
 %%%%%%begin preamble
 \usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
@@ -11,6 +11,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{import}
+\usepackage{pdfpages} % breaks with aastex6
 %\usepackage{fontspec}
 %\setmainfont{TimesNewRoman}
 %\definetypeface[Serapion][rm][Xserif][Serapion Pro]
@@ -28,15 +29,16 @@
 \hypersetup{
      colorlinks   = true,
      citecolor    = gray,
-     urlcolor      = blue
+     urlcolor      = gray
 }
 
 %% headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{Anders}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
 \chead{}
-\rhead{Title goes here}
+\rhead{}
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
@@ -53,7 +55,7 @@
 \usepackage{titlesec}
 %\titleformat{\abstract}[runin]{\normalfont\normalsize\bfseries}{\theabstract}{1em}{}
 \titleformat{\section}[block]{\normalfont\fontsize{14pt}{17pt}\selectfont\bfseries\filcenter}{\thesection}{1em}{}
-\titleformat{\subsection}[runin]{\normalfont\fontsize{12.5pt}{14pt}\selectfont\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsection}[block]{\normalfont\normalsize\bfseries\filcenter}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 
@@ -62,8 +64,6 @@
 %%%%%%end preamble
 
 \begin{document}
-\thispagestyle{empty}
-\parindent=0cm
 \begin{center}
 \huge{Evan H. Anders}\\
 \large{Biographical Sketch}\\
@@ -72,65 +72,90 @@ University of Colorado, Boulder \\\texttt{evan.anders@colorado.edu}}
 \end{center}
 
 
-\section*{Citizenship}
-\vspace{-0.15cm}
-\begin{center}
-Evan H. Anders is a citizen of the United States of America.
-\end{center}
-
+\vspace{-1.4cm}
 \section*{Professional Preparation}
-\vspace{-0.15cm}
+\vspace{-0.5cm}
 \begin{tabular}{lll}
   Whitworth University & Physics & BS May 2014\\
   University of Colorado, Boulder & Astrophysics & MS December 2017\\
   University of Colorado, Boulder & Astrophysics & PhD Expected May 2020\\
 \end{tabular}
 
+\vspace{-1cm}
 \section*{Appointments}
-\vspace{-0.15cm}
+\vspace{-0.5cm}
 \begin{tabular}{lll}
   NASA NESSF/FINESST Fellow & University of Colorado, Boulder & Sept 2018 -- \\
   George Ellery Hale Fellow & University of Colorado, Boulder & Sept 2015 -- Aug 2018 \\
 \end{tabular}
 
-\section*{Products}
-\vspace{-0.15cm}
+\vspace{-1cm}
+\section*{Publications}
+\vspace{-0.5cm}
+
+\subsection*{Publications most closely related to the proposed project}
+\vspace{-13pt}
 \begin{itemize}
 \setlength{\itemsep}{-\parsep}
 \setlength{\topsep}{-2\parsep}
 \setlength{\partopsep}{-2\parsep}
 
 \item \textbf{Anders}, E.~H., Lecoanet, D., \& Brown, B.~P.,
-``Entropy Rain: Dilution and Compression of Thermals in Stratified Domains'',
-2019, \href{https://ui.adsabs.harvard.edu/abs/2019arXiv190602342A/abstract}{Accepted for publication in \emph{The Astrophysical Journal}}
+``Entropy Rain: Dilution and Compression of Thermals in Stratified Domains,''
+2019, \href{https://iopscience.iop.org/article/10.3847/1538-4357/ab3644}{\emph{The Astrophysical Journal} 884,~1:65.}
 
 \item \textbf{Anders}, E.~H., Manduca, C.~M., Brown, B.~P., Oishi, J.~S., \& Vasil, G.~M.,
-``Predicting the Rossby Number in Convective experiments'',
-2019, \href{https://iopscience.iop.org/article/10.3847/1538-4357/aaff61}{\emph{The Astrophysical Journal} 872,~2.}
+``Predicting the Rossby Number in Convective experiments,''
+2019, \href{https://iopscience.iop.org/article/10.3847/1538-4357/aaff61}{\emph{The Astrophysical Journal} 872,~2:138.}
 
 \item \textbf{Anders}, E.~H., Brown, B.~P., \& Oishi, J.~S.,
-``Accelerated evolution of convective simulations'',
+``Accelerated evolution of convective simulations,''
 2018, \href{https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.3.083502}{\emph{Physical Review Fluids} 3,~8:083502.}
 
 \item \textbf{Anders}, E.~H. \& Brown, B.~P.,
-``Convective heat transport in stratified atmospheres at low and high Mach number'',
+``Convective heat transport in stratified atmospheres at low and high Mach number,''
 2018, \href{https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.2.083501}{\emph{Physical Review Fluids} 2,~8:083501.}
+\end{itemize}
+
+\vspace{-38pt}
+\subsection*{Other Publications}
+\vspace{-13pt}
+\begin{itemize}
+\setlength{\itemsep}{-\parsep}
+\setlength{\topsep}{-2\parsep}
+\setlength{\partopsep}{-2\parsep}
+\item Karki, S., Tuyenbayev, D., Kandhasamy, S., Abbott, B.~P., Abbott, T.~D., \textbf{Anders}, E.~H., Berliner, J., Betzwieser, J., Cahillane, C., Canete, L., Conley, C., Daveloza, H.~P., De Lillo, N., Gleason, J.~R., Goetz, E., Izumi, K., Kissel, J.~S., Mendell, G., Quetschke, V., Rodruck, M., Sachdev, S., Sadecki, T., Schwinberg, P.~B., Sottile, A., Wade, M., Weinstein, A.~J., West, M., and Savage, R.~L.,
+``The Advanced LIGO photon calibrators,''
+2016, \href{https://aip.scitation.org/doi/10.1063/1.4967303}{\emph{Review of Scientific Instruments} 87,~11:114503}
+\end{itemize}
+
+\vspace{-1.4cm}
+\section*{Synergistic activities}
+\vspace{-0.5cm}
+\begin{itemize}
+\setlength{\itemsep}{-\parsep}
+\setlength{\topsep}{-2\parsep}
+\setlength{\partopsep}{-2\parsep}
+\item I participated in UC Santa Cruz's ISEE Professional Development Program twice, where I created and taught pedagogically-sound outreach modules to teach entering college freshmen about exoplanet transits (year 1) and buoyancy (year 2).  
+\item I served on many committees at CU Boulder, including multiple years on the graduate admissions committee, where I led the development and use of rubrics in the graduate admissions process to ensure more equitable evaluation of applicants.
+\setlength{\itemsep}{-\parsep}
+\setlength{\topsep}{-2\parsep}
+\setlength{\partopsep}{-2\parsep}
+\item I served as an administrator of the CU Boulder Science, Technology, and Astronomy RecruitS (CU-STARS) program for three years, with duties including coordinating outreach trips to high schools, mentoring undergraduates, and designing hands-on activities in exoplanetary science, black holes, and atmospheric dynamics.
+\item I helped mentor two undergraduate students in year-long projects; one of these projects eventually resulted in a publication (Anders, Manduca et al. 2019). 
 
 \end{itemize}
 
-
-\section*{Synergistic activities}
+\section*{Eligibility}
 \vspace{-0.15cm}
 \begin{itemize}
 \setlength{\itemsep}{-\parsep}
 \setlength{\topsep}{-2\parsep}
 \setlength{\partopsep}{-2\parsep}
-
-\item Anders has designed, tested, and made public a method of simulating state-of-the-art convection simulations which requires an order of magnitude fewer computational hours than traditional methods.
-\item Anders has served multiple years each on CU Boulder's graduate admissions committee, graduate exams committee, and faculty search committees; he has led the development and use of rubrics in the graduate admissions process in his department which ensure more equitable evaluation of applicants.
-\item Anders spent three years serving as an administrator of the CU-Boulder Science, Technology, and Astronomy RecruitS (CU-STARS) program, with duties including coordinating outreach trips to high schools, mentoring undergraduates, and designing hands-on activities in exoplanetary science, black holes, and atmospheric dynamics.
-\item Anders has helped mentor two undergraduate students in year-long projects; one of these projects eventually resulted in a publication (Anders, Manduca et al. 2019). 
-
+\item I, Evan H. Anders, am a citizen of the United States of America.
+\item I will complete my doctoral degree in astrophysics before 1 October 2020.
 \end{itemize}
+
+
 
 \end{document}
