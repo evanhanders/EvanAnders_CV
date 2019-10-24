@@ -78,7 +78,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{} % sets both header and footer to nothing
-\lhead{Evan Anders---Research Statement}
+\lhead{Evan Anders---Career Goals}
 \rhead{Stanford University, Stanford Science Fellows}
 \cfoot{\footnotesize{\thepage}}
 %\pagestyle{empty}
@@ -105,21 +105,75 @@
 
 \begin{document}
 
+\section*{Career Goals}
+\vspace{-12pt}
+Postdoctoral positions are the next step towards my ultimate career goal of obtaining a position as a professor at a university.
+I understand that the duties of a professor include research, teaching, and departmental service, and from my experiences, which I outline below, I can confidently say that participating in all three of these axes of professorship is quite appealing to me.
+Over the past couple of years, I have come to truly enjoy working on my research; learning about and synthesizing past work and then struggling through a difficult question that extends that knowledge is really rewarding, as is being able to learn something new that potentially no one else has learned before.
+All of my experiences in teaching and mentorship have been extremely rewarding, and have given me a great deal of respect for the amount of effort that goes into building a course or helping young scientists grow in their work.
+Finally, the ability of faculty members to make institutional change through departmental service, even at very small scales, and in doing so to create a more equitable and transparent working environment is greatly appealing to me.
+
+\section*{Relevant Experience}
+\vspace{-12pt}
+\paragraph*{Research}
+My PhD research has been funded almost entirely by fellowships, which has given me the flexibility to pursue my own research plan.
+I was awarded the University of Colorado's (CU's) George Elery Hale Graduate Fellowship for three years (Sep.~2015 - Aug.~2018), and was subsequently awareded a NASA Earth and Space Science Fellowship (NESSF, now called FINESST as of 2019), which I am currently supported on.
+These fellowships have given me the opportunity to develop my skills in carrying out the research cycle from start to finish on numerous occasions.
+My four publications that I have published as a graduate student so far all address scientific questions that I personally identified, and explored.
+The freedom that has come with my fellowships has also shown me how important collaboration is to science.
+My PhD advisor and other mentors have been instrumental to helping me craft my scientific questions into coherent research plans and in helping me break through blocks when my thinking is stuck on a project.
+In short, my time as a graduate student has taught me how to devise and execute a research plan (with published, scoped results) and how to effectively collaborate with other scientists.
+
 During my PhD, I gained proficiency in using the open-source Dedalus \citep{burns&all2019} code to study questions about stellar convection at various scales.
-I used Dedalus to study thermals-as-downflows and learned how atmospheric stratification affects the propagation of these downflows \citep{andersLB2019}.
-I surprisingly found that these downflows carry enough energy to feasibly transport the solar luminosity, giving credence to the entropy rain hypothesis.
-However, this work neglected turbulence, magnetism, and rotation, which are key ingredients in stellar convection.
+While Dedalus is typically used in astrophysical and fluid dynamical contexts, it is essentially a programming language for solving arbitrary partial differential equation sets.
+This flexibility means that it can be applied to a vast number of interdisciplinary applications.
+More importantly, as a user, the flexibility of Dedalus forces me to be precise in my specification of problems, and has given me a deep appreciation for the types of problems that can and cannot be studied through spectral numerical techniques.
 
-In creating simulations of solar convection, it is important to strive to produce flows which feel the same influence of rotation and magnetism as those in the Sun.
-Simulations which include global rotation can be run in a regime where flows are heavily affected by Coriolis forces or one where Coriolis forces are weak.
-A ``critical'' rotation frequency, $\Omega_\text{c}$, separates these two regimes, but determining $\Omega_\text{c}$ is often not straightforward.
-During my PhD, I found a method for determining $\Omega_\text{c}$ so that the importance of rotation could be specified in simulation initial conditions \citep[see left panel of Fig. \ref{fig:rossby_plot} and][]{anders&all2019}.
-Flows look very different depending on whether you simulate above, below, or near $\Omega_\text{c}$ (right panels of Fig.~\ref{fig:rossby_plot}), and it is crucial to simulate in the same regime as the Sun.
-In magnetized systems, there is an analagous critical magnetic field, but to date no study has determined how to determine this field \emph{a priori}.
+My past research has focused on convection in the stellar context.
+I have studied fully compressible, stratified convection in stellar-like setups and under the influence of rotation \citep{anders&brown2017, anders&all2019}.
+I have also learned the benefits of scaling back from these complications to understand underlying phenomena \citep{anders&all2018}.
+More recently, I have studied individual, transient, studies of thermals-as-downflows to understand how atmospheric stratification affects individual convective features \citep{andersLB2019}.
+All of these projects were studied using Dedalus.
 
-During my PhD, I created and verified an ``accelerated evolution'' tool which skips the long KH timescale in convective simulations \citep{anders&all2018}.
-This tool reached a relaxed, equilibrated state using an order of magnitude fewer computational resources than a simulation which timestepped through a full KH timescale, and results between the simulations differed by less than 1\%.
+\paragraph*{Teaching}
+My experiences as a graduate student have taught me that great teaching requires a great deal of effort, but also that teaching is very rewarding.
+Over the summer of 2017, I was the co-Instructor of Record for the University of Colorado's ``ASTR 2600: Introduction to Scientific Computing'' course, and introductory course in Python programming for astrophysics majors.
+My fellow instructor and I had worked with previous students of this course (through experiences as tutors and teaching assistants), and were noticing that students who graduated from this course often struggled with the fundamentals of Python programming.
+We completely redesigned the course curriculum using backwards-design principles to ensure that students who completed our course would be prepared for the next course in the series or for summer research work.
+The month that I taught this course was probably one of the hardest that I worked during my graduate career; this experience taught me that course design is exhausting and difficult, however, it also taught me that I personally find teaching really rewarding.
 
-\bibliographystyle{yahapj}
-\bibliography{biblio}
+My graduate studies have had additional teaching experiences: I was a Teaching Assistant (TA) for introductory astronomy courses three times, and I participated in the University of California Santa Cruz's ISEE Professional Development Program Twice (PDP).
+As a TA, I had the opportunity to teach my own labs, and I also learned about the amount of work that goes into keeping track of a gradebook for both small (20-student labs) and large (100-student lecture) courses.
+In the PDP, I had the opportunity to learn about teaching pedigogy research and literature, and apply best teaching practices while designing outreach teaching modules.
+During my second time at the PDP program, I was a Design Team Leader, and in addition to learning about teaching pedagogy I got to learn about best practices in leadership while leading a group of fellow graduate students in the design of a outreach teaching module on the topic of buoyancy.
+
+In addition to these formal teaching experiences, I have participated extensively in outreach and mentoring as a graduate student.
+I spent three years as a graduate student coordinator of CU STARS (CU-Boulder's Science, Technology, and Astronomy RecruitS), an outreach program which gives undergraduate CU students an opportunity to hone their own teaching skills on outreach trips to underserved high schools across Colorado.
+As a graduate student coordinator, I mentored and tutored the undergraduate students in this group, helped design the outreach teaching modules, and helped ensure that outreach trips ran smoothly.
+I loved being able to interact with and mentor undergraduate students, who I likely would not have been able to meet if I were not involved in this program.
+Additionally, my research group has had a couple of undergraduate students who I have helped to mentor in research, and one of my publications was helped greatly by the contributions of one of these students \citep{anders&all2019}.
+As a senior graduate student, I am now helping teach and develop the research skills of less experienced graduate students, and it feels very rewarding.
+
+\paragraph*{Service}
+As a graduate student at CU Boulder's Astrophysical \& Planetary Sciences department, I have had numerous opportunities to participate in departmental committees.
+I have been a member of three faculty search committees, and I have been on the committee which ensures that our department's PhD qualifiers are fair twice.
+In addition to these experiences, and more importantly, I have been a member of the graduate admissions committee for the past two years.
+My first year on the committee, I developed and utilized the first official rubric that our department had ever used in the admissions process.
+Last year, all of the graduate students on the committee and one of the four faculty members adopted and helped improve that rubric.
+This year, I am a member of the newly-formed ``Graduate Admissions Setup Committee,'' which is tasked with developing a robust and fair admissions process, including the improvement of this rubric, for all members of the admissions committee to usimprovement of this rubric, for all members of the admissions committee to usimprovement of this rubric, for all members of the admissions committee to usimprovement of this rubric, for all members of the admissions committee to use.
+While this contribution to our department may be small, being in a position to make institutional change that helps make our department more equitable and fair has been a treat.
+
+
+\section*{Contributions to Program Goals}
+\vspace{-12pt}
+
+My acceptance into the Stanford Science Fellows program would advance multiple of the stated goals of the program.
+The research I propose in my research statement will help deepen our understanding of the natural world, and I will continue to employ the collaborative skills that I developed as a graduate student to bridge physical and mathematical disciplines.
+The breadth of research being conducted at Stanford University will enable me to find interdisciplinary approaches to these foundational problems that I have proposed.
+I will grow as a science communicator both through the professional development opportunities of the program, through communicating my science with and working alongside a diverse group of researchers who are not stellar physicists, and through learning how to create better visualizations of my data (Prof.~Tom Abel, my proposed primary scientific advisor, was involved extensively in developing the visualization suite \emph{yt}). 
+The fellowship would provide me with the flexibility and resources to pursue my own research vision.
+In short, I am thrilled at the opportunity to be a part of a diverse research community and to work collaboratively at the frontiers of research both within stellar physics, my area of expertise, and in some of the many other exciting areas of active research at Stanford.
+
+\bibliographystyle{../yahapj}
+\bibliography{../biblio}
 \end{document}
