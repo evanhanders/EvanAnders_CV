@@ -650,8 +650,8 @@ revtex4-1.cls^^J^^J}\stop
 \ifrnaas
 \vspace*{-\headsep}\vspace*{\headheight}
 \footnotesize
-\noindent{\sc Draft version \today}\\[2pt]
-{\footnotesize Typeset using \LaTeX\ {\bf RNAAS} style in AASTeX62}
+%\noindent{\sc Draft version \today}\\[2pt]
+%{\footnotesize Typeset using \LaTeX\ {\bf RNAAS} style in AASTeX62}
 \par\vspace*{-\baselineskip}\vspace*{0.625in}
 \else
 \vbox to 0pt{\vskip-48pt\normalsize\rptloopnum=0\loop
@@ -667,7 +667,7 @@ revtex4-1.cls^^J^^J}\stop
 \vglue-18pt
 {\footnotesize
 \raggedright
-{\sc Draft version \today}\\[2pt]
+{\sc Draft Version \today}\\[2pt]
 {\footnotesize
 Typeset using \LaTeX\ {\bf modern} style in AASTeX62}
 \vskip48pt
@@ -677,8 +677,8 @@ Typeset using \LaTeX\ {\bf modern} style in AASTeX62}
 \ifpreprint
 \vspace*{-\headsep}\vspace*{\headheight}
 \footnotesize
-\noindent{\sc Draft version \today}\\[2pt]
-{\footnotesize Typeset using \LaTeX\ {\bf preprint} style in AASTeX62}
+%\noindent{\sc Draft version \today}\\[2pt]
+%{\footnotesize Typeset using \LaTeX\ {\bf preprint} style in AASTeX62}
 \par\vspace*{-\baselineskip}\vspace*{0.625in}
 \else
 %%
@@ -708,8 +708,8 @@ AASTeX62}
 %% Default
 \vspace*{-\headsep}\vspace*{\headheight}
 \footnotesize
-{\footnotesize\textsc{\@journalinfo}}\par
-{\footnotesize Typeset using \LaTeX\ default style in AASTeX62}%% default style
+{}%\footnotesize\textsc{\@journalinfo}}\par
+{}%\footnotesize Typeset using \LaTeX\ default style in AASTeX62}%% default style
 \par\vspace*{-\baselineskip}\vspace*{0.625in}
 \fi\fi\fi\fi\fi
 %%
@@ -1667,7 +1667,7 @@ the#1\endcsname}
 \newcommand\icarus{\ref@jnl{Icarus}}% % Icarus
 \newcommand\jrasc{\ref@jnl{JRASC}}%   % Journal of the RAS of Canada 
 \newcommand\memras{\ref@jnl{MmRAS}}%  % Memoirs of the RAS 
-\newcommand{\mnras}{\ref@jnl{MNRAS}}%   % Monthly Notices of the RAS 
+\newcommand\mnras{\ref@jnl{MNRAS}}%   % Monthly Notices of the RAS 
 \renewcommand\pra{\ref@jnl{PhRvA}}% % Physical Review A: General Physics ++
 \renewcommand\prb{\ref@jnl{PhRvB}}% % Physical Review B: Solid State ++
 \renewcommand\prc{\ref@jnl{PhRvC}}% % Physical Review C ++

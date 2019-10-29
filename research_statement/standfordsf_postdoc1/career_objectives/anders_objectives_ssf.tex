@@ -1,16 +1,14 @@
-\documentclass[aps, pre, onecolumn, nofootinbib, notitlepage, groupedaddress, amsfonts, amssymb, amsmath]{revtex4-1}
+\documentclass[onecolumn, 11pt, hmargin=1in, vmargin=1in]{aastex62}
 %%%%%%begin preamble
-\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{natbib}
 \setlength{\bibsep}{0pt plus 0.3ex}
 \usepackage{graphicx}
-%\usepackage{pdfpages} % breaks with aastex6
-\usepackage{import}
-\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
-\usepackage{xcolor}
+\usepackage{color}
 \hypersetup{
   colorlinks   = true,
   %citecolor    = blue
@@ -22,60 +20,7 @@
 }
 
 %Copy+pasted from aastex.
-\newcommand\aj{\ref@jnl{AJ}}%        % Astronomical Journal 
-\newcommand\araa{\ref@jnl{ARA\&A}}%  % Annual Review of Astron and Astrophys 
-\renewcommand\apj{ApJ}%    % Astrophysical Journal ++
-\newcommand\apjl{ApJL}     % Astrophysical Journal, Letters 
 \newcommand\prf{Phys.~Rev.~Fluids}     % Astrophysical Journal, Letters 
-\newcommand\apjs{\ref@jnl{ApJS}}%    % Astrophysical Journal, Supplement 
-\renewcommand\ao{\ref@jnl{ApOpt}}%   % Applied Optics ++
-\newcommand\apss{\ref@jnl{Ap\&SS}}%  % Astrophysics and Space Science 
-\newcommand\aap{\ref@jnl{A\&A}}%     % Astronomy and Astrophysics 
-\newcommand\aapr{\ref@jnl{A\&A~Rv}}%  % Astronomy and Astrophysics Reviews 
-\newcommand\aaps{\ref@jnl{A\&AS}}%    % Astronomy and Astrophysics, Supplement 
-\newcommand\azh{\ref@jnl{AZh}}%       % Astronomicheskii Zhurnal 
-\newcommand\baas{\ref@jnl{BAAS}}%     % Bulletin of the AAS 
-\newcommand\icarus{\ref@jnl{Icarus}}% % Icarus
-\newcommand\jrasc{\ref@jnl{JRASC}}%   % Journal of the RAS of Canada 
-\newcommand\memras{\ref@jnl{MmRAS}}%  % Memoirs of the RAS 
-\newcommand\mnras{MNRAS}%   % Monthly Notices of the RAS 
-\renewcommand\pra{\ref@jnl{PhRvA}}% % Physical Review A: General Physics ++
-\renewcommand\prb{\ref@jnl{PhRvB}}% % Physical Review B: Solid State ++
-\renewcommand\prc{\ref@jnl{PhRvC}}% % Physical Review C ++
-\renewcommand\prd{\ref@jnl{PhRvD}}% % Physical Review D ++
-\renewcommand\pre{\ref@jnl{PhRvE}}% % Physical Review E ++
-\renewcommand\prl{\ref@jnl{PhRvL}}% % Physical Review Letters 
-\newcommand\pasp{\ref@jnl{PASP}}%     % Publications of the ASP 
-\newcommand\pasj{\ref@jnl{PASJ}}%     % Publications of the ASJ 
-\newcommand\qjras{\ref@jnl{QJRAS}}%   % Quarterly Journal of the RAS 
-\newcommand\skytel{\ref@jnl{S\&T}}%   % Sky and Telescope 
-\newcommand\solphys{\ref@jnl{SoPh}}% % Solar Physics 
-\newcommand\sovast{\ref@jnl{Soviet~Ast.}}% % Soviet Astronomy 
-\newcommand\ssr{SSRv}% % Space Science Reviews 
-\newcommand\zap{\ref@jnl{ZA}}%       % Zeitschrift fuer Astrophysik 
-\renewcommand\nat{\ref@jnl{Nature}}%  % Nature 
-\newcommand\iaucirc{\ref@jnl{IAUC}}% % IAU Cirulars 
-\newcommand\aplett{\ref@jnl{Astrophys.~Lett.}}%  % Astrophysics Letters 
-\newcommand\apspr{\ref@jnl{Astrophys.~Space~Phys.~Res.}}% % Astrophysics Space Physics Research 
-\newcommand\bain{\ref@jnl{BAN}}% % Bulletin Astronomical Institute of the Netherlands 
-\newcommand\fcp{\ref@jnl{FCPh}}%   % Fundamental Cosmic Physics 
-\newcommand\gca{\ref@jnl{GeoCoA}}% % Geochimica Cosmochimica Acta 
-\newcommand\grl{\ref@jnl{Geophys.~Res.~Lett.}}%  % Geophysics Research Letters 
-\renewcommand\jcp{\ref@jnl{JChPh}}%     % Journal of Chemical Physics 
-\newcommand\jgr{\ref@jnl{J.~Geophys.~Res.}}%     % Journal of Geophysics Research 
-\newcommand\jqsrt{\ref@jnl{JQSRT}}%   % Journal of Quantitiative Spectroscopy and Radiative Trasfer 
-\newcommand\memsai{\ref@jnl{MmSAI}}% % Mem. Societa Astronomica Italiana 
-\newcommand\nphysa{\ref@jnl{NuPhA}}%     % Nuclear Physics A 
-\newcommand\physrep{\ref@jnl{PhR}}%       % Physics Reports 
-\newcommand\physscr{\ref@jnl{PhyS}}%        % Physica Scripta 
-\newcommand\planss{\ref@jnl{Planet.~Space~Sci.}}%  % Planetary Space Science 
-\newcommand\procspie{\ref@jnl{Proc.~SPIE}}%      % Proceedings of the SPIE 
-
-\newcommand\actaa{\ref@jnl{AcA}}%  % Acta Astronomica
-\newcommand\caa{\ref@jnl{ChA\&A}}%  % Chinese Astronomy and Astrophysics
-
-
-\setcounter{tocdepth}{2}
 %% headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -106,75 +51,83 @@
 
 
 \begin{document}
-
-\section*{Career Goals}
-\vspace{-12pt}
+\thispagestyle{fancy}
+\begin{center}
+\vspace{-1.4in}
+\textbf{Career Goals}
+\vspace{-6pt}
+\end{center}
 My ultimate career goal is obtaining a position as a professor at a university, and working as a postdoctoral research fellow is the next step toward that goal.
-Through the past few years, I have found that my research is extremely rewarding, as is being able to learn something new that no one else has learned before.
-My experiences in teaching and mentorship have been extremely fulfilling, and have given me a great deal of respect for the amount of effort that goes into building a course or helping young scientists grow in their work.
-Finally, the ability to make institutional change through departmental service, even at very small scales, and in doing so to create a more equitable and transparent working environment is greatly appealing to me.
+Through the past few years, I have come to find my research to be extremely rewarding; I love the freedom to grapple with problems that interest me and the ability to learn something new that no one else has learned before.
+My graduate experiences in teaching and mentorship have been extremely fulfilling, and have given me a great deal of respect for the amount of effort that goes into building a course or helping young scientists grow in their work.
+Finally, the ability to make positive institutional change through departmental service, even at very small scales, and in doing so to create a more equitable and transparent working environment is greatly appealing to me.
 Below I detail my experiences which inform my desire to participate in the research, teaching, and departmental service aspects of being a professor in my career.
 
-\section*{Relevant Experience}
-\vspace{-12pt}
-\paragraph*{Research}
+\begin{center}
+\textbf{Relevant Experience}
+\vspace{-6pt}
+\end{center}
+\emph{Research Experience --}
 My PhD research has been funded almost entirely by fellowships, which has given me the flexibility to pursue my own research plan.
 I was awarded the University of Colorado's (CU's) George Elery Hale Graduate Fellowship for three years (Sep.~2015 - Aug.~2018), and was subsequently awareded a NASA Earth and Space Science Fellowship (NESSF, now called FINESST as of 2019), which I am currently supported on.
 These fellowships have given me the opportunity to develop my own research questions and projects, and I personally identified the scientific questions explored in the four publications that I have thusfar published as a graduate student.
 While I have generated my own questions, my research freedom has shown me how important collaboration is to the scientific process.
 My PhD advisor, Prof.~Ben Brown, and my many other mentors have been instrumental in helping me define appropriate bounds on my research projects and work through mental blocks.
-In short, my time as a graduate student has taught me how to devise and execute a research plan with well-scoped, publishable results and how to work effectively in collaborative groups of scientists.
+In short, my time as a graduate student has taught me how to work effectively in a collaborative group of scientists to devise and execute a research plan with well-scoped, publishable results.
 
-During my PhD, I learned to use the open-source Dedalus \citep{burns&all2019} code to study questions about stellar convection at various scales.
+During my PhD, I learned to use the open-source Dedalus \citep{burns&all2019} code.
 Dedalus is often used in astrophysical and fluid dynamical contexts, but it is essentially a programming language for solving arbitrary partial differential equation sets.
 This flexibility means that it can efficiently be applied to a vast number of interdisciplinary applications.
-More importantly, the flexibility of Dedalus has not only taught me how to be precise in the design of numerical experiments, but has also peaked my interest in a broad range of scientific topics that the code could feasibly be used to study.
+More importantly, the flexibility of Dedalus has not only taught me how to be precise in the design of numerical experiments, but has also broadened my own research interests because of the many scientific topics that the code could feasibly be used to study.
 My past research has focused on convection in the stellar context: I studied the time evolution of very simple convection \citep{anders&all2018} as well as fully compressible convection in stellar-like setups \citep{anders&brown2017} and under the influence of rotation \citep{anders&all2019}.
-More recently, I have studied individual, transient, studies of individual convective downflows to understand how atmospheric stratification affects individual convective features \citep{andersLB2019}.
+More recently, I have studied transient simulations of individual convective downflows to understand how atmospheric stratification affects individual convective features \citep{andersLB2019}.
 While I am interested in building on the research that I conducted as a PhD student, I am also broadly interested in other fields of research, including geophysical and planetary applications.
 I am grateful to have access to the tools to allow me to participate in these diverse fields of research, and I look forward to joining a vibrant research community like the one at Stanford where I can continue my PhD research and branch out into my other interests.
 
-\paragraph*{Teaching}
-My experiences as a graduate student have taught me that teaching is very rewarding, but also requires a great deal of effort.
+\emph{Teaching Experience --}
+My teaching experiences as a graduate student have been extremely rewarding and have taught me that teaching requires a great deal of effort.
 Over the summer of 2017, I was the co-Instructor of Record for the University of Colorado's ``ASTR 2600: Introduction to Scientific Computing'' course, an introductory course in Python programming for astrophysics majors.
 My fellow instructor and I had previously worked with students of this course (through experiences as tutors and teaching assistants), and had noticed that students who graduated from this course often struggled with the fundamentals of Python programming.
 We completely redesigned the course curriculum using backwards design principles to ensure that our course would sufficiently prepare students for summer research work or the next course in the series.
-Summer courses at CU are condensed into a five-week period, and teaching this course, especially on an accelerated schedule, was one of the most difficult challenges of my graduate career.
+Summer courses at CU are condensed into a five-week period, and teaching this course while redesigning it, especially on an accelerated schedule, was one of the most difficult challenges of my graduate career.
 This experience taught me that course design is exhausting and difficult; however, it also taught me that I personally love both the course design and student interaction aspects of teaching.
 
 In addition to teaching my own course, I was a Teaching Assistant (TA) for introductory astronomy courses during three semesters, and I participated in the University of California Santa Cruz's ISEE Professional Development Program (PDP) in the spring of 2017 and 2019.
 As a TA, I had the opportunity to teach and grade my own lab sections ($\sim$20 students), and I also learned about the amount of work that goes into keeping track of homework, exams, and a gradebook for large ($\sim$100 student) lecture sections.
 In the PDP, I learned about teaching pedagogy research and literature, and had the opportunity to apply best teaching practices while designing outreach teaching modules.
-I was a Design Team Leader in the PDP program in 2019, and I further learned about best practices in leadership while leading a group of fellow graduate students in the design of a outreach teaching module on the topic of buoyancy.
+I was a Design Team Leader in the PDP program in 2019, and I further learned about best practices in leadership while leading a group of fellow graduate students in the design of an outreach teaching module on the topic of buoyancy.
 
 In addition to these formal teaching experiences, I have participated in outreach and mentoring as a graduate student.
 I spent three years as a graduate student coordinator of CU STARS (CU-Boulder's Science, Technology, and Astronomy RecruitS), an outreach program which gives undergraduate CU students an opportunity to hone their own teaching skills on outreach trips to underserved high schools across Colorado.
 As a graduate student coordinator, I mentored and tutored the undergraduate students in this group, helped design the outreach teaching modules, and helped ensure that outreach trips ran smoothly.
-Additionally, a few undergraduate students have been members of my research group, and I have gained mentorship experience in helping guide their research projects; my work with one of these students led to one of my graduate publications \citep{anders&all2019}.
+Additionally, over the past few years, a few undergraduate students have been members of my research group, and I have gained mentorship experience in helping guide their research projects; my work with one of these students (Ms.~C. Manduca) led to one of my graduate publications \citep{anders&all2019}.
 As a senior graduate student, I am now helping teach and develop the research skills of less experienced graduate students in our group.
-I have loved all of the experiences in teaching and mentorship that I have gained as a graduate student, and I look forward to further opportunities to help young career scientists learn and grow as researchers.
+I have loved all of the experiences in teaching and mentorship that I have gained as a graduate student, and I look forward to further opportunities to help young career scientists learn and grow as they launch their careers.
 
-\paragraph*{Service}
+\emph{Service Experience --}
 As a graduate student in CU Boulder's Astrophysical \& Planetary Sciences department, I have been a member of numerous departmental committees.
-I was a member of three hiring committees (two faculty searches and the search for the Fiske Planetarium director), and I have been on the Exams Committee, which ensures that our department's PhD qualifiers are fair, twice.
+I was a member of three hiring committees (two faculty searches and the search for the Fiske Planetarium director).
+I have been on the Exams Committee, which ensures that our department's PhD qualifiers are fair, twice.
 More importantly, I have been a member of the graduate admissions committee each of the past two years.
-My first year on the committee, I developed and utilized the first official rubric that our department had ever used in the admissions process.
+My first year on the committee, I developed and utilized the first official rubric that our department had ever used in the admissions process, with the goal of reducing my own biases and more uniformly evaluating applicants.
 Last year, all of the graduate students on the committee and one of the four faculty members adopted and helped improve that rubric.
 This year, I am a member of the newly-formed ``Graduate Admissions Setup Committee,'' which is tasked with developing a robust and fair admissions process, and which has further iterated on my rubric.
-I am proud to have taken the first step towards a more uniform, fair, and transparent graduate admissions process in our department, and to see my efforts now being taken up by our department's faculty.
+I am proud to have taken the first step towards a more uniform, fair, and transparent graduate admissions process in our department, and I am thrilled to see my efforts now being taken up and iterated on by our department's faculty as I prepare to graduate.
 While this contribution to our department may be small, I have loved being in a position to affect these institutional changes, and look forward to continuing similar work in my career.
 
 
-\section*{Contributions to Program Goals}
-\vspace{-12pt}
+\begin{center}
+\textbf{Contributions to Program Goals}
+\vspace{-6pt}
+\end{center}
 
 My acceptance into the Stanford Science Fellows program would advance multiple of the stated goals of the program.
 The research I propose in my research statement will help deepen our understanding of the natural world, and I will continue to employ the collaborative skills that I developed as a graduate student to bridge physical and mathematical disciplines.
 The breadth of research being conducted at Stanford University will enable me to find interdisciplinary approaches to these foundational problems that I have proposed.
 The program's professional development opportunities will continue to help me grow as a well rounded researcher, educator, and science communicator.
-Furthermore, my work as a fellow in the program will help me grow as a communicator by learning how to create better visualizations of my data (Prof.~Tom Abel, my proposed primary scientific advisor, was involved extensively in developing the visualization suite \emph{yt}) and by forcing me to clearly articulate my scientific goals while forming collaborations with researchers who are not stellar physicists. 
+Furthermore, my work as a fellow in the program will help me grow as a communicator by learning how to create better visualizations of my data (Prof.~Tom Abel, my proposed primary scientific advisor, was involved extensively in developing the visualization suite \emph{yt}) and by forcing me to clearly articulate my scientific goals while forming collaborations with researchers who are not stellar physicists (in e.g., the Math department). 
 Acceptance into the program would provide me with the flexibility and resources to pursue my own research vision.
-In short, I am thrilled at the opportunity to be a part of a diverse research community and to work collaboratively at the frontiers of research both within stellar physics, my area of expertise, and in some of the many other exciting areas of active research at Stanford.
+In short, I am thrilled to possibly have the opportunity to be a part of a diverse research community and to work collaboratively at the frontiers of research both within stellar physics, my area of expertise, and in some of the many other exciting areas of active research at Stanford.
 
 \bibliographystyle{../yahapj}
 \bibliography{../biblio}

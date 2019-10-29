@@ -1546,11 +1546,11 @@ FUNCTION {begin.bib}
     'skip$
     { preamble$ write$ newline$ }
   if$
-  "\begin{thebibliography}{}"
+  "\scriptsize\begin{thebibliography}{}"
   write$ newline$
-  "\providecommand\natexlab[1]{#1}"
+  "\scriptsize\providecommand\natexlab[1]{#1}"
   write$ newline$
-  "\providecommand\JournalTitle[1]{#1}"
+  "\scriptsize\providecommand\JournalTitle[1]{#1}"
   write$ newline$
 }
 
