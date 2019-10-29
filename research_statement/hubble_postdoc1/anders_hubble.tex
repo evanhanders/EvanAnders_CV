@@ -1,4 +1,4 @@
-\documentclass[11pt, preprint, hmargin=1in, vmargin=1in]{aastex62}
+\documentclass[preprint, hmargin=1in, vmargin=1in]{aastex62}
 %%%%%%begin preamble
 %\usepackage[hmargin=1in, vmargin=1in]{geometry} % Margins
 \usepackage{hyperref}
@@ -63,16 +63,19 @@
 
 
 
-Stars like the Sun rely on vigorous near-surface convective regions to transport the heat generated in their cores.
-This convection generates sound waves which refract due to density stratification as they propagate into the stellar interior.
-The relatively new fields of helio- and asteroseismology measure waves to examine the interior of the Sun and other stars.
-These measurements enable the precise determination of age, mass, and radius of other stars, and have revealed the interior structure and mean flows of the Sun \citep{huber&all2019, christensen-dalsgaard2002}.
-Helioseismic observations and direct measurements of the Sun's surface have been unable to detect theorized large-scale convective flows called ``giant cells.''
-The absence of these flows has called into question our most fundamental understanding of the nature of convection in stars, a problem widely referred to as the ``Solar Convective Conundrum'' \citep{hanasoge&all2015}.
+Main sequence stars of masses similar to the Sun rely on vigorous near-surface convective regions to transport their stellar luminosity.
+These convecting regions are highly stratified (14 density scale heights in the Sun), and the convective motions generate sound waves which refract due to stratification as they propagate into the stellar interior.
+Helioseismology and asteroseismology measure the surface signatures of these acoustic waves---and gravity modes when available---to examine the interior of the Sun and other stars.
+These measurements enable the precise determination of mass and radius of other stars, and have revealed the interior structure and mean flows, like differential rotation, inside the Sun \citep{huber&all2019, christensen-dalsgaard2002}.
 
-State-of-the-art codes like MESA \citep{paxton&all2011} which generate profiles of the internal structure of stars rely on one-dimensional (1D) parameterizations of convection like mixing length theory \citep[MLT,][]{bohm-vitense1958}.
-Parameterizations like MLT assume giant cells exist in the Sun, but this assumption conflicts with modern observations.
-Interpretation of asteroseismic and helioseismic data relies on these 1D models, so improving them is critical as NASA missions like TESS have provided asteroseismic datasets of $10^4$ stars, growing to $10^6$ stars in a decade's time \citep{huber&all2019}.
+Interpretation of asteroseismic and helioseismic data relies on one-dimensional (1D) stellar structure models. 
+State-of-the-art codes like MESA \citep{paxton&all2011} which generate 1D stellar structure profiles have many deficiencies \citep{buldgen2019}, including their reliance on parameterizations of convection like mixing length theory \citep[MLT,][]{bohm-vitense1958}.
+Parameterizations like MLT assume that convective flows whose length scales are proportional to the local density scale height are driven throughout the full depth of the convective zone.
+This theory thus predicts that small convective elements driven near the stellar surface---like the ``granules'' we see on the Sun's surface---should exist on top of large-scale ``giant cells'' driven in the deep convection zone.
+Unfortunately, modern helioseismic observations and direct measurements of flows on the Sun's surface have not detected giant cells \citep{hanasoge&all2015}.
+The absence of these flows has called into question our most fundamental understanding of the nature of convection in stars, a problem widely referred to as the ``Solar Convective Conundrum.''
+Improving our understanding of convection, and thus improving stellar structure models is critical to improving asteroseismic observations.
+With NASA's TESS mission currently underway and supplying more than $10^4$ asteroseismic target stars in its nominal mission, and with other missions such as WFIRST increasing the number of asteroseismic target stars to $10^6$ \citep{huber&all2019}, we must sort out the convective conundrum.
 
 My research aims to  help solve this Convective Conundrum by gaining a better understanding of convection in the highly stratified, rotating, magnetized context of stellar convection.
 Parameterizations like MLT generally neglect stellar rotation and magnetism, but modern asteroseismic observations have detected latitudinal differential rotation in stars \citep{benomar&all2018} and shown that the structure of stellar magnetic fields affects asteroseismic measurements \citep{santos&all2018}.
