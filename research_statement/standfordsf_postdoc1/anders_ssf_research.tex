@@ -47,26 +47,26 @@
 \thispagestyle{fancy}
 
 \begin{center}
-\vspace{-1.45in}
+\vspace{-1in}
 \textbf{Motivation and Research Problem: The Solar Convective Conundrum}
-\vspace{-11pt}
+\vspace{-8pt}
 \end{center}
 
 Stars are the cornerstone of studies in astrophysics and are themselves fascinating experiments where fluid dynamical processes occur at extreme parameters.
-Asteroseismology measures sound and gravity waves at the surface of stars and, akin to seismic measurements on the Earth, traces the paths of those waves through the depths of the star to learn about its interior structure.
-This technique enables the precise determination of age, mass, and radius of Sun-like stars, and these measurements are used across astrophysical disciplines like exoplanetary science and galactic archaeology \citep{huber&all2019}.
-The interpretation of asteroseismic data relies on 1D models of stellar interiors which use decades-old parameterizations \citep{bohm-vitense1958} to deal with turbulent 3D processes like convection.
-Stars like the Sun have convection zones near their surfaces, and these parameterizations and most modern simulations predict that ``giant cells'' characterized by large-scale horizontal motions are driven deep in those convective regions.
-These giant cells are absent in observations of the Sun \citep{hanasoge&all2015}.
+The relatively new field of asteroseismology measures wavelike deformations along stellar surfaces and uses those measurements to learn about the structure of stellar interiors.
+Asteroseismology can precisely determine the age, mass, and radius of Sun-like stars, and these measurements are used broadly across astrophysical disciplines like exoplanetary science and galactic archaeology \citep{huber&all2019}.
+The interpretation of asteroseismic data relies on 1D models of stellar interiors.
+Stars like the Sun have convection zones near their surfaces, but turbulent 3D processes like convection are handled using decades-old parameterizations \citep[e.g.,][]{bohm-vitense1958} in the creation of these 1D models.
+These parameterizations predict that ``giant cells'' characterized by massive horizontal motions should be driven deep in those convective regions, but giant cells are absent in observations of the Sun \citep{hanasoge&all2015}.
 The absence of giant cells is called the ``Solar Convective Conundrum'' and implies that our most fundamental understanding of convection in stars is incomplete.
-Sorting out this Convective Conundrum, and improving stellar models which are used broadly including in asteroseismic techniques, is crucial.
+Solving this Convective Conundrum---which in turn will improve stellar models and broadly-used asteroseismic measurements---is crucial.
 
 
 
 \begin{center}
 \vspace{-5pt}
 \textbf{Research Plan: Stellar Convection Across Spatial Scales}
-\vspace{-11pt}
+\vspace{-8pt}
 \end{center}
 \begin{figure*}[b]
 	\begin{center}
@@ -83,56 +83,58 @@ Sorting out this Convective Conundrum, and improving stellar models which are us
 \end{figure*}
 
 
-Modern convective simulations reproduce flows at the Sun's surface reliably; deep convection, where giant cells would be driven, is still poorly constrained and understood.
+Modern convective simulations reliably reproduce flows at the Sun's surface; however, simulations of deep convection often disagree with modern observations and drive giant cells.
 During my time at Stanford, I will conduct a series of studies, outlined in Fig.~\ref{fig:tri_panel}, which span from the smallest to the largest scales in stellar convection.
-I will progressively build on understanding gained in detailed small scale studies to inform studies which focus on increasingly larger scales.
-As I have for my PhD, I will carry out my simulations using the Dedalus code \citep{burns&all2019}.
+%I will progressively build on understanding gained in detailed small scale studies to inform studies which focus on increasingly larger scales.
+I will carry out my simulations using the Dedalus code \citep{burns&all2019}, which I have used throughout my PhD research.
 
-Stratified convection like that in the solar convection zone exhibits broad slow upwellings in balance with intense, fast downflows.
-The now-popular ``entropy rain'' hypothesis posits that these downflows are so powerful that they alone transport the Sun's luminosity in the deep convection zone (see the schematic in Fig.~\ref{fig:tri_panel}a).
-This hypothesis is gaining traction in recent simulations \cite{kapyla&all2017} and theoretical work \citep{brandenburg2016}, and could explain the absence of giant cells in observations \citep{hanasoge&all2015}.
-These downflows may turbulently break up into distinct pieces as they fall and these individual downflow pieces can be modeled as ``thermals'' (a turbulent evolved thermal is visualized in Fig.~\ref{fig:tri_panel}b).
-Thermals are studied extensively in Earth's atmosphere \citep{lecoanet&jeevanjee2019} and I recently studied them in the solar context \citep{andersLB2019}.
+Stratified convection, such as in the Sun's convection zone, exhibits broad slow upwellings in balance with intense, fast downflows.
+The ``entropy rain'' hypothesis posits that downflows alone are powerful enough to transport the Sun's luminosity deep in the convection zone (see Fig.~\ref{fig:tri_panel}a).
+This hypothesis is gaining traction \citep{brandenburg2016, kapyla&all2017} and could explain the absence of giant cells in observations \citep{hanasoge&all2015}.
 
 Regardless of the veracity of the entropy rain hypothesis, the nature of downflows in solar convection and their deep interactions must be better understood.
 As a Stanford fellow, I will spend my first two years studying solar downflows to help clarify the convective conundrum.
-In my first year, I will build on my work in \citet{andersLB2019} to understand how the Sun's magnetism and global rotation affect the propagation of individual downflows (thermals).
-I will try to constrain whether or not Lorentz and Coriolis forces in the Sun can prevent downflows from transiting the full solar convection zone to help determine the importance of downflows and the plausibility of the entropy rain hypothesis.
-Building on this work, my PhD studies of convection \citep{anders&brown2017, anders&all2019}, and sparse modern studies \citep{brummell&all2002, wood&brummell2018}, I will then examine interactions between downflows and the base of the solar convection zone, as in Fig.~\ref{fig:tri_panel}c.
-The base of the convection zone in Sun-like stars is a radiative-convective boundary (RCB), where the turbulent convection zone meets a stably stratified ``radiative zone'' where radiation effectively carries the stellar luminosity.
-In my second year, I will constrain the mechanisms through which an ensemble of downflows interacts with the RCB to understand how downflows pump energy, magnetic fields, and angular momentum into the radiative zone.
-Giant cells should be driven near the RCB; mixing of near-RCB fluid by downflows may stablize the deep convection zone and prevent the acceleration of giant cell flows.
-Furthermore, the topology of a star's angular momentum profile or magnetic field can affect asteroseismic measurements \citep{benomar&all2018, santos&all2018}, and so understanding how RCB interactions affect these topologies is crucial.
+These downflows may turbulently break up into distinct pieces as they fall and these individual downflow pieces can be modeled as ``thermals'' (a turbulent evolved thermal is visualized in Fig.~\ref{fig:tri_panel}b).
+Thermals are studied extensively in Earth's atmosphere \citep{lecoanet&jeevanjee2019} and I recently studied them in the solar context \citep{andersLB2019}.
+In my first year as a fellow, I will study thermals-as-downflows to understand how the Sun's magnetism and global rotation affect the propagation of individual downflows.
+I will constrain whether magnetic Lorentz or rotational Coriolis forces in the Sun can prevent downflows from transiting the full solar convection zone to help determine the plausibility of the entropy rain hypothesis.
 
-In my third year as a Stanford Science Fellow, I will zoom out from these detailed studies to examine full, spherical, global simulations of Suns; a partial wedge of such a sphere is depicted in Fig.~\ref{fig:tri_panel}a.
-Recent studies \citep{jorgensen&weiss2019} have effectively coupled 3D simulations of thin, near-surface layers to 1D stellar structure models to improve measurements, but such a coupling is not yet available for deep convective motions.
-Simulations of deep, turbulent convective motions take an unachievably large number of convective overturn timescales to come into an equilibrium state, and so cannot be efficiently coupled with 1D models while using traditional timestepping techniques due to computational expense.
-In \citet{anders&all2018}, I developed a mechanism for coupling 3D simulations of deep motions and 1D boundary value problems (BVPs) to fast-forward these simulations to an equilibrated state.
-During my time at Stanford, I will extend this work and design a generalized public module which couples 3D global simulations to 1D BVPs to reach a rapidly accelerated state.
-I will personally employ this tool to create equilibrated global simulations; I will probe the nature of downflows and RCB interactions in these simulations and compare them to my previous more detailed studies to try to elucidate why modern observations and global simulations disagree so strongly about giant cells \citep{hanasoge&all2015}.
-The implementation of this accelerated evolution tool will also be one of the next steps towards a generalized coupling of 1D stellar models and 3D convective simulations.
-Such a generalized coupling, which samples 3D turbulent statistics of convection in order to inform and improve 1D modeling, is the ``holy grail'' of stellar structure modeling because it does not depend on simple parameterizations which have many known deficiences.
+After examining individual downflows, I will spend my second year examining interactions between downflows and the base of the solar convection zone, as in Fig.~\ref{fig:tri_panel}c.
+The base of the convection zone in Sun-like stars is a radiative-convective boundary (RCB), where the turbulent convection zone meets a stably stratified ``radiative zone'' where radiation effectively carries the stellar luminosity.
+I will build on my PhD convection work \citep{anders&brown2017, anders&all2019} and recent RCB work \citep{wood&brummell2018} to study the mechanisms through which an ensemble of downflows interacts with the RCB.
+I will learn how downflows pump energy, magnetic fields, and angular momentum into the radiative zone.
+Parameterizations predict that giant cells should be driven near the RCB, but mixing of near-RCB fluid by downflows may stabilize the deep convection zone and prevent the acceleration of giant cell flows.
+Furthermore, the topology of a star's magnetic field and angular momentum profile can affect asteroseismic measurements \citep{benomar&all2018, santos&all2018}.
+Pumping of magnetism and angular momentum into the RCB is poorly understood, but is crucial in establishing the topology of these fields.
+
+In my third year as a fellow, I will examine spherical global simulations of Suns (Fig.~\ref{fig:tri_panel}a is a schematic of a wedge of such a simulation).
+Recently, \citet{jorgensen&weiss2019} improved 1D stellar structure models by coupling them with 3D simulations of convection in thin, near-surface layers.
+This coupling cannot be done generically for 3D simulations of \emph{deep}, turbulent convective motions because the timescale of atmospheric equilibration is very long compared to the size of timesteps required to resolve flows.
+It is very computationally expensive to create a single equilibrated solution through standard timestepping techniques, so creating equilibrated solutions for arbitrary stars is impossible.
+In \citet{anders&all2018}, I developed a mechanism which rapidly equilibrates simple Cartesian convection simulations (requiring e.g., an order of magnitude fewer cpu-hours than traditional techniques).
+During my time at Stanford, I will extend this work to design, validate, and publicly release a generalized module which rapidly equilibrates the atmospheric structure and mean fluid flows in 3D global simulations.
+This tool will allow for the efficient production of global simulations with deep convection from which convective statistics can be sampled to improve stellar models, as in \citet{jorgensen&weiss2019}.
+I will personally employ this tool to equilibrate global simulations where I will examine downflows and RCB interactions.
+I will compare these simulations to my previous two years' work to elucidate why modern observations and global simulations disagree so strongly about giant cells.
 
 
 \begin{center}
 \vspace{-5pt}
 \textbf{How Stanford Enables These Accomplishments}
-\vspace{-11pt}
+\vspace{-8pt}
 \end{center}
-Stanford is the perfect location for carrying out this work due to the opportunities available for interdisciplinary collaboration between astrophysicists, geophysical fluid dynamicists, applied mathematicians, and experts in turbulence.
-The most natural collaborator on this work proposed here is Prof.~Tom Abel of Stanford's physics department.
-Prof.~Abel's expertise in astrophysical fluid dynamics and scientific visualization, as well as his broad interest in astrophysical topics would make him an excellent collaborator for these proposed studies.
+Stanford is the perfect location for carrying out this work due to the opportunities available for interdisciplinary collaboration between astrophysicists, geophysical fluid dynamicists, applied mathematicians, and turbulence experts.
+Prof.~Tom Abel of Stanford's physics department is the most natural collaborator for this work due to his expertise in astrophysical fluid dynamics and scientific visualization, as well as his broad interest in astrophysical topics.
 From Prof.~Abel's group, I would collaborate with the numerous experts in Stanford's Physics department, such as Prof.~Petrosian, who has recently studied the hydrodynamics of solar flares and Prof.~Wagoner, who has studied waves in astrophysical accretion disks.
 There are many other natural collaborators with expertise in fluid dynamics across Stanford, such as Profs.~Sheshadri and Thomas in the Dept.~of Earth System Science and Profs.~Ryzhik and Tokieda in the Mathematics Department.
-Finally, Stanford's Center for Turbulence Research, which houses many experts on turbulent fluid dynamics such as Prof.~Javier Jim\'{e}nez, will be an invaluable resource as I carry out my research plan.
-This work will further be enabled by the computational resources available through Stanford's Research Computing Center, like the Sherlock HPC cluster.
+Stanford's Center for Turbulence Research, with experts in turbulent fluid dynamics like Prof.~Jim\'{e}nez, will also be an invaluable resource as I carry out my research plan.
+The computational requirements of this work are modest, and the resources available through Stanford's Research Computing Center, including the Sherlock HPC cluster, far exceed what will be required to complete this work.
 
 The Stanford Science Fellows program would give me the freedom to study these ambitious problems in astrophysical fluid dynamics.
-The projects proposed here seek to understand stellar convection from small to global scales and build naturally upon my PhD research.
-These projects help solve exciting problems in stellar structure with applications in numerous astrophysical subdisciplines.
-I look forward to the opportunity to create cross-disciplinary collaborations and carry on Stanford's excellent research tradition while making lasting contributions which help solve the Convective Conundrum and other fascinating problems. 
+The projects proposed here seek to understand stellar convection from small to global scales, build naturally upon my PhD research, and help solve exciting problems in stellar structure with applications across astrophysics.
+I look forward to the opportunity to create cross-disciplinary collaborations and carry on Stanford's excellent research tradition while making lasting contributions which help solve the Convective Conundrum.
 
-\vspace{-22pt}
+\vspace{-11pt}
 \bibliographystyle{yahapj}
 \bibliography{biblio}
 \end{document}
