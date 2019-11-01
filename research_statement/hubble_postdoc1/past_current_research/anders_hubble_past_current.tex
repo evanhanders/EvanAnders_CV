@@ -42,60 +42,39 @@
 \newcommand{\prf}{Physical Review Fluids}
 
 \begin{document}
-\begin{figure*}[t!]
-	\vspace{-6pt}
-	\begin{center}
-    \includegraphics[width=0.9\textwidth]{./figs/snapshots_fig.pdf}
-	\end{center}
-	\vspace{-25pt}
-    \caption{ 
-	\citep[Fig.~2 of][]{anders&brown2017} Entropy perturbations in evolved convective simulations; blue is negatively buoyant while red is positively buoyant.
-	(left three panels) Evolved flow structures in 2D simulations, including low Mach number (top), high Mach number (middle and bottom), and highly turbulent dynamics (bottom).
-	Overall flow structures are nearly the same (large rolls) regardless of Mach number or degree of turbulence, although the high Mach number cases do exhibit shocks near the top of downflow lanes (e.g., upper left corner of middle panel).
-	(right panels) Evolved flows in a 3D simulation, including a vertical cut through the domain (top) and horizontal slices near the top and (bottom left) and middle (bottom right) of the domain.
-	Flows in 3D take on plume structures rather than time-stationary rolls, and the surface dynamics strikingly resemble convection at the solar surface.
-	Despite very different dynamics in 2D and 3D, many properties of the overall convective flows (heat transport, turbulence) are very similar between 2D and 3D.
-	\label{fig:ab17} }
-	\vspace{-66pt}
-\end{figure*}
-\section*{\textbf{Previous Research}}
 \thispagestyle{fancy}
 \paragraph{Scaling Laws in Fully Compressible, Stratified Convection}
-The levels of turbulence achieved by stellar convection is far beyond what can be simulated on modern computational resources \citep[see e.g.,][for a discussion]{brummell&all2002}.
-This limitation means that numericists like myself aim to understand how basic measures of the flow change as the degree of turbulence is increased towards the stellar regime so that we can extrapolate out to stellar parameters.
-In \citet{anders&brown2017}, I studied scaling laws in fully compressible, stratified convection.
-I showed that the Mach number of convective simulations is straightforward to specify in polytropic atmospheres, and then studied how convection changes from the laminar to the turbulent regime in 2D and 3D convection.
-Characteristic flow fields from these simulations are depicted in Fig.~\ref{fig:ab17}, from this paper.
-We surprisingly found that stratified convection at both very low and very high Mach numbers exhibited scaling laws that were nearly identical to those seen in incompressible Boussinesq convection \citep{ahlers&all2009}.
+Modern computational resources cannot create simulations which achieve the same levels of turbulence as stellar convection \citep{brummell&all2002}.
+Modern convection research therefore attempts to extrapolate out to stellar parameters by studying how properties like the efficiency of heat transport scale with increased convective driving.
+In \citet{anders&brown2017}, we determined how to straightforwardly set the Mach number of fully compressible, stratified convection, and learned that scaling laws in both low- and high-Mach number convection are almost identical to those seen in incompressible convection \citep{ahlers&all2009}.
 
-\vspace{-4pt}
+\vspace{22pt}
 \paragraph{Fixing Rotational Constraint in Convective Simulations}
 Convection in astrophysical and geophysical contexts experience Coriolis forces due to the global rotation of the star or planet on which the convection occurs.
 These Coriolis forces suppress convective motions, and therefore the degree of turbulence and the degree of rotational influence in the evolved convective state is a complicated function of convective driving and global rotation.
 In \citet{anders&all2019}, I extended my studies of stratified, compressible convection to include rotation.
-We discovered a new parameter, the ``predictive Rossby number'' (Ro$_\text{P}$), which is informed by the convective driving and global rotation and which, when held constant, allows the degree of turbulence in convection simulations to be straightforwardly increased.
-When the rotation rate or convective driving are changed on their own, the amount of rotational influence felt by the evolved convective flows either increases or decreases as turbulence is increased.
-However, at a fixed value of Ro$_\text{P}$, the rotational influence felt by the evolved flows does not change with increasing turbulence.
+We discovered a new parameter, the ``predictive Rossby number'' (Ro$_\text{P}$), which fixes the rotational constraint and allows the degree of turbulence in convection simulations to be straightforwardly increased.
+When the degree of rotational constraint was specified and convective driving was increased, we once again found incompressible scaling laws emerge.
 Select figures from this work have been annotated and displayed in Fig.~\ref{fig:rossby_plot}.
 
-\begin{figure*}[t]
+\begin{figure*}[b]
 	\begin{center}
-    \includegraphics[width=0.9\textwidth]{./figs/rossby_plot.pdf}
+    \includegraphics[width=\textwidth]{./figs/rossby_plot.pdf}
 	\end{center}
-	\vspace{-22pt}
-    \caption{ 
-	\citep[From Figs.~1 \& 2 of][]{anders&brown2017} Left panel: As turbulence is increased in convective simulations, the rotational constraint felt by the flows changes along traditional paths through parameter space (green triangles and blue squares) but stays constant along our newly-found paths (orange circles).
-	Right panels: As rotational constraint increases (left to right), the granular convective structures seen in e.g., Fig.~\ref{fig:ab17} give way to quasi-2D vortical columns which change very little between the top (upper row) and midplane (lower row) of the atmosphere, even in the presence of stratification.
-	The very different flow structures observed when rotational constraint is important implies that it is crucial to simulate in the same regime in which an astrophysical object of interest exists.
-	\label{fig:rossby_plot} }
 	\vspace{-11pt}
+    \caption{ 
+	\citep[From Figs.~1 \& 2 of][]{anders&all2019} Left panel: As turbulence is increased in convective simulations along traditional paths through parameter space (green triangles and blue squares), the rotational constraint felt by the flows changes.
+	Rotational constraint stays constant along our newly-found paths (orange circles).
+	Right panels: As rotational constraint increases (left to right), granular convective structures give way to quasi-2D vortical columns with little deviation at the top (upper row) and midplane (lower row) of the atmosphere.
+	\label{fig:rossby_plot} }
 \end{figure*}
 
-\vspace{-11pt}
+
+\newpage
 \paragraph{Accelerated Evolution of Convective Simulations}
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
-	\vspace{-22pt}
+	\vspace{-11pt}
     \includegraphics[width=0.48\textwidth]{./figs/nu_v_time.png}
 	\vspace{-16pt}
 	\end{center}
@@ -103,22 +82,19 @@ Select figures from this work have been annotated and displayed in Fig.~\ref{fig
 	\citep[Fig.~2 of][]{anders&all2018} The time evolution of convective transport (black line) and thermal energy (blue line) for a simulation which uses standard timestepping (top) and one which uses our accelerated evolution method (bottom).
 	Standard timestepping converges over thousands of convective timescales, but our accelerated evolution method (which occurs at the times marked by arrows) rapidly and accurately achieves the same converged state.
 	\label{fig:ae_plot} }
-	\vspace{-16pt}
+	\vspace{-11pt}
 \end{wrapfigure}
-In highly turbulent simulations of astrophysical convection, the timescale over which the atmospheric stratification evolves (e.g, the Kelvin-Helmholtz [KH] timescale) is much larger than the timescale on which convective motions overturn.
-However, in order to have faith in the results of convective simulations, it is crucial to timestep through at least one KH timescale to ensure that simulation results are in a statistical equilibrium.
-This means that a vast amount of computational resources are often ``wasted'' equilibrating simulations before meaningful measurements can be made.
-In \citet{anders&all2018}, I studied and verified a tool for accelerating through the long thermal relaxation of convective atmospheres.
-In a simplified convective system, this tool equilibrated a solution to within 1\% accuracy of traditional timestepping techniques while using an order of magnitude fewer resources.
-Time traces comparing properties of a traditional simulation to one of these accelerated simulations are shown in Fig.~\ref{fig:ae_plot}.
+Modern simulations of stellar convection generally include a transient phase during which the thermodynamic structure of the domain is relaxing into an equilibrium state.
+As simulations are pushed into highly-turbulent, more astrophysically-interesting regimes, this relaxation timescale becomes very long compared to the overturn timescale of convective dynamics.
+In state-of-the-art simulations, before meaningful measurements can be taken, this timescale separation creates a long period of rundown which is physically uninteresting and very computationally expensive to timestep through.
+In \citet{anders&all2018}, we found a mechanism for fast-forwarding through this equilibration time in a very simple convective system, and verified that it produced the same results to within 1\% of standard timestepping techniques using an order of magnitude fewer cpu-hours.
+A comparison of an accelerated run and traditional run is shown in Fig.~\ref{fig:ae_plot}.
 
-
-\vspace{-4pt}
-\paragraph{Entropy Rain: Thermals as Downflows in Stellar Convection}
+\paragraph{Entropy Rain: Thermals in Stratified Domains}
 \begin{wrapfigure}{l}{0.5\textwidth}
 	\begin{center}
-	\vspace{-33pt}
-    \includegraphics[width=0.48\textwidth]{./figs/evolution_colormeshes.pdf}
+	\vspace{-37pt}
+    \includegraphics[width=0.45\textwidth]{./figs/evolution_colormeshes.pdf}
 	\vspace{-16pt}
 	\end{center}
     \caption{
@@ -127,36 +103,38 @@ Time traces comparing properties of a traditional simulation to one of these acc
 	\label{fig:thermals} }
 	\vspace{-22pt}
 \end{wrapfigure}
-Most recently, I have studied the effects of atmospheric stratification on individual convective downflows.
-I model downflows as ``thermals,'' or cold regions of fluid which naturally evolve due to buoyancy forces, which are studied extensively in the Earth's atmosphere \citep{lecoanet&jeevanjee2019}.
-The evolution of thermals in minimally stratified and appreciably stratified domains is depicted in Fig.~\ref{fig:thermals}.
-In \citet{andersLB2019}, I developed an analytical theory for the size of these downflows as a function of atmospheric depth, and I verified that theory with simulations. 
-Stratification compresses these downflows as the density increases, but not as much as a simple estimate based on the density profile would suggest \citep[as in][]{brandenburg2016}.
-We find that downflows in the Sun remain large enough to shield their entropy signature from dissapative effects and transport enough energy to carry the solar luminosity alone.
+
+Stratified convection, like that in the envelopes of solar-type stars, exhibits asymmetrical flows: upwellings are slow, weak, and wide while downflows are intense, fast, and narrow.
+The ``entropy rain'' hypothesis posits that downflows may be so powerful in stellar envelope convection that they alone transport the stellar luminosity, and upflows exist only to conserve mass while transporting negligible energy.
+It is possible these downflows turbulently break up into distinct pieces as they fall and these individual downflow pieces can be modeled as ``thermals.''
+Thermals are regions of cold fluid which accelerate due to buoyancy forces and shape themselves into vortex rings; thermal evolution is visualized in Fig. \ref{fig:thermals}.
+
+In \citet{andersLB2019}, we studied how an atmospheric density stratification affects the size of thermals as they propagate.
+We found that thermals compress less than a simple estimate based on the stratification alone would anticipate \citep{brandenburg2016}.
+We further estimated to our surprise that thermal-like downflows could very easily carry the Sun's luminosity through much of the solar convection zone, in agreement with the entropy rain hypothesis.
 
 
+\vspace{-44pt}
 \section*{\textbf{Current Research}}
-As I finish my PhD, I am extending my research to three small collaborative projects which build upon these results.
+As I finish my PhD, I am extending my past research to three small collaborative projects.
 
 \vspace{-4pt}
-\paragraph{Individual downflows impinging on stable layers}
+\paragraph{Individual Downflows Impinging on Stable Layers}
 Alongside Prof.~Daniel Lecoanet (Northwestern / Princeton) and Dr.~Lydia Korre (Univ.~Colorado), I am extending my Entropy Rain study to include interactions with the stable layer that lies beneath a solar-like convection zone.
-While there have been many simple studies of the interactions of thermals with stable regions of fluid in the laboratory over the past few decades, few studies have focused on where the buoyant energy signature of the flow is deposited.
-In the Sun, the location of this energy deposition could have huge implications on observed convective dynamics.
-For example, cold downflow material deposited at the base of the convection zone could strongly stabilize that region and suppress flows from being driven there \citep{cossette&rast2017}.
+We are trying to determine where the buoyant energy signature of highly resolved downflows is deposited when these flows encounter a stable layer.
+In stars, cold downflow material deposited at the base of the convection zone could strongly stabilize that region and suppress flows (such as giant cells) from being driven there \citep{cossette&rast2016}.
 
 \vspace{-4pt}
-\paragraph{Thermal Relaxation and Dynamical Regime changes}
-During my PhD, I learned how to set the degree of rotational constraint in a rotating convection simulation and I learned how to fast-forward through thermal relaxation.
-I am collaborating with Prof.~Geoff Vasil (Univ.~Sydney) to study the effects of thermal relaxation on convective simulations where complicating effects like rotation are included in order to demonstrate the importance of achieving a relaxed state.
+\paragraph{Thermal Relaxation and Dynamical Regime Changes}
+During my PhD, I learned how to set the degree of rotational constraint in a rotating convection simulation \citep{anders&all2019} and I learned how to fast-forward through thermal relaxation \citep{anders&all2018}.
+I am collaborating with Prof.~Geoff Vasil (Univ.~Sydney) to study the effects of thermal relaxation on convective simulations when rotation is included.
 We have found that at highly turbulent, astrophysically-interesting parameters, the degree of rotational constraint felt by convective flows can change by an order of magnitude between a transient and fully relaxed solution.
-These results suggest that simulations in certain regimes which do not carefully achieve thermal equilibration may sample completely nonsensical convective dynamics.
+As in Fig.~\ref{fig:rossby_plot}, changing the degree of rotational constraint greatly alters the convective flow structures, and we are trying to determine if this massive change of rotational influence leaves hysteretic effects which may pollute simulation results.
 
 \vspace{-4pt}
-\paragraph{Predicting the Rossby number in global simulations}
-The final project I am collaborating on as I finish up my PhD is one with Dr.~Nick Featherstone (Univ.~Colorado).
-The simulations I conducted in \citet{anders&brown2019} showed that the degree of rotational constraint could be set \emph{a priori} in \emph{Cartesian} simulations of rotating convection.
-Dr.~Featherstone and I are currently investigating whether or not this can be achieved in convective simulations in spherical geometries.
+\paragraph{Predicting the Rossby Number in Global Simulations}
+The simulations I conducted in \citet{anders&all2019} showed that the degree of rotational constraint could be set \emph{a priori} in \emph{Cartesian} simulations of rotating convection.
+Dr.~Nick Featherstone (Univ.~Colorado) and I are currently investigating whether or not this can be achieved in convective simulations in spherical geometries.
 Past work by \citet{featherstone&hindman2016} shows that the degree of rotational constraint felt by convective flows in a global simulation can vastly change the evolved flow structures, and so verifying our mechanism in global simulations is crucial.
 
 
