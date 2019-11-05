@@ -12,6 +12,7 @@
 %\usepackage{import}
 \usepackage{wrapfig}
 
+
 \usepackage{color}
 \hypersetup{
   colorlinks   = true,
@@ -42,30 +43,33 @@
 \newcommand{\prf}{Physical Review Fluids}
 
 \begin{document}
+
+\begin{center}
+\textbf{PAST RESEARCH: FUNDAMENTAL STUDIES IN STELLAR CONVECTION}
+\end{center}
 \thispagestyle{fancy}
 \paragraph{Scaling Laws in Fully Compressible, Stratified Convection}
 Modern computational resources cannot create simulations which achieve the same levels of turbulence as stellar convection \citep{brummell&all2002}.
 Modern convection research therefore attempts to extrapolate out to stellar parameters by studying how properties like the efficiency of heat transport scale with increased convective driving.
 In \citet{anders&brown2017}, we determined how to straightforwardly set the Mach number of fully compressible, stratified convection, and learned that scaling laws in both low- and high-Mach number convection are almost identical to those seen in incompressible convection \citep{ahlers&all2009}.
 
-\vspace{22pt}
 \paragraph{Fixing Rotational Constraint in Convective Simulations}
-Convection in astrophysical and geophysical contexts experience Coriolis forces due to the global rotation of the star or planet on which the convection occurs.
+Coriolis forces influence convection in astrophysical and geophysical contexts due to the global rotation of the star or planet on which the convection occurs.
 These Coriolis forces suppress convective motions, and therefore the degree of turbulence and the degree of rotational influence in the evolved convective state is a complicated function of convective driving and global rotation.
-In \citet{anders&all2019}, I extended my studies of stratified, compressible convection to include rotation.
+In \citet{anders&all2019}, we extended our studies of stratified, compressible convection to include rotation.
 We discovered a new parameter, the ``predictive Rossby number'' (Ro$_\text{P}$), which fixes the rotational constraint and allows the degree of turbulence in convection simulations to be straightforwardly increased.
 When the degree of rotational constraint was specified and convective driving was increased, we once again found incompressible scaling laws emerge.
 Select figures from this work have been annotated and displayed in Fig.~\ref{fig:rossby_plot}.
 
 \begin{figure*}[b]
 	\begin{center}
-    \includegraphics[width=\textwidth]{./figs/rossby_plot.pdf}
+    \includegraphics[width=\textwidth]{./figs/rossby_plot_lowres.png}
 	\end{center}
 	\vspace{-11pt}
     \caption{ 
 	\citep[From Figs.~1 \& 2 of][]{anders&all2019} Left panel: As turbulence is increased in convective simulations along traditional paths through parameter space (green triangles and blue squares), the rotational constraint felt by the flows changes.
 	Rotational constraint stays constant along our newly-found paths (orange circles).
-	Right panels: As rotational constraint increases (left to right), granular convective structures give way to quasi-2D vortical columns with little deviation at the top (upper row) and midplane (lower row) of the atmosphere.
+	Right panels: As rotational constraint increases (left to right), granular convective structures give way to quasi-2D vortical columns with little deviation from the top (upper row) to the midplane (lower row) of the atmosphere.
 	\label{fig:rossby_plot} }
 \end{figure*}
 
@@ -87,18 +91,20 @@ Select figures from this work have been annotated and displayed in Fig.~\ref{fig
 Modern simulations of stellar convection generally include a transient phase during which the thermodynamic structure of the domain is relaxing into an equilibrium state.
 As simulations are pushed into highly-turbulent, more astrophysically-interesting regimes, this relaxation timescale becomes very long compared to the overturn timescale of convective dynamics.
 In state-of-the-art simulations, before meaningful measurements can be taken, this timescale separation creates a long period of rundown which is physically uninteresting and very computationally expensive to timestep through.
-In \citet{anders&all2018}, we found a mechanism for fast-forwarding through this equilibration time in a very simple convective system, and verified that it produced the same results to within 1\% of standard timestepping techniques using an order of magnitude fewer cpu-hours.
+In \citet{anders&all2018}, we found a mechanism for fast-forwarding through this equilibration time in a very simple convective system.
+We verified that our fast-forwarding procedure produced the same results as standard timestepping techniques to within 1\%.
+This accuracy was achieved using an order of magnitude fewer cpu-hours than traditional techniques.
 A comparison of an accelerated run and traditional run is shown in Fig.~\ref{fig:ae_plot}.
 
 \paragraph{Entropy Rain: Thermals in Stratified Domains}
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{l}{0.46\textwidth}
 	\begin{center}
-	\vspace{-37pt}
+	\vspace{-42pt}
     \includegraphics[width=0.45\textwidth]{./figs/evolution_colormeshes.pdf}
 	\vspace{-16pt}
 	\end{center}
     \caption{
-	\citep[Fig.~2 of][]{andersLB2019} Shown is the evolution of the entropy signature in a vertical slice through thermals in weakly stratified (left) and highly stratified (right) atmospheres.
+	\citep[Fig.~2 of][]{andersLB2019} Shown is the evolution of the entropy signature in vertical slices through thermals in weakly stratified (left) and highly stratified (right) atmospheres.
 	In the presence of weak stratification, these downflows grow with depth; in the presence of strong stratification, they are compressed and they accelerate as they propagate downwards.
 	\label{fig:thermals} }
 	\vspace{-22pt}
@@ -115,7 +121,7 @@ We further estimated to our surprise that thermal-like downflows could very easi
 
 
 \vspace{-44pt}
-\section*{\textbf{Current Research}}
+\section*{\textbf{Current \& Ongoing Research}}
 As I finish my PhD, I am extending my past research to three small collaborative projects.
 
 \vspace{-4pt}
