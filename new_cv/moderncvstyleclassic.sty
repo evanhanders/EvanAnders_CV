@@ -69,21 +69,24 @@
 % lengths
 \newlength{\quotewidth}
 \newlength{\hintscolumnwidth}
-\setlength{\hintscolumnwidth}{0.175\textwidth}
+\setlength{\hintscolumnwidth}{0.12\textwidth}
 \newlength{\separatorcolumnwidth}
-\setlength{\separatorcolumnwidth}{0.025\textwidth}
+\setlength{\separatorcolumnwidth}{0.03\textwidth}
 \newlength{\maincolumnwidth}
 \newlength{\doubleitemmaincolumnwidth}
 \newlength{\listitemsymbolwidth}
 \settowidth{\listitemsymbolwidth}{\listitemsymbol}
 \newlength{\listitemmaincolumnwidth}
 \newlength{\listdoubleitemmaincolumnwidth}
+\newlength{\sephintwidth}
 
 % commands
 \renewcommand*{\recomputecvlengths}{%
   \setlength{\quotewidth}{0.65\textwidth}%
   % main lenghts
   \setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\hintscolumnwidth}%
+  %separator + column width
+  \setlength{\sephintwidth}{\separatorcolumnwidth+\hintscolumnwidth}
   % listitem lengths
   \setlength{\listitemmaincolumnwidth}{\maincolumnwidth-\listitemsymbolwidth}%
   % doubleitem lengths
@@ -209,17 +212,17 @@
     \ifx&#7&%
      \else{\ifthenelse{\equal{#3#4#5#6}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
 
-%\newcommand*{\cvpub}[5][.25em]{%
-%  \cvitem[#1]{#2}{%
-%    {#3. \slshape#4\strut}%
-%    \ifx&#5&%
-%     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#5\end{minipage}}\fi}}
-
 \newcommand*{\cvpub}[5][.25em]{%
   \cvitem[#1]{#2}{%
-      {\makebox[10pt][l]{#3.} #4}%
-    \ifx&\makebox[1pt][l]{\textit{#5}}&%
-     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small\textit{#5}\end{minipage}}\fi}}
+    {#3. \slshape#4\strut}%
+    \ifx&#5&%
+     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#5\end{minipage}}\fi}}
+
+%\newcommand*{\cvpub}[5][.25em]{%
+%  \cvitem[#1]{#2}{%
+%      {#3.} #4}%
+%    \ifx&\makebox[1pt][l]{\textit{#5}}&%
+%     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small\textit{#5}\end{minipage}}\fi}}
 
 
 
