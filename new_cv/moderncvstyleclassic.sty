@@ -69,7 +69,9 @@
 % lengths
 \newlength{\quotewidth}
 \newlength{\hintscolumnwidth}
-\setlength{\hintscolumnwidth}{0.12\textwidth}
+\setlength{\hintscolumnwidth}{0.175\textwidth}
+\newlength{\smallhintscolumnwidth}
+\setlength{\smallhintscolumnwidth}{0.1\textwidth}
 \newlength{\separatorcolumnwidth}
 \setlength{\separatorcolumnwidth}{0.03\textwidth}
 \newlength{\maincolumnwidth}
@@ -79,6 +81,7 @@
 \newlength{\listitemmaincolumnwidth}
 \newlength{\listdoubleitemmaincolumnwidth}
 \newlength{\sephintwidth}
+\newlength{\smallsephintwidth}
 
 % commands
 \renewcommand*{\recomputecvlengths}{%
@@ -87,6 +90,7 @@
   \setlength{\maincolumnwidth}{\textwidth-\separatorcolumnwidth-\hintscolumnwidth}%
   %separator + column width
   \setlength{\sephintwidth}{\separatorcolumnwidth+\hintscolumnwidth}
+  \setlength{\smallsephintwidth}{\separatorcolumnwidth+\smallhintscolumnwidth}
   % listitem lengths
   \setlength{\listitemmaincolumnwidth}{\maincolumnwidth-\listitemsymbolwidth}%
   % doubleitem lengths
@@ -169,6 +173,16 @@
   \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#1}}%
   \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
 
+\newcommand*{\cvpubsection}[1]{%
+  \par\addvspace{2.5ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{section}{#1}%
+  \parbox[t]{\smallhintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\smallhintscolumnwidth}{0.95ex}}}%
+  \hspace{\separatorcolumnwidth}%
+  \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#1}}%
+  \par\nobreak\addvspace{1ex}\@afterheading}% to avoid a pagebreak after the heading
+
+
 \renewcommand*{\subsection}[1]{%
   \par\addvspace{1ex}%
   \phantomsection{}% reset the anchor for hyperrefs
@@ -178,11 +192,28 @@
   \end{tabular}%
   \par\nobreak\addvspace{0.5ex}\@afterheading}% to avoid a pagebreak after the heading
 
+\newcommand*{\cvpubsubsection}[1]{%
+  \par\addvspace{1ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{subsection}{#1}%
+  \begin{tabular}{@{}p{\smallhintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+ 	  \raggedleft\hintstyle{} &{\strut\subsectionstyle{#1}}%
+  \end{tabular}%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}% to avoid a pagebreak after the heading
+
+
 \renewcommand*{\cvitem}[3][.25em]{%
   \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
  	  \raggedleft\hintstyle{#2} &{#3}%
   \end{tabular}%
   \par\addvspace{#1}}
+
+\newcommand*{\cvpubitem}[3][.25em]{%
+  \begin{tabular}{@{}p{\smallhintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+ 	  \raggedleft\hintstyle{#2} &{#3}%
+  \end{tabular}%
+  \par\addvspace{#1}}
+
 
 \renewcommand*{\cvdoubleitem}[5][.25em]{%
  \cvitem[#1]{#2}{%
@@ -213,10 +244,10 @@
      \else{\ifthenelse{\equal{#3#4#5#6}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
 
 \newcommand*{\cvpub}[5][.25em]{%
-  \cvitem[#1]{#2}{%
-    {#3. \slshape#4\strut}%
+  \cvpubitem[#1]{#2}{%
+    {#3. #4\strut}%
     \ifx&#5&%
-     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#5\end{minipage}}\fi}}
+     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\slshape\small#5\end{minipage}}\fi}}
 
 %\newcommand*{\cvpub}[5][.25em]{%
 %  \cvitem[#1]{#2}{%
