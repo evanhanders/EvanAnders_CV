@@ -242,12 +242,22 @@
     \ifthenelse{\equal{#3#4#5#6}{}}{}{.\strut}%
     \ifx&#7&%
      \else{\ifthenelse{\equal{#3#4#5#6}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
-
+\usepackage{array}
 \newcommand*{\cvpub}[5][.25em]{%
-  \cvpubitem[#1]{#2}{%
-    {#3. #4\strut}%
-    \ifx&#5&%
-     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\slshape\small#5\end{minipage}}\fi}}
+    \begin{tabular}{@{}p{\smallhintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+        \raggedleft\hintstyle{#2} & {\begin{tabular}[t]{>{\raggedleft\arraybackslash}p{0.25in} @{\hspace{0.05in}} >{\raggedright\arraybackslash}p{\maincolumnwidth-0.25in}} #3. & #4\strut\end{tabular}} \\
+                                & {\begin{tabular}[t]{p{0.3in}p{\maincolumnwidth-0.3in}}& \slshape\small#5\strut\end{tabular}}
+  \end{tabular}%
+  \par\addvspace{#1}
+  }
+
+%commented sept 2022
+%\newcommand*{\cvpub}[5][.25em]{%
+%  \cvpubitem[#1]{#2}{%
+%    {#3. #4\strut}%
+%    \ifx&#5&%
+%     \else{\ifthenelse{\equal{#3#4}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\slshape\small#5\end{minipage}}\fi}}
+
 
 %\newcommand*{\cvpub}[5][.25em]{%
 %  \cvitem[#1]{#2}{%
