@@ -201,6 +201,17 @@
   \end{tabular}%
   \par\nobreak\addvspace{0.5ex}\@afterheading}% to avoid a pagebreak after the heading
 
+\newcommand*{\cventrysubsection}[1]{%
+  \par\addvspace{1ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{subsection}{#1}%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+ 	  \raggedleft\hintstyle{} &{\strut\subsectionstyle{#1}}%
+  \end{tabular}%
+  \par\nobreak\addvspace{0.5ex}\@afterheading}% to avoid a pagebreak after the heading
+
+
+
 
 \renewcommand*{\cvitem}[3][.25em]{%
   \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
@@ -243,6 +254,7 @@
     \ifx&#7&%
      \else{\ifthenelse{\equal{#3#4#5#6}{}}{}{\newline{}}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
 \usepackage{array}
+
 \newcommand*{\cvpub}[5][.25em]{%
     \begin{tabular}{@{}p{\smallhintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
         \raggedleft\hintstyle{#2} & {\begin{tabular}[t]{>{\raggedleft\arraybackslash}p{0.25in} @{\hspace{0.05in}} >{\raggedright\arraybackslash}p{\maincolumnwidth-0.25in}} #3. & #4\strut\end{tabular}} \\
